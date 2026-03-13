@@ -1,0 +1,14 @@
+{
+  "country": "GB",
+  "year": 2026,
+  "holidays": [
+    { "name": "New Year's Day",          "date": "2026-01-01", "type": "fixed",    "country": "GB" },
+    { "name": "Good Friday",             "date": "2026-04-03", "type": "moveable", "country": "GB" },
+    { "name": "Easter Monday",           "date": "2026-04-06", "type": "moveable", "country": "GB" },
+    { "name": "Early May Bank Holiday",  "date": "2026-05-04", "type": "fixed",    "country": "GB" },
+    { "name": "Spring Bank Holiday",     "date": "2026-05-25", "type": "fixed",    "country": "GB" },
+    { "name": "Summer Bank Holiday",     "date": "2026-08-31", "type": "fixed",    "country": "GB" },
+    { "name": "Christmas Day",           "date": "2026-12-25", "type": "fixed",    "country": "GB" },
+    { "name": "Boxing Day",              "date": "2026-12-26", "type": "fixed",    "country": "GB" }
+  ]
+}

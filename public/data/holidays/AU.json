@@ -1,0 +1,14 @@
+{
+  "country": "AU",
+  "year": 2026,
+  "holidays": [
+    { "name": "New Year's Day",         "date": "2026-01-01", "type": "fixed",    "country": "AU" },
+    { "name": "Australia Day",          "date": "2026-01-26", "type": "fixed",    "country": "AU" },
+    { "name": "Good Friday",            "date": "2026-04-03", "type": "moveable", "country": "AU" },
+    { "name": "Easter Saturday",        "date": "2026-04-04", "type": "moveable", "country": "AU" },
+    { "name": "Easter Monday",          "date": "2026-04-06", "type": "moveable", "country": "AU" },
+    { "name": "Anzac Day",              "date": "2026-04-25", "type": "fixed",    "country": "AU" },
+    { "name": "Christmas Day",          "date": "2026-12-25", "type": "fixed",    "country": "AU" },
+    { "name": "Boxing Day",             "date": "2026-12-26", "type": "fixed",    "country": "AU" }
+  ]
+}

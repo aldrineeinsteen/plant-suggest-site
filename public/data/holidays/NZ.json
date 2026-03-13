@@ -1,0 +1,16 @@
+{
+  "country": "NZ",
+  "year": 2026,
+  "holidays": [
+    { "name": "New Year's Day",         "date": "2026-01-01", "type": "fixed",    "country": "NZ" },
+    { "name": "New Year's Day (observed)", "date": "2026-01-02", "type": "fixed",  "country": "NZ" },
+    { "name": "Waitangi Day",           "date": "2026-02-06", "type": "fixed",    "country": "NZ" },
+    { "name": "Good Friday",            "date": "2026-04-03", "type": "moveable", "country": "NZ" },
+    { "name": "Easter Monday",          "date": "2026-04-06", "type": "moveable", "country": "NZ" },
+    { "name": "Anzac Day",              "date": "2026-04-25", "type": "fixed",    "country": "NZ" },
+    { "name": "King's Birthday",        "date": "2026-06-01", "type": "moveable", "country": "NZ" },
+    { "name": "Labour Day",             "date": "2026-10-26", "type": "moveable", "country": "NZ" },
+    { "name": "Christmas Day",          "date": "2026-12-25", "type": "fixed",    "country": "NZ" },
+    { "name": "Boxing Day",             "date": "2026-12-26", "type": "fixed",    "country": "NZ" }
+  ]
+}

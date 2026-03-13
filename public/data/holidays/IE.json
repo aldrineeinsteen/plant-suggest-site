@@ -1,0 +1,17 @@
+{
+  "country": "IE",
+  "year": 2026,
+  "holidays": [
+    { "name": "New Year's Day",         "date": "2026-01-01", "type": "fixed",    "country": "IE" },
+    { "name": "St Brigid's Day",        "date": "2026-02-02", "type": "fixed",    "country": "IE" },
+    { "name": "St Patrick's Day",       "date": "2026-03-17", "type": "fixed",    "country": "IE" },
+    { "name": "Good Friday",            "date": "2026-04-03", "type": "moveable", "country": "IE" },
+    { "name": "Easter Monday",          "date": "2026-04-06", "type": "moveable", "country": "IE" },
+    { "name": "May Bank Holiday",       "date": "2026-05-04", "type": "moveable", "country": "IE" },
+    { "name": "June Bank Holiday",      "date": "2026-06-01", "type": "moveable", "country": "IE" },
+    { "name": "August Bank Holiday",    "date": "2026-08-03", "type": "moveable", "country": "IE" },
+    { "name": "October Bank Holiday",   "date": "2026-10-26", "type": "moveable", "country": "IE" },
+    { "name": "Christmas Day",          "date": "2026-12-25", "type": "fixed",    "country": "IE" },
+    { "name": "St Stephen's Day",       "date": "2026-12-26", "type": "fixed",    "country": "IE" }
+  ]
+}
