@@ -72,13 +72,13 @@ export default function CalendarView({ recommendations, startMonth, startYear }:
       </div>
 
       {/* Table */}
-      <div className="overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
+      <div className="overflow-auto max-h-[calc(100vh-280px)] rounded-lg border border-gray-200 shadow-sm">
         <table className="border-collapse text-xs w-full min-w-max">
           <thead>
             {/* Row 1 — month labels */}
             <tr className="bg-gray-100">
               <th
-                className="sticky left-0 z-10 bg-gray-100 text-left px-3 py-2 font-semibold text-gray-700 whitespace-nowrap border-r border-gray-300 min-w-[140px]"
+                className="sticky left-0 top-0 z-30 bg-gray-100 text-left px-3 py-2 font-semibold text-gray-700 whitespace-nowrap border-r border-gray-300 min-w-[140px]"
                 rowSpan={2}
               >
                 Plant
@@ -88,7 +88,7 @@ export default function CalendarView({ recommendations, startMonth, startYear }:
                   key={`${cm.year}-${cm.month}`}
                   colSpan={4}
                   className={[
-                    'text-center px-1 py-1 font-medium text-gray-600 whitespace-nowrap',
+                    'sticky top-0 z-20 bg-gray-100 text-center px-1 py-1 font-medium text-gray-600 whitespace-nowrap',
                     i === 0 ? '' : cm.isOverflow
                       ? 'border-l-2 border-dashed border-gray-400'
                       : 'border-l border-gray-300',
@@ -106,7 +106,7 @@ export default function CalendarView({ recommendations, startMonth, startYear }:
                   <th
                     key={`${cm.year}-${cm.month}-${part}`}
                     className={[
-                      'text-center py-1 font-normal text-gray-400 w-6',
+                      'sticky top-[25px] z-20 bg-gray-50 text-center py-1 font-normal text-gray-400 w-6 border-b border-gray-200',
                       part === 1
                         ? mi === 0
                           ? ''

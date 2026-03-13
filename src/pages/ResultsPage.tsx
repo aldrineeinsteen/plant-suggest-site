@@ -67,61 +67,64 @@ export function ResultsPage({ result, onReset }: Props) {
         </div>
       </header>
 
-      <main className="mx-auto max-w-5xl px-4 py-8">
-        {/* Climate summary */}
-        <section className="mb-6 rounded-xl border border-brand-100 bg-brand-50 p-4">
-          <h2 className="text-sm font-semibold text-brand-800 mb-2">Climate summary</h2>
-          <div className="grid grid-cols-2 gap-x-8 gap-y-1 text-sm text-gray-700 sm:grid-cols-4">
-            <div>
-              <span className="text-xs text-gray-500 block">Last spring frost</span>
-              <strong>{frostLabel}</strong>
+      <main className="px-4 py-8">
+        {/* Constrained header content — always centred */}
+        <div className="mx-auto max-w-5xl">
+          {/* Climate summary */}
+          <section className="mb-6 rounded-xl border border-brand-100 bg-brand-50 p-4">
+            <h2 className="text-sm font-semibold text-brand-800 mb-2">Climate summary</h2>
+            <div className="grid grid-cols-2 gap-x-8 gap-y-1 text-sm text-gray-700 sm:grid-cols-4">
+              <div>
+                <span className="text-xs text-gray-500 block">Last spring frost</span>
+                <strong>{frostLabel}</strong>
+              </div>
+              <div>
+                <span className="text-xs text-gray-500 block">First autumn frost</span>
+                <strong>{autumnFrostLabel}</strong>
+              </div>
+              <div>
+                <span className="text-xs text-gray-500 block">Growing season</span>
+                <strong>{climate.growingSeasonDays} days</strong>
+              </div>
+              <div>
+                <span className="text-xs text-gray-500 block">Avg summer temp</span>
+                <strong>{climate.avgSummerTempC}°C</strong>
+              </div>
             </div>
-            <div>
-              <span className="text-xs text-gray-500 block">First autumn frost</span>
-              <strong>{autumnFrostLabel}</strong>
-            </div>
-            <div>
-              <span className="text-xs text-gray-500 block">Growing season</span>
-              <strong>{climate.growingSeasonDays} days</strong>
-            </div>
-            <div>
-              <span className="text-xs text-gray-500 block">Avg summer temp</span>
-              <strong>{climate.avgSummerTempC}°C</strong>
-            </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Filter bar + view toggle */}
-        <div className="mb-5 flex flex-wrap items-center gap-3">
-          <div className="flex-1 min-w-0">
-            <FilterBar
-              activeCategories={activeCategories}
-              onToggleCategory={toggleCategory}
-              totalCount={result.recommendations.length}
-              filteredCount={filtered.length}
-            />
-          </div>
-          <div className="flex rounded-lg border border-gray-300 overflow-hidden text-xs font-medium shrink-0">
-            <button
-              onClick={() => setViewMode('cards')}
-              className={`px-3 py-1.5 transition ${
-                viewMode === 'cards'
-                  ? 'bg-brand-600 text-white'
-                  : 'bg-white text-gray-600 hover:bg-gray-50'
-              }`}
-            >
-              Cards
-            </button>
-            <button
-              onClick={() => setViewMode('calendar')}
-              className={`px-3 py-1.5 border-l border-gray-300 transition ${
-                viewMode === 'calendar'
-                  ? 'bg-brand-600 text-white'
-                  : 'bg-white text-gray-600 hover:bg-gray-50'
-              }`}
-            >
-              Calendar
-            </button>
+          {/* Filter bar + view toggle */}
+          <div className="mb-5 flex flex-wrap items-center gap-3">
+            <div className="flex-1 min-w-0">
+              <FilterBar
+                activeCategories={activeCategories}
+                onToggleCategory={toggleCategory}
+                totalCount={result.recommendations.length}
+                filteredCount={filtered.length}
+              />
+            </div>
+            <div className="flex rounded-lg border border-gray-300 overflow-hidden text-xs font-medium shrink-0">
+              <button
+                onClick={() => setViewMode('cards')}
+                className={`px-3 py-1.5 transition ${
+                  viewMode === 'cards'
+                    ? 'bg-brand-600 text-white'
+                    : 'bg-white text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                Cards
+              </button>
+              <button
+                onClick={() => setViewMode('calendar')}
+                className={`px-3 py-1.5 border-l border-gray-300 transition ${
+                  viewMode === 'calendar'
+                    ? 'bg-brand-600 text-white'
+                    : 'bg-white text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                Calendar
+              </button>
+            </div>
           </div>
         </div>
 
@@ -132,13 +135,17 @@ export function ResultsPage({ result, onReset }: Props) {
             startMonth={startMonth}
             startYear={startYear}
           />
-        ) : filtered.length === 0 ? (
-          <p className="text-center text-gray-500 py-16">No plants match the selected filters.</p>
         ) : (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {filtered.map((rec) => (
-              <PlantCard key={rec.plant.id} recommendation={rec} />
-            ))}
+          <div className="mx-auto max-w-5xl">
+            {filtered.length === 0 ? (
+              <p className="text-center text-gray-500 py-16">No plants match the selected filters.</p>
+            ) : (
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {filtered.map((rec) => (
+                  <PlantCard key={rec.plant.id} recommendation={rec} />
+                ))}
+              </div>
+            )}
           </div>
         )}
       </main>
