@@ -41,6 +41,11 @@ export function PlantCard({ recommendation: rec }: Props) {
           {plant.scientificName && (
             <p className="text-xs italic text-gray-400">{plant.scientificName}</p>
           )}
+          {rec.isNextSeason && (
+            <span className="mt-1 inline-block rounded-full border border-indigo-100 bg-indigo-50 px-2 py-0.5 text-[10px] font-medium text-indigo-600">
+              Next season
+            </span>
+          )}
         </div>
         <span
           className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-medium capitalize ${

@@ -131,7 +131,14 @@ export default function CalendarView({ recommendations, startMonth, startYear }:
               >
                 {/* Plant name cell */}
                 <td className="sticky left-0 z-10 bg-inherit px-3 py-1 font-medium text-gray-800 whitespace-nowrap border-r border-gray-300">
-                  {rec.plant.commonName}
+                  <span className="flex items-center gap-1.5 flex-wrap">
+                    {rec.plant.commonName}
+                    {rec.isNextSeason && (
+                      <span className="inline-block rounded-full border border-indigo-100 bg-indigo-50 px-1.5 py-px text-[10px] font-medium text-indigo-600 leading-tight">
+                        Next season
+                      </span>
+                    )}
+                  </span>
                 </td>
 
                 {/* Slot cells */}

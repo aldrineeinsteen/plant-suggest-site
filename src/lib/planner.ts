@@ -58,6 +58,9 @@ export function runPlanner(
     Math.round((seasonEnd.getTime() - frost.getTime()) / MS_PER_DAY)
   );
 
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
   return plants
     .map((plant): Omit<PlantRecommendation, 'companionPlants' | 'plantsToAvoid' | 'holidayHighlights'> | null => {
       const warnings: string[] = [];
@@ -66,6 +69,14 @@ export function runPlanner(
       if (plant.propagatorBenefit === 'required' && !setup.hasHeatedPropagator) {
         return null;
       }
+
+      // ── Year rollover: if the sowing window has already passed, shift to next year ──
+      const earliestActionableEnd = plant.directSowOnly
+        ? addWeeks(frost, plant.sowingOffsetWeeks.max)
+        : addWeeks(frost, plant.indoorStartOffsetWeeks.max);
+      const isNextSeason = earliestActionableEnd < today;
+      const effectiveFrost = isNextSeason ? addDays(frost, 365) : frost;
+      const effectiveSeasonEnd = isNextSeason ? addDays(seasonEnd, 365) : seasonEnd;
 
       // Germination temperature check
       const springTooWarm = climate.avgSpringTempC > plant.germinationTempMaxC + 5;
@@ -87,26 +98,26 @@ export function runPlanner(
       const indoorStartWindow =
         !plant.directSowOnly
           ? window(
-              addWeeks(frost, plant.indoorStartOffsetWeeks.min),
-              addWeeks(frost, plant.indoorStartOffsetWeeks.max)
+              addWeeks(effectiveFrost, plant.indoorStartOffsetWeeks.min),
+              addWeeks(effectiveFrost, plant.indoorStartOffsetWeeks.max)
             )
           : undefined;
 
       // Transplant
-      const transplantDate = addWeeks(frost, plant.transplantOffsetWeeks.min);
+      const transplantDate = addWeeks(effectiveFrost, plant.transplantOffsetWeeks.min);
       const transplantWindow =
         !plant.directSowOnly
           ? window(
               transplantDate,
-              addWeeks(frost, plant.transplantOffsetWeeks.max)
+              addWeeks(effectiveFrost, plant.transplantOffsetWeeks.max)
             )
           : undefined;
 
       // Direct sow
-      const directSowStart = addWeeks(frost, plant.sowingOffsetWeeks.min);
+      const directSowStart = addWeeks(effectiveFrost, plant.sowingOffsetWeeks.min);
       const directSowWindow = window(
         directSowStart,
-        addWeeks(frost, plant.sowingOffsetWeeks.max)
+        addWeeks(effectiveFrost, plant.sowingOffsetWeeks.max)
       );
 
       // Harvest timing (based on transplant if transplanted, else direct sow start)
@@ -118,7 +129,7 @@ export function runPlanner(
       const harvestWindow = window(firstHarvestDate, harvestEndDate);
 
       // Clamp: warn if harvest extends past season end
-      if (harvestEndDate > seasonEnd) {
+      if (harvestEndDate > effectiveSeasonEnd) {
         warnings.push(`Harvest window extends beyond expected season end.`);
       }
 
@@ -131,6 +142,7 @@ export function runPlanner(
         firstHarvestWindow,
         harvestWindow,
         warnings,
+        isNextSeason,
       };
     })
     .filter((r): r is Omit<PlantRecommendation, 'companionPlants' | 'plantsToAvoid' | 'holidayHighlights'> => r !== null);

@@ -100,7 +100,7 @@ export function needsOverflowMonths(
       if (extra > maxExtra) maxExtra = extra;
     }
   }
-  return Math.min(maxExtra, 4);
+  return Math.min(maxExtra, 8);
 }
 
 /** Convert a MonthWindow part number to its display label. */

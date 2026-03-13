@@ -48,6 +48,8 @@ export interface PlantRecommendation {
   plantsToAvoid: PlantDefinition[];
   warnings: string[];
   holidayHighlights: HolidayHighlight[];
+  /** True when all windows have been shifted +365 days because this season's window has passed. */
+  isNextSeason?: boolean;
 }
 
 export interface PlannerResult {
