@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { PlannerResult, PlantCategory } from '../types';
 import { PlantCard } from '../components/PlantCard/PlantCard';
 import { FilterBar } from '../components/FilterBar/FilterBar';
+import CalendarView from '../components/CalendarView/CalendarView';
 
 const ALL_CATEGORIES = new Set<PlantCategory>(['vegetable', 'herb', 'fruit', 'flower']);
 
@@ -14,6 +15,11 @@ export function ResultsPage({ result, onReset }: Props) {
   const [activeCategories, setActiveCategories] = useState<Set<PlantCategory>>(
     new Set(ALL_CATEGORIES)
   );
+  const [viewMode, setViewMode] = useState<'cards' | 'calendar'>('cards');
+
+  const now = new Date();
+  const startMonth = now.getMonth() + 1;
+  const startYear = now.getFullYear();
 
   function toggleCategory(cat: PlantCategory) {
     setActiveCategories((prev) => {
@@ -85,18 +91,48 @@ export function ResultsPage({ result, onReset }: Props) {
           </div>
         </section>
 
-        {/* Filter bar */}
-        <div className="mb-5">
-          <FilterBar
-            activeCategories={activeCategories}
-            onToggleCategory={toggleCategory}
-            totalCount={result.recommendations.length}
-            filteredCount={filtered.length}
-          />
+        {/* Filter bar + view toggle */}
+        <div className="mb-5 flex flex-wrap items-center gap-3">
+          <div className="flex-1 min-w-0">
+            <FilterBar
+              activeCategories={activeCategories}
+              onToggleCategory={toggleCategory}
+              totalCount={result.recommendations.length}
+              filteredCount={filtered.length}
+            />
+          </div>
+          <div className="flex rounded-lg border border-gray-300 overflow-hidden text-xs font-medium shrink-0">
+            <button
+              onClick={() => setViewMode('cards')}
+              className={`px-3 py-1.5 transition ${
+                viewMode === 'cards'
+                  ? 'bg-brand-600 text-white'
+                  : 'bg-white text-gray-600 hover:bg-gray-50'
+              }`}
+            >
+              Cards
+            </button>
+            <button
+              onClick={() => setViewMode('calendar')}
+              className={`px-3 py-1.5 border-l border-gray-300 transition ${
+                viewMode === 'calendar'
+                  ? 'bg-brand-600 text-white'
+                  : 'bg-white text-gray-600 hover:bg-gray-50'
+              }`}
+            >
+              Calendar
+            </button>
+          </div>
         </div>
 
-        {/* Results grid */}
-        {filtered.length === 0 ? (
+        {/* Results */}
+        {viewMode === 'calendar' ? (
+          <CalendarView
+            recommendations={filtered}
+            startMonth={startMonth}
+            startYear={startYear}
+          />
+        ) : filtered.length === 0 ? (
           <p className="text-center text-gray-500 py-16">No plants match the selected filters.</p>
         ) : (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
