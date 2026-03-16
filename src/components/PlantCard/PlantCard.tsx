@@ -13,11 +13,13 @@ interface Props {
   recommendation: PlantRecommendation;
   /** When true, renders without the outer article card wrapper (for use inside PlantSheet) */
   inSheet?: boolean;
-  /** When true, shows a ✓ Saved badge — used in the card grid to reflect My List state. */
+  /** Reflects whether this plant is in the user's list. */
   isInPlan?: boolean;
+  /** When provided, renders an interactive Add / Saved button at the top of the card. */
+  onTogglePlan?: () => void;
 }
 
-export function PlantCard({ recommendation: rec, inSheet = false, isInPlan = false }: Props) {
+export function PlantCard({ recommendation: rec, inSheet = false, isInPlan = false, onTogglePlan }: Props) {
   const { plant } = rec;
 
   const windows: { type: WindowType; label: string }[] = [
@@ -51,10 +53,17 @@ export function PlantCard({ recommendation: rec, inSheet = false, isInPlan = fal
           )}
         </div>
         <div className="flex flex-col items-end gap-1 shrink-0">
-          {isInPlan && (
-            <span className="rounded-full bg-brand-600 px-2 py-0.5 text-[10px] font-semibold text-white">
-              ✓ Saved
-            </span>
+          {onTogglePlan && (
+            <button
+              onClick={(e) => { e.stopPropagation(); onTogglePlan(); }}
+              className={`rounded-full px-2 py-0.5 text-[10px] font-semibold transition ${
+                isInPlan
+                  ? 'bg-brand-600 text-white hover:bg-brand-700 dark:hover:bg-brand-500'
+                  : 'border border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400 hover:border-brand-500 hover:text-brand-600 dark:hover:border-brand-400 dark:hover:text-brand-400'
+              }`}
+            >
+              {isInPlan ? '✓ Saved' : '+ Add to List'}
+            </button>
           )}
           <span
             className={`rounded-full px-2 py-0.5 text-xs font-medium capitalize ${

@@ -15,13 +15,16 @@ interface Props {
   plan: UsePlanReturn;
   isDark: boolean;
   onToggleDark: () => void;
+  initialListFilter?: 'all' | 'my-list';
 }
 
-export function ResultsPage({ result, onReset, plan, isDark, onToggleDark }: Props) {
+export function ResultsPage({ result, onReset, plan, isDark, onToggleDark, initialListFilter }: Props) {
   const [activeCategories, setActiveCategories] = useState<Set<PlantCategory>>(
     new Set(ALL_CATEGORIES)
   );
-  const [plantListFilter, setPlantListFilter] = useState<'all' | 'my-list'>('all');
+  const [plantListFilter, setPlantListFilter] = useState<'all' | 'my-list'>(
+    () => initialListFilter ?? 'all'
+  );
   const [viewMode, setViewMode] = useState<'cards' | 'calendar'>(
     () => (typeof window !== 'undefined' && window.innerWidth < 640) ? 'calendar' : 'cards'
   );
@@ -252,7 +255,7 @@ export function ResultsPage({ result, onReset, plan, isDark, onToggleDark }: Pro
               <p className="text-center text-gray-500 dark:text-gray-400 py-16">
                 {plantListFilter === 'my-list'
                   ? plan.planIds.length === 0
-                    ? 'No plants saved yet — open any plant and tap “+ Add to My Plan”.'
+                    ? 'No plants saved yet — use the "+ Add to List" button on any card.'
                     : 'No saved plants match the selected filters.'
                   : 'No plants match the selected filters.'}
               </p>
@@ -263,6 +266,7 @@ export function ResultsPage({ result, onReset, plan, isDark, onToggleDark }: Pro
                     key={rec.plant.id}
                     recommendation={rec}
                     isInPlan={plan.isInPlan(rec.plant.id)}
+                    onTogglePlan={() => plan.togglePlan(rec.plant.id)}
                   />
                 ))}
               </div>
