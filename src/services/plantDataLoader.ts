@@ -12,7 +12,7 @@ export async function loadAllPlants(): Promise<PlantDefinition[]> {
 
   const base = import.meta.env.BASE_URL;
   const fetches = PLANT_CATEGORIES.map((cat) =>
-    fetch(`${base}data/plants/${cat}.json`)
+    fetch(`${base}data/plants/${cat}.json`, { cache: 'no-cache' })
       .then((r) => {
         if (!r.ok) return [] as PlantDefinition[];
         return r.json() as Promise<PlantDefinition[]>;

@@ -1,5 +1,28 @@
 import { useState } from 'react';
 import type { LocationInput, GrowingSetup, PlannerResult, PlantRecommendation } from '../types';
+
+const STORAGE_KEY = 'plant-suggest-result';
+
+function saveResult(result: PlannerResult): void {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(result));
+  } catch {
+    // Quota exceeded or storage unavailable — silently skip
+  }
+}
+
+function loadSavedResult(): PlannerResult | null {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as PlannerResult;
+    // Revive generatedAt — JSON serialisation strips the Date prototype
+    parsed.generatedAt = new Date(parsed.generatedAt);
+    return parsed;
+  } catch {
+    return null;
+  }
+}
 import { geocodePostcode } from '../services/geocodingService';
 import { fetchClimateNormals } from '../services/weatherService';
 import { loadAllPlants, findPlantById } from '../services/plantDataLoader';
@@ -30,8 +53,8 @@ const STATUS_LABELS: Record<Status, string> = {
 };
 
 export function usePlanner(): UsePlannerReturn {
-  const [status, setStatus] = useState<Status>('idle');
-  const [result, setResult] = useState<PlannerResult | null>(null);
+  const [status, setStatus] = useState<Status>(() => (loadSavedResult() ? 'done' : 'idle'));
+  const [result, setResult] = useState<PlannerResult | null>(() => loadSavedResult());
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   async function run(locationInput: LocationInput, setup: GrowingSetup) {
@@ -96,17 +119,20 @@ export function usePlanner(): UsePlannerReturn {
     // Step 4: Holiday alignment (additive metadata only)
     const aligned = alignHolidays(recommendations, holidays);
 
-    setResult({
+    const plannerResult: PlannerResult = {
       location: geoLocation,
       climate,
       setup,
       recommendations: aligned,
       generatedAt: new Date(),
-    });
+    };
+    saveResult(plannerResult);
+    setResult(plannerResult);
     setStatus('done');
   }
 
   function reset() {
+    localStorage.removeItem(STORAGE_KEY);
     setStatus('idle');
     setResult(null);
     setErrorMessage(null);
