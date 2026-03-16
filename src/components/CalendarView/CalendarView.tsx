@@ -119,7 +119,7 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
           {monthOffset !== 0 && (
             <button
               onClick={onReset}
-              className="rounded-full border border-brand-300 dark:border-brand-700 bg-brand-50 dark:bg-brand-900/30 px-2 py-0.5 text-xs font-medium text-brand-700 dark:text-brand-400 hover:bg-brand-100 dark:hover:bg-brand-900/50 transition"
+              className="rounded-full border border-brand-300 dark:border-gray-600 bg-brand-50 dark:bg-gray-700 px-2 py-0.5 text-xs font-medium text-brand-700 dark:text-brand-400 hover:bg-brand-100 dark:hover:bg-gray-600 transition"
             >
               Today
             </button>
@@ -182,7 +182,7 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
               <div className="flex flex-col gap-0.5 min-w-0">
                 <span className="text-sm font-medium text-gray-800 dark:text-gray-200 leading-tight">{rec.plant.commonName}</span>
                 {rec.isNextSeason && (
-                  <span className="inline-block self-start rounded-full border border-indigo-100 bg-indigo-50 px-1.5 py-px text-[10px] font-medium text-indigo-600 leading-tight">
+                  <span className="inline-block self-start rounded-full border border-indigo-100 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-900 px-1.5 py-px text-[10px] font-medium text-indigo-600 dark:text-indigo-300 leading-tight">
                     Next season
                   </span>
                 )}
@@ -316,7 +316,7 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
                   >
                     {rec.plant.commonName}
                     {rec.isNextSeason && (
-                      <span className="inline-block rounded-full border border-indigo-100 bg-indigo-50 px-1.5 py-px text-[10px] font-medium text-indigo-600 leading-tight">
+                      <span className="inline-block rounded-full border border-indigo-100 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-900 px-1.5 py-px text-[10px] font-medium text-indigo-600 dark:text-indigo-300 leading-tight">
                         Next season
                       </span>
                     )}
@@ -345,7 +345,7 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
                         className={[
                           'w-6 h-6 p-0',
                           borderClass,
-                          type ? WINDOW_COLOURS[type] : isCurrentMonth ? 'bg-brand-50 dark:bg-brand-900/20' : 'bg-transparent',
+                          type ? WINDOW_COLOURS[type] : isCurrentMonth ? 'bg-brand-50 dark:bg-gray-700/50' : 'bg-transparent',
                           status ? STATUS_CLASS[status] : '',
                         ].join(' ')}
                       />
