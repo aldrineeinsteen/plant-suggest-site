@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { PlannerResult, PlantCategory, PlantRecommendation } from '../types';
 import type { UsePlanReturn } from '../hooks/usePlan';
+import { encodeShareLink } from '../lib/shareLink';
 import { PlantCard } from '../components/PlantCard/PlantCard';
 import { FilterBar } from '../components/FilterBar/FilterBar';
 import CalendarView from '../components/CalendarView/CalendarView';
@@ -20,12 +21,14 @@ export function ResultsPage({ result, onReset, plan, isDark, onToggleDark }: Pro
   const [activeCategories, setActiveCategories] = useState<Set<PlantCategory>>(
     new Set(ALL_CATEGORIES)
   );
+  const [plantListFilter, setPlantListFilter] = useState<'all' | 'my-list'>('all');
   const [viewMode, setViewMode] = useState<'cards' | 'calendar'>(
     () => (typeof window !== 'undefined' && window.innerWidth < 640) ? 'calendar' : 'cards'
   );
   const [monthOffset, setMonthOffset] = useState(-2);
   const [climateOpen, setClimateOpen] = useState(false);
   const [selectedRec, setSelectedRec] = useState<PlantRecommendation | null>(null);
+  const [copied, setCopied] = useState(false);
 
   const now = new Date();
   const viewDate = new Date(now.getFullYear(), now.getMonth() + monthOffset, 1);
@@ -53,9 +56,17 @@ export function ResultsPage({ result, onReset, plan, isDark, onToggleDark }: Pro
     });
   }
 
-  const filtered = result.recommendations.filter((r) =>
-    activeCategories.has(r.plant.category)
-  );
+  const filtered = result.recommendations
+    .filter((r) => activeCategories.has(r.plant.category))
+    .filter((r) => plantListFilter === 'all' || plan.isInPlan(r.plant.id));
+
+  function handleCopyLink() {
+    const url = encodeShareLink(result.input, result.setup, plan.planIds);
+    navigator.clipboard.writeText(url).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }
 
   const { climate } = result;
   const frostLabel = climate.lastFrostDate
@@ -84,6 +95,14 @@ export function ResultsPage({ result, onReset, plan, isDark, onToggleDark }: Pro
             {result.location.displayName.split(',').slice(0, 2).join(',')}
           </div>
           <div className="flex items-center gap-2">
+            <button
+              onClick={handleCopyLink}
+              aria-label="Copy share link"
+              title="Copy share link"
+              className="rounded-full p-1.5 text-base text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+            >
+              {copied ? '✓' : '🔗'}
+            </button>
             <button
               onClick={onToggleDark}
               aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
@@ -146,6 +165,41 @@ export function ResultsPage({ result, onReset, plan, isDark, onToggleDark }: Pro
             )}
           </section>
 
+          {/* All Plants / My List segment */}
+          <div className="mb-4 flex items-center gap-3">
+            <div className="flex rounded-lg border border-gray-300 dark:border-gray-600 overflow-hidden text-sm font-medium">
+              <button
+                onClick={() => setPlantListFilter('all')}
+                className={`px-4 py-2 transition ${
+                  plantListFilter === 'all'
+                    ? 'bg-brand-600 text-white'
+                    : 'bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600'
+                }`}
+              >
+                All Plants
+              </button>
+              <button
+                onClick={() => setPlantListFilter('my-list')}
+                className={`px-4 py-2 border-l border-gray-300 dark:border-gray-600 transition flex items-center gap-1.5 ${
+                  plantListFilter === 'my-list'
+                    ? 'bg-brand-600 text-white'
+                    : 'bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600'
+                }`}
+              >
+                My List
+                {plan.planIds.length > 0 && (
+                  <span className={`rounded-full px-1.5 py-0.5 text-xs font-semibold ${
+                    plantListFilter === 'my-list'
+                      ? 'bg-white/20 text-white'
+                      : 'bg-brand-100 dark:bg-brand-800 text-brand-700 dark:text-brand-300'
+                  }`}>
+                    {plan.planIds.length}
+                  </span>
+                )}
+              </button>
+            </div>
+          </div>
+
           {/* Filter bar + view toggle — single row */}
           <div className="mb-5 flex flex-wrap items-center gap-2">
             <FilterBar
@@ -195,11 +249,21 @@ export function ResultsPage({ result, onReset, plan, isDark, onToggleDark }: Pro
         ) : (
           <div className="mx-auto max-w-5xl">
             {filtered.length === 0 ? (
-              <p className="text-center text-gray-500 dark:text-gray-400 py-16">No plants match the selected filters.</p>
+              <p className="text-center text-gray-500 dark:text-gray-400 py-16">
+                {plantListFilter === 'my-list'
+                  ? plan.planIds.length === 0
+                    ? 'No plants saved yet — open any plant and tap “+ Add to My Plan”.'
+                    : 'No saved plants match the selected filters.'
+                  : 'No plants match the selected filters.'}
+              </p>
             ) : (
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {filtered.map((rec) => (
-                  <PlantCard key={rec.plant.id} recommendation={rec} />
+                  <PlantCard
+                    key={rec.plant.id}
+                    recommendation={rec}
+                    isInPlan={plan.isInPlan(rec.plant.id)}
+                  />
                 ))}
               </div>
             )}

@@ -3,7 +3,7 @@ import type { LocationInput, GrowingSetup, PlannerResult, PlantRecommendation } 
 
 const STORAGE_KEY = 'plant-suggest-result';
 // Increment this whenever the stored shape or computed fields change, to discard stale caches.
-const STORAGE_VERSION = 3;
+const STORAGE_VERSION = 4;
 
 function saveResult(result: PlannerResult): void {
   try {
@@ -134,6 +134,7 @@ export function usePlanner(): UsePlannerReturn {
 
     const plannerResult: PlannerResult = {
       location: geoLocation,
+      input: locationInput,
       climate,
       setup,
       recommendations: aligned,

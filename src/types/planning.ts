@@ -1,6 +1,6 @@
 import type { PlantDefinition } from './plant';
 import type { HolidayEntry } from './holiday';
-import type { GeoLocation, GrowingSetup } from './location';
+import type { LocationInput, GeoLocation, GrowingSetup } from './location';
 import type { ClimateSummary } from './climate';
 
 /** Which quarter of the month a date falls in */
@@ -56,6 +56,8 @@ export interface PlantRecommendation {
 
 export interface PlannerResult {
   location: GeoLocation;
+  /** Original postcode + country the user entered — required for share links. */
+  input: LocationInput;
   climate: ClimateSummary;
   setup: GrowingSetup;
   recommendations: PlantRecommendation[];

@@ -13,9 +13,11 @@ interface Props {
   recommendation: PlantRecommendation;
   /** When true, renders without the outer article card wrapper (for use inside PlantSheet) */
   inSheet?: boolean;
+  /** When true, shows a ✓ Saved badge — used in the card grid to reflect My List state. */
+  isInPlan?: boolean;
 }
 
-export function PlantCard({ recommendation: rec, inSheet = false }: Props) {
+export function PlantCard({ recommendation: rec, inSheet = false, isInPlan = false }: Props) {
   const { plant } = rec;
 
   const windows: { type: WindowType; label: string }[] = [
@@ -36,7 +38,6 @@ export function PlantCard({ recommendation: rec, inSheet = false }: Props) {
 
   const content = (
     <>
-      {/* Header */}
       <div className="flex items-start justify-between gap-2">
         <div>
           <h2 className="text-base font-semibold text-gray-900 dark:text-gray-100">{plant.commonName}</h2>
@@ -49,13 +50,20 @@ export function PlantCard({ recommendation: rec, inSheet = false }: Props) {
             </span>
           )}
         </div>
-        <span
-          className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-medium capitalize ${
-            CATEGORY_COLOURS[plant.category] ?? 'bg-gray-100 text-gray-700'
-          }`}
-        >
-          {plant.category}
-        </span>
+        <div className="flex flex-col items-end gap-1 shrink-0">
+          {isInPlan && (
+            <span className="rounded-full bg-brand-600 px-2 py-0.5 text-[10px] font-semibold text-white">
+              ✓ Saved
+            </span>
+          )}
+          <span
+            className={`rounded-full px-2 py-0.5 text-xs font-medium capitalize ${
+              CATEGORY_COLOURS[plant.category] ?? 'bg-gray-100 text-gray-700'
+            }`}
+          >
+            {plant.category}
+          </span>
+        </div>
       </div>
 
       {/* Planning windows */}
