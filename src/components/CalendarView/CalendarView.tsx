@@ -3,6 +3,7 @@ import type { PlantRecommendation, WindowType } from '../../types/planning';
 import {
   buildCalendarMonths,
   getWindowTypeAtSlot,
+  getActiveWindowsForMonth,
   getSlotStatus,
   needsOverflowMonths,
   partLabel,
@@ -114,7 +115,7 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
           <span className="font-semibold text-gray-700 tabular-nums">
             {MONTH_SHORT[startMonth - 1]} {startYear}
           </span>
-          {monthOffset !== -2 && (
+          {monthOffset !== 0 && (
             <button
               onClick={onReset}
               className="rounded-full border border-brand-300 bg-brand-50 px-2 py-0.5 text-xs font-medium text-brand-700 hover:bg-brand-100 transition"
@@ -145,6 +146,92 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
         </span>
       </div>
 
+      {/* ── Mobile layout (one month at a time, vertical list) ── */}
+      {(() => {
+        const upcomingMonths = [1, 2].map((d) => {
+          const ud = new Date(startYear, startMonth - 1 + d, 1);
+          return { month: ud.getMonth() + 1, year: ud.getFullYear() };
+        });
+
+        const thisMonthRecs = recommendations.filter(
+          (r) => getActiveWindowsForMonth(r, startMonth, startYear).length > 0
+        );
+        const upcomingRecs = recommendations.filter(
+          (r) =>
+            getActiveWindowsForMonth(r, startMonth, startYear).length === 0 &&
+            upcomingMonths.some((um) => getActiveWindowsForMonth(r, um.month, um.year).length > 0)
+        );
+
+        const WINDOW_LABEL: Record<string, string> = {
+          indoorSeedStart: 'Indoor start',
+          directSow: 'Direct sow',
+          transplant: 'Transplant',
+          firstHarvest: 'First harvest',
+          harvest: 'Harvest',
+        };
+
+        const PlantRow = ({ rec }: { rec: (typeof recommendations)[0] }) => {
+          const windows = getActiveWindowsForMonth(rec, startMonth, startYear);
+          return (
+            <div className="flex items-start justify-between gap-2 py-2.5 border-b border-gray-100 last:border-0">
+              <div className="flex flex-col gap-0.5 min-w-0">
+                <span className="text-sm font-medium text-gray-800 leading-tight">{rec.plant.commonName}</span>
+                {rec.isNextSeason && (
+                  <span className="inline-block self-start rounded-full border border-indigo-100 bg-indigo-50 px-1.5 py-px text-[10px] font-medium text-indigo-600 leading-tight">
+                    Next season
+                  </span>
+                )}
+              </div>
+              <div className="flex flex-wrap justify-end gap-1 shrink-0">
+                {(windows.length > 0 ? windows : upcomingMonths.flatMap((um) => getActiveWindowsForMonth(rec, um.month, um.year))).map((w) => (
+                  <span
+                    key={w}
+                    className={`rounded px-1.5 py-0.5 text-[10px] font-medium ${WINDOW_COLOURS[w]} text-gray-700`}
+                  >
+                    {WINDOW_LABEL[w]}
+                  </span>
+                ))}
+              </div>
+            </div>
+          );
+        };
+
+        return (
+          <div className="sm:hidden">
+            {thisMonthRecs.length === 0 && upcomingRecs.length === 0 ? (
+              <p className="text-center text-gray-400 text-sm py-10">
+                Nothing to do this month — tap → to look ahead
+              </p>
+            ) : (
+              <div className="rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+                {thisMonthRecs.length > 0 && (
+                  <div>
+                    <div className="bg-brand-600 px-4 py-2">
+                      <span className="text-xs font-semibold text-white tracking-wide uppercase">This month</span>
+                    </div>
+                    <div className="divide-y divide-gray-100 px-4">
+                      {thisMonthRecs.map((r) => <PlantRow key={r.plant.id} rec={r} />)}
+                    </div>
+                  </div>
+                )}
+                {upcomingRecs.length > 0 && (
+                  <div className={thisMonthRecs.length > 0 ? 'border-t border-gray-200' : ''}>
+                    <div className="bg-gray-100 px-4 py-2">
+                      <span className="text-xs font-semibold text-gray-500 tracking-wide uppercase">Coming up</span>
+                    </div>
+                    <div className="divide-y divide-gray-100 px-4">
+                      {upcomingRecs.map((r) => <PlantRow key={r.plant.id} rec={r} />)}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        );
+      })()}
+
+      {/* ── Desktop layout (horizontal table) ── */}
+      <div className="hidden sm:block">
       {/* Table */}
       <div className="overflow-auto max-h-[calc(100vh-280px)] rounded-lg border border-gray-200 shadow-sm">
         <table className="border-collapse text-xs w-full min-w-max">
@@ -258,6 +345,7 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
           </tbody>
         </table>
       </div>
+      </div>{/* end desktop wrapper */}
     </div>
   );
 }

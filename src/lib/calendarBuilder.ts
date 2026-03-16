@@ -114,6 +114,23 @@ export function partLabel(part: MonthWindow['part']): string {
   return part === 1 ? 'E' : part === 2 ? 'M' : part === 3 ? 'L' : 'X';
 }
 
+/**
+ * Returns the unique set of WindowTypes active in any part of a given month.
+ * Applies the same ±1/±2 year repetition as getWindowTypeAtSlot.
+ */
+export function getActiveWindowsForMonth(
+  rec: PlantRecommendation,
+  month: number,
+  year: number,
+): WindowType[] {
+  const active = new Set<WindowType>();
+  for (const part of [1, 2, 3, 4] as const) {
+    const t = getWindowTypeAtSlot(rec, month, year, part);
+    if (t) active.add(t);
+  }
+  return [...active];
+}
+
 export type SlotStatus = 'ideal' | 'still-possible' | 'late-start' | null;
 
 /**

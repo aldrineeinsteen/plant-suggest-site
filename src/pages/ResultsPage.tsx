@@ -15,8 +15,11 @@ export function ResultsPage({ result, onReset }: Props) {
   const [activeCategories, setActiveCategories] = useState<Set<PlantCategory>>(
     new Set(ALL_CATEGORIES)
   );
-  const [viewMode, setViewMode] = useState<'cards' | 'calendar'>('cards');
+  const [viewMode, setViewMode] = useState<'cards' | 'calendar'>(
+    () => (typeof window !== 'undefined' && window.innerWidth < 640) ? 'calendar' : 'cards'
+  );
   const [monthOffset, setMonthOffset] = useState(-2);
+  const [climateOpen, setClimateOpen] = useState(false);
 
   const now = new Date();
   const viewDate = new Date(now.getFullYear(), now.getMonth() + monthOffset, 1);
@@ -28,7 +31,7 @@ export function ResultsPage({ result, onReset }: Props) {
   }
 
   function resetToDefault() {
-    setMonthOffset(-2);
+    setMonthOffset(0);
   }
 
   function toggleCategory(cat: PlantCategory) {
@@ -81,39 +84,56 @@ export function ResultsPage({ result, onReset }: Props) {
         {/* Constrained header content — always centred */}
         <div className="mx-auto max-w-5xl">
           {/* Climate summary */}
-          <section className="mb-6 rounded-xl border border-brand-100 bg-brand-50 p-4">
-            <h2 className="text-sm font-semibold text-brand-800 mb-2">Climate summary</h2>
-            <div className="grid grid-cols-2 gap-x-8 gap-y-1 text-sm text-gray-700 sm:grid-cols-4">
-              <div>
-                <span className="text-xs text-gray-500 block">Last spring frost</span>
-                <strong>{frostLabel}</strong>
+          <section className="mb-6 rounded-xl border border-brand-100 bg-brand-50">
+            {/* Header row — always visible */}
+            <button
+              onClick={() => setClimateOpen((o) => !o)}
+              className="w-full flex items-center justify-between px-4 py-3 text-left"
+              aria-expanded={climateOpen}
+            >
+              <h2 className="text-sm font-semibold text-brand-800">Climate summary</h2>
+              <div className="flex items-center gap-2">
+                {/* Temp badge — visible when collapsed */}
+                {!climateOpen && (
+                  <span className="rounded-full bg-brand-100 border border-brand-200 px-2 py-0.5 text-xs font-medium text-brand-800">
+                    {climate.avgSummerTempC}°C · {climate.growingSeasonDays}d
+                  </span>
+                )}
+                <span className="text-brand-600 text-sm select-none">{climateOpen ? '▲' : '▼'}</span>
               </div>
-              <div>
-                <span className="text-xs text-gray-500 block">First autumn frost</span>
-                <strong>{autumnFrostLabel}</strong>
+            </button>
+            {/* Expandable detail */}
+            {climateOpen && (
+              <div className="px-4 pb-4 grid grid-cols-2 gap-x-8 gap-y-1 text-sm text-gray-700 sm:grid-cols-4">
+                <div>
+                  <span className="text-xs text-gray-500 block">Last spring frost</span>
+                  <strong>{frostLabel}</strong>
+                </div>
+                <div>
+                  <span className="text-xs text-gray-500 block">First autumn frost</span>
+                  <strong>{autumnFrostLabel}</strong>
+                </div>
+                <div>
+                  <span className="text-xs text-gray-500 block">Growing season</span>
+                  <strong>{climate.growingSeasonDays} days</strong>
+                </div>
+                <div>
+                  <span className="text-xs text-gray-500 block">Avg summer temp</span>
+                  <strong>{climate.avgSummerTempC}°C</strong>
+                </div>
               </div>
-              <div>
-                <span className="text-xs text-gray-500 block">Growing season</span>
-                <strong>{climate.growingSeasonDays} days</strong>
-              </div>
-              <div>
-                <span className="text-xs text-gray-500 block">Avg summer temp</span>
-                <strong>{climate.avgSummerTempC}°C</strong>
-              </div>
-            </div>
+            )}
           </section>
 
-          {/* Filter bar + view toggle */}
-          <div className="mb-5 flex flex-wrap items-center gap-3">
-            <div className="flex-1 min-w-0">
-              <FilterBar
-                activeCategories={activeCategories}
-                onToggleCategory={toggleCategory}
-                totalCount={result.recommendations.length}
-                filteredCount={filtered.length}
-              />
-            </div>
-            <div className="flex rounded-lg border border-gray-300 overflow-hidden text-xs font-medium shrink-0">
+          {/* Filter bar + view toggle — single row */}
+          <div className="mb-5 flex flex-wrap items-center gap-2">
+            <FilterBar
+              activeCategories={activeCategories}
+              onToggleCategory={toggleCategory}
+              totalCount={result.recommendations.length}
+              filteredCount={filtered.length}
+            />
+            <div className="flex rounded-lg border border-gray-300 overflow-hidden text-xs font-medium ml-auto shrink-0">
               <button
                 onClick={() => setViewMode('cards')}
                 className={`px-3 py-1.5 transition ${

@@ -2,6 +2,13 @@ import type { PlantCategory } from '../../types';
 
 const ALL_CATEGORIES: PlantCategory[] = ['vegetable', 'herb', 'fruit', 'flower'];
 
+const CATEGORY_EMOJI: Record<PlantCategory, string> = {
+  vegetable: '🥦',
+  herb: '🌿',
+  fruit: '🍓',
+  flower: '🌸',
+};
+
 interface Props {
   activeCategories: Set<PlantCategory>;
   onToggleCategory: (cat: PlantCategory) => void;
@@ -12,10 +19,7 @@ interface Props {
 export function FilterBar({ activeCategories, onToggleCategory, totalCount, filteredCount }: Props) {
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <span className="text-sm text-gray-500">
-        Showing <strong>{filteredCount}</strong> of {totalCount} plants
-      </span>
-      <div className="flex flex-wrap gap-1.5 ml-auto">
+      <div className="flex flex-wrap gap-1.5">
         {ALL_CATEGORIES.map((cat) => {
           const active = activeCategories.has(cat);
           return (
@@ -28,11 +32,14 @@ export function FilterBar({ activeCategories, onToggleCategory, totalCount, filt
                   : 'bg-white border-gray-300 text-gray-600 hover:border-brand-500 hover:text-brand-700'
               }`}
             >
-              {cat}
+              {CATEGORY_EMOJI[cat]}<span className="hidden sm:inline"> {cat}</span>
             </button>
           );
         })}
       </div>
+      <span className="text-xs text-gray-400 hidden sm:inline">
+        {filteredCount}/{totalCount}
+      </span>
     </div>
   );
 }
