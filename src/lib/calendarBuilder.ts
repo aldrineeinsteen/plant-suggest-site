@@ -59,6 +59,10 @@ export function getWindowTypeAtSlot(
   part: number,
 ): WindowType | null {
   const ord = slotOrdinal(year, month, part);
+  // Check the same seasonal slot ±1 and ±2 years so that:
+  // - current-season (2026) windows repeat when viewing 2027 columns (ord-48)
+  // - next-season (2027) windows are visible when viewing 2026 columns (ord+48)
+  const ords = [ord, ord - 48, ord - 96, ord + 48];
 
   const windows: Partial<Record<WindowType, PlanningWindow | undefined>> = {
     harvest: rec.harvestWindow,
@@ -70,8 +74,10 @@ export function getWindowTypeAtSlot(
 
   for (const type of WINDOW_PRIORITY) {
     const w = windows[type];
-    if (w && ord >= windowOrdinalStart(w) && ord <= windowOrdinalEnd(w)) {
-      return type;
+    if (w) {
+      const wStart = windowOrdinalStart(w);
+      const wEnd = windowOrdinalEnd(w);
+      if (ords.some((o) => o >= wStart && o <= wEnd)) return type;
     }
   }
   return null;
@@ -106,4 +112,27 @@ export function needsOverflowMonths(
 /** Convert a MonthWindow part number to its display label. */
 export function partLabel(part: MonthWindow['part']): string {
   return part === 1 ? 'E' : part === 2 ? 'M' : part === 3 ? 'L' : 'X';
+}
+
+export type SlotStatus = 'ideal' | 'still-possible' | 'late-start' | null;
+
+/**
+ * Classify how timely a slot is relative to today's ordinal.
+ * Pass the WindowType already resolved for this slot (null → returns null).
+ * Harvest windows are never marked stale. Sow/transplant slots in the past
+ * return 'still-possible' (within ~1 month) or 'late-start' (older).
+ */
+export function getSlotStatus(
+  type: WindowType | null,
+  month: number,
+  year: number,
+  part: number,
+  todayOrd: number,
+): SlotStatus {
+  if (!type) return null;
+  if (type === 'harvest' || type === 'firstHarvest') return 'ideal';
+  const ord = slotOrdinal(year, month, part);
+  if (ord >= todayOrd) return 'ideal';
+  if (ord >= todayOrd - 4) return 'still-possible';
+  return 'late-start';
 }

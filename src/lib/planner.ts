@@ -70,11 +70,11 @@ export function runPlanner(
         return null;
       }
 
-      // ── Year rollover: if the sowing window has already passed, shift to next year ──
-      const earliestActionableEnd = plant.directSowOnly
-        ? addWeeks(frost, plant.sowingOffsetWeeks.max)
-        : addWeeks(frost, plant.indoorStartOffsetWeeks.max);
-      const isNextSeason = earliestActionableEnd < today;
+      // ── Year rollover: only shift to next year once the direct sow window
+      //    has fully closed — indoor start passing is not enough, since the
+      //    plant can still go in the ground via direct sow this season. ──
+      const lastActionableEnd = addWeeks(frost, plant.sowingOffsetWeeks.max);
+      const isNextSeason = lastActionableEnd < today;
       const effectiveFrost = isNextSeason ? addDays(frost, 365) : frost;
       const effectiveSeasonEnd = isNextSeason ? addDays(seasonEnd, 365) : seasonEnd;
 

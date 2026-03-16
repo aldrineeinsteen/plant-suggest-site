@@ -16,10 +16,20 @@ export function ResultsPage({ result, onReset }: Props) {
     new Set(ALL_CATEGORIES)
   );
   const [viewMode, setViewMode] = useState<'cards' | 'calendar'>('cards');
+  const [monthOffset, setMonthOffset] = useState(-2);
 
   const now = new Date();
-  const startMonth = now.getMonth() + 1;
-  const startYear = now.getFullYear();
+  const viewDate = new Date(now.getFullYear(), now.getMonth() + monthOffset, 1);
+  const startMonth = viewDate.getMonth() + 1;
+  const startYear = viewDate.getFullYear();
+
+  function navigate(delta: number) {
+    setMonthOffset((prev) => Math.max(-24, Math.min(24, prev + delta)));
+  }
+
+  function resetToDefault() {
+    setMonthOffset(-2);
+  }
 
   function toggleCategory(cat: PlantCategory) {
     setActiveCategories((prev) => {
@@ -134,6 +144,9 @@ export function ResultsPage({ result, onReset }: Props) {
             recommendations={filtered}
             startMonth={startMonth}
             startYear={startYear}
+            monthOffset={monthOffset}
+            onNavigate={navigate}
+            onReset={resetToDefault}
           />
         ) : (
           <div className="mx-auto max-w-5xl">
