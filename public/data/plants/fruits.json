@@ -33,7 +33,11 @@
     ],
     "notes": "From seed is very slow — runners or plug plants are more reliable.",
     "spacingCm": 30,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "lettuce",
+      "spinach"
+    ]
   },
   {
     "id": "cucumber",
@@ -68,7 +72,12 @@
     ],
     "notes": "Loves heat. Indoor / greenhouse varieties are much more reliable in cool climates.",
     "spacingCm": 60,
-    "plantsPerSqFt": 0.5
+    "plantsPerSqFt": 0.5,
+    "followWithIds": [
+      "lettuce",
+      "spinach",
+      "pea"
+    ]
   },
   {
     "id": "pumpkin",
@@ -102,6 +111,11 @@
     "avoidNearIds": [],
     "notes": "Needs a long warm summer. Harvest before first frost.",
     "spacingCm": 90,
-    "plantsPerSqFt": 0.25
+    "plantsPerSqFt": 0.25,
+    "followWithIds": [
+      "pea",
+      "french-bean",
+      "spinach"
+    ]
   }
 ]

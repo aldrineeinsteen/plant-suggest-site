@@ -35,6 +35,10 @@
     "plantsPerSqFt": 4,
     "interPlantIds": [
       "tomato"
+    ],
+    "followWithIds": [
+      "lettuce",
+      "carrot"
     ]
   },
   {
@@ -75,6 +79,10 @@
     "interPlantIds": [
       "carrot",
       "lettuce"
+    ],
+    "followWithIds": [
+      "lettuce",
+      "carrot"
     ]
   },
   {
@@ -149,7 +157,11 @@
     "spacingCm": 20,
     "plantsPerSqFt": 4,
     "successionIntervalWeeks": 3,
-    "successionRounds": 3
+    "successionRounds": 3,
+    "followWithIds": [
+      "lettuce",
+      "carrot"
+    ]
   },
   {
     "id": "fennel",
@@ -222,6 +234,10 @@
     "plantsPerSqFt": 4,
     "interPlantIds": [
       "tomato",
+      "carrot"
+    ],
+    "followWithIds": [
+      "lettuce",
       "carrot"
     ]
   },
@@ -433,7 +449,11 @@
     "spacingCm": 10,
     "plantsPerSqFt": 9,
     "successionIntervalWeeks": 2,
-    "successionRounds": 5
+    "successionRounds": 5,
+    "followWithIds": [
+      "lettuce",
+      "carrot"
+    ]
   },
   {
     "id": "lemon-balm",
@@ -506,6 +526,10 @@
     "interPlantIds": [
       "tomato",
       "courgette"
+    ],
+    "followWithIds": [
+      "lettuce",
+      "carrot"
     ]
   },
   {
@@ -542,7 +566,11 @@
     "spacingCm": 10,
     "plantsPerSqFt": 9,
     "successionIntervalWeeks": 3,
-    "successionRounds": 4
+    "successionRounds": 4,
+    "followWithIds": [
+      "carrot",
+      "lettuce"
+    ]
   },
   {
     "id": "tarragon",

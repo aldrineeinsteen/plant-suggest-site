@@ -50,7 +50,7 @@ export function runPlanner(
   plants: PlantDefinition[],
   climate: ClimateSummary,
   setup: GrowingSetup
-): Omit<PlantRecommendation, 'companionPlants' | 'plantsToAvoid' | 'holidayHighlights'>[] {
+): Omit<PlantRecommendation, 'companionPlants' | 'plantsToAvoid' | 'followWithPlants' | 'holidayHighlights'>[] {
   const frost = adjustedLastFrost(climate, setup);
   const seasonEnd = adjustedSeasonEnd(climate, setup);
   const effectiveSeasonDays = Math.max(
@@ -62,7 +62,7 @@ export function runPlanner(
   today.setHours(0, 0, 0, 0);
 
   return plants
-    .map((plant): Omit<PlantRecommendation, 'companionPlants' | 'plantsToAvoid' | 'holidayHighlights'> | null => {
+    .map((plant): Omit<PlantRecommendation, 'companionPlants' | 'plantsToAvoid' | 'followWithPlants' | 'holidayHighlights'> | null => {
       const warnings: string[] = [];
 
       // Filter: propagator required but unavailable
@@ -145,5 +145,5 @@ export function runPlanner(
         isNextSeason,
       };
     })
-    .filter((r): r is Omit<PlantRecommendation, 'companionPlants' | 'plantsToAvoid' | 'holidayHighlights'> => r !== null);
+    .filter((r): r is Omit<PlantRecommendation, 'companionPlants' | 'plantsToAvoid' | 'followWithPlants' | 'holidayHighlights'> => r !== null);
 }

@@ -35,6 +35,10 @@
     "interPlantIds": [
       "tomato",
       "courgette"
+    ],
+    "followWithIds": [
+      "lettuce",
+      "carrot"
     ]
   },
   {
@@ -70,7 +74,11 @@
     "avoidNearIds": [],
     "notes": "Direct sow. Attracts aphids away from vegetables (trap crop). Edible.",
     "spacingCm": 30,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "lettuce",
+      "spinach"
+    ]
   },
   {
     "id": "sunflower",
@@ -105,7 +113,11 @@
     ],
     "notes": "Tall varieties may shade nearby plants. Attracts pollinators and birds.",
     "spacingCm": 45,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "pea",
+      "lettuce"
+    ]
   },
   {
     "id": "cosmos",
@@ -139,7 +151,11 @@
     "avoidNearIds": [],
     "notes": "Thrives in poor soil. Pinch out tips to encourage bushy growth and more flowers.",
     "spacingCm": 30,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "lettuce",
+      "carrot"
+    ]
   },
   {
     "id": "zinnia",
@@ -172,7 +188,10 @@
     "avoidNearIds": [],
     "notes": "Loves heat. Do not start too early — zinnias hate being pot-bound. Direct sow works well.",
     "spacingCm": 20,
-    "plantsPerSqFt": 4
+    "plantsPerSqFt": 4,
+    "followWithIds": [
+      "lettuce"
+    ]
   },
   {
     "id": "calendula",
@@ -207,7 +226,11 @@
     "avoidNearIds": [],
     "notes": "Hardy annual. Direct sow in autumn or spring. Dead-head to prolong flowering.",
     "spacingCm": 20,
-    "plantsPerSqFt": 4
+    "plantsPerSqFt": 4,
+    "followWithIds": [
+      "lettuce",
+      "carrot"
+    ]
   },
   {
     "id": "cornflower",
@@ -241,7 +264,10 @@
     "avoidNearIds": [],
     "notes": "Hardy annual. Autumn sowing gives earlier flowers. Attractive to bees and butterflies.",
     "spacingCm": 20,
-    "plantsPerSqFt": 4
+    "plantsPerSqFt": 4,
+    "followWithIds": [
+      "lettuce"
+    ]
   },
   {
     "id": "sweet-pea",
@@ -344,7 +370,11 @@
     "avoidNearIds": [],
     "notes": "Need light to germinate — do not cover seeds. Pinch growing tips early for bushiness.",
     "spacingCm": 20,
-    "plantsPerSqFt": 4
+    "plantsPerSqFt": 4,
+    "followWithIds": [
+      "lettuce",
+      "carrot"
+    ]
   },
   {
     "id": "petunia",

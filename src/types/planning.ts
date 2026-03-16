@@ -46,6 +46,8 @@ export interface PlantRecommendation {
   harvestWindow?: PlanningWindow;
   companionPlants: PlantDefinition[];
   plantsToAvoid: PlantDefinition[];
+  /** Plants recommended to follow this crop in the same bed (crop rotation) */
+  followWithPlants: PlantDefinition[];
   warnings: string[];
   holidayHighlights: HolidayHighlight[];
   /** True when all windows have been shifted +365 days because this season's window has passed. */

@@ -36,6 +36,11 @@
     "plantsPerSqFt": 0.25,
     "interPlantIds": [
       "basil"
+    ],
+    "followWithIds": [
+      "lettuce",
+      "spinach",
+      "carrot"
     ]
   },
   {
@@ -73,6 +78,11 @@
     "plantsPerSqFt": 0.25,
     "interPlantIds": [
       "nasturtium"
+    ],
+    "followWithIds": [
+      "pea",
+      "french-bean",
+      "spinach"
     ]
   },
   {
@@ -113,6 +123,11 @@
     "interPlantIds": [
       "carrot",
       "chive"
+    ],
+    "followWithIds": [
+      "carrot",
+      "radish",
+      "beetroot"
     ]
   },
   {
@@ -152,7 +167,12 @@
     "spacingCm": 8,
     "plantsPerSqFt": 16,
     "successionIntervalWeeks": 3,
-    "successionRounds": 4
+    "successionRounds": 4,
+    "followWithIds": [
+      "onion",
+      "spring-onion",
+      "lettuce"
+    ]
   },
   {
     "id": "pea",
@@ -189,7 +209,13 @@
     "spacingCm": 8,
     "plantsPerSqFt": 9,
     "successionIntervalWeeks": 3,
-    "successionRounds": 2
+    "successionRounds": 2,
+    "followWithIds": [
+      "cabbage",
+      "kale",
+      "lettuce",
+      "leek"
+    ]
   },
   {
     "id": "sweetcorn",
@@ -223,7 +249,12 @@
     "avoidNearIds": [],
     "notes": "Needs a warm long summer. Best in blocks for wind pollination.",
     "spacingCm": 35,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "pea",
+      "french-bean",
+      "spinach"
+    ]
   },
   {
     "id": "spinach",
@@ -259,7 +290,12 @@
     "spacingCm": 15,
     "plantsPerSqFt": 9,
     "successionIntervalWeeks": 2,
-    "successionRounds": 4
+    "successionRounds": 4,
+    "followWithIds": [
+      "carrot",
+      "beetroot",
+      "onion"
+    ]
   },
   {
     "id": "kale",
@@ -294,7 +330,12 @@
     ],
     "notes": "Very hardy. Flavour improves after frost. Cut-and-come-again.",
     "spacingCm": 45,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "pea",
+      "french-bean",
+      "carrot"
+    ]
   },
   {
     "id": "beetroot",
@@ -330,7 +371,12 @@
     "spacingCm": 10,
     "plantsPerSqFt": 9,
     "successionIntervalWeeks": 3,
-    "successionRounds": 3
+    "successionRounds": 3,
+    "followWithIds": [
+      "lettuce",
+      "pea",
+      "spinach"
+    ]
   },
   {
     "id": "onion",
@@ -367,7 +413,12 @@
     ],
     "notes": "Long-season crop. Sets (small bulbs) are a quicker alternative to seed.",
     "spacingCm": 10,
-    "plantsPerSqFt": 9
+    "plantsPerSqFt": 9,
+    "followWithIds": [
+      "carrot",
+      "lettuce",
+      "beetroot"
+    ]
   },
   {
     "id": "runner-bean",
@@ -407,6 +458,12 @@
     "plantsPerSqFt": 4,
     "interPlantIds": [
       "sweetcorn"
+    ],
+    "followWithIds": [
+      "cabbage",
+      "kale",
+      "leek",
+      "broccoli"
     ]
   },
   {
@@ -444,7 +501,13 @@
     ],
     "notes": "Prolific producer. Pick regularly to keep plants cropping.",
     "spacingCm": 15,
-    "plantsPerSqFt": 9
+    "plantsPerSqFt": 9,
+    "followWithIds": [
+      "cabbage",
+      "broccoli",
+      "leek",
+      "kale"
+    ]
   },
   {
     "id": "pepper-sweet",
@@ -483,6 +546,11 @@
     "plantsPerSqFt": 1,
     "interPlantIds": [
       "basil"
+    ],
+    "followWithIds": [
+      "lettuce",
+      "spinach",
+      "carrot"
     ]
   },
   {
@@ -519,7 +587,12 @@
     ],
     "notes": "Needs high germination heat. Start very early indoors. Greenhouse gives best results.",
     "spacingCm": 45,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "lettuce",
+      "spinach",
+      "carrot"
+    ]
   },
   {
     "id": "aubergine",
@@ -555,7 +628,12 @@
     ],
     "notes": "Very heat-demanding. In cool climates, greenhouse is virtually essential.",
     "spacingCm": 50,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "lettuce",
+      "spinach",
+      "pea"
+    ]
   },
   {
     "id": "leek",
@@ -591,7 +669,12 @@
     ],
     "notes": "Winter staple. Plant in dibbed holes — don't backfill, just water in.",
     "spacingCm": 15,
-    "plantsPerSqFt": 4
+    "plantsPerSqFt": 4,
+    "followWithIds": [
+      "carrot",
+      "lettuce",
+      "beetroot"
+    ]
   },
   {
     "id": "brussels-sprouts",
@@ -628,7 +711,12 @@
     ],
     "notes": "Long-season brassica. Needs firm soil — stake in exposed sites. Improves after frost.",
     "spacingCm": 60,
-    "plantsPerSqFt": 0.25
+    "plantsPerSqFt": 0.25,
+    "followWithIds": [
+      "pea",
+      "french-bean",
+      "lettuce"
+    ]
   },
   {
     "id": "cabbage",
@@ -666,7 +754,12 @@
     ],
     "notes": "Spring, summer and winter varieties available. Net against cabbage white butterfly.",
     "spacingCm": 45,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "pea",
+      "french-bean",
+      "beetroot"
+    ]
   },
   {
     "id": "cauliflower",
@@ -704,7 +797,12 @@
     ],
     "notes": "Blanch the curds by folding outer leaves over once they appear.",
     "spacingCm": 60,
-    "plantsPerSqFt": 0.25
+    "plantsPerSqFt": 0.25,
+    "followWithIds": [
+      "pea",
+      "french-bean",
+      "onion"
+    ]
   },
   {
     "id": "broccoli",
@@ -742,7 +840,12 @@
     ],
     "notes": "Cut the central head to promote side shoots for extended harvest.",
     "spacingCm": 45,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "pea",
+      "french-bean",
+      "onion"
+    ]
   },
   {
     "id": "purple-sprouting-broccoli",
@@ -778,7 +881,12 @@
     ],
     "notes": "Overwinters outdoors. Harvested in late winter–spring — a true hungry gap filler.",
     "spacingCm": 60,
-    "plantsPerSqFt": 0.25
+    "plantsPerSqFt": 0.25,
+    "followWithIds": [
+      "pea",
+      "french-bean",
+      "lettuce"
+    ]
   },
   {
     "id": "parsnip",
@@ -814,7 +922,12 @@
     ],
     "notes": "Very slow to germinate — use fresh seed each year. Sweetens after frost.",
     "spacingCm": 10,
-    "plantsPerSqFt": 9
+    "plantsPerSqFt": 9,
+    "followWithIds": [
+      "onion",
+      "lettuce",
+      "pea"
+    ]
   },
   {
     "id": "swede",
@@ -850,7 +963,12 @@
     ],
     "notes": "Hardy winter root. Sow in June. Can leave in ground until needed.",
     "spacingCm": 25,
-    "plantsPerSqFt": 4
+    "plantsPerSqFt": 4,
+    "followWithIds": [
+      "pea",
+      "french-bean",
+      "lettuce"
+    ]
   },
   {
     "id": "celeriac",
@@ -886,7 +1004,12 @@
     ],
     "notes": "Needs a long season. Start early under cover. Remove lower leaves in summer.",
     "spacingCm": 30,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "pea",
+      "onion",
+      "lettuce"
+    ]
   },
   {
     "id": "radish",
@@ -923,7 +1046,12 @@
     "spacingCm": 5,
     "plantsPerSqFt": 16,
     "successionIntervalWeeks": 2,
-    "successionRounds": 6
+    "successionRounds": 6,
+    "followWithIds": [
+      "carrot",
+      "lettuce",
+      "spinach"
+    ]
   },
   {
     "id": "swiss-chard",
@@ -957,7 +1085,12 @@
     "avoidNearIds": [],
     "notes": "Cut-and-come-again. Tolerates light frost — productive spring through autumn.",
     "spacingCm": 30,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "pea",
+      "carrot",
+      "onion"
+    ]
   },
   {
     "id": "pak-choi",
@@ -993,7 +1126,12 @@
     "spacingCm": 25,
     "plantsPerSqFt": 4,
     "successionIntervalWeeks": 3,
-    "successionRounds": 3
+    "successionRounds": 3,
+    "followWithIds": [
+      "carrot",
+      "lettuce",
+      "beetroot"
+    ]
   },
   {
     "id": "spring-onion",
@@ -1031,7 +1169,12 @@
     "spacingCm": 5,
     "plantsPerSqFt": 16,
     "successionIntervalWeeks": 2,
-    "successionRounds": 5
+    "successionRounds": 5,
+    "followWithIds": [
+      "carrot",
+      "lettuce",
+      "beetroot"
+    ]
   },
   {
     "id": "melon",
@@ -1065,7 +1208,12 @@
     "avoidNearIds": [],
     "notes": "Needs long hot summers. Greenhouse strongly recommended in the UK.",
     "spacingCm": 60,
-    "plantsPerSqFt": 0.25
+    "plantsPerSqFt": 0.25,
+    "followWithIds": [
+      "lettuce",
+      "spinach",
+      "pea"
+    ]
   },
   {
     "id": "broad-bean",
@@ -1103,7 +1251,13 @@
     ],
     "notes": "Autumn sow (Oct–Nov) overwinters as young plants. Hardy — tolerates hard frosts. Pinch out blackfly-prone tips in spring.",
     "spacingCm": 25,
-    "plantsPerSqFt": 4
+    "plantsPerSqFt": 4,
+    "followWithIds": [
+      "cabbage",
+      "kale",
+      "broccoli",
+      "leek"
+    ]
   },
   {
     "id": "broad-bean-spring",
@@ -1141,7 +1295,13 @@
     ],
     "notes": "Spring sow (Feb–Mar) for June–July harvest. Hardy enough to sow direct as soon as soil is workable.",
     "spacingCm": 25,
-    "plantsPerSqFt": 4
+    "plantsPerSqFt": 4,
+    "followWithIds": [
+      "cabbage",
+      "kale",
+      "broccoli",
+      "leek"
+    ]
   },
   {
     "id": "garlic",
@@ -1179,7 +1339,12 @@
     ],
     "notes": "Plant individual cloves (not seed) Oct–Nov, pointy end up, 5cm deep. Needs cold period to vernalise. Harvest when lower leaves yellow.",
     "spacingCm": 15,
-    "plantsPerSqFt": 4
+    "plantsPerSqFt": 4,
+    "followWithIds": [
+      "carrot",
+      "lettuce",
+      "beetroot"
+    ]
   },
   {
     "id": "spring-cabbage",
@@ -1217,7 +1382,12 @@
     ],
     "notes": "Sow outdoors Jul–Aug, transplant Sep–Oct, harvest Feb–May. Overwinters as young plant. Net against cabbage white butterfly.",
     "spacingCm": 30,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "pea",
+      "french-bean",
+      "onion"
+    ]
   },
   {
     "id": "kohlrabi",
@@ -1257,7 +1427,12 @@
     "spacingCm": 20,
     "plantsPerSqFt": 4,
     "successionIntervalWeeks": 3,
-    "successionRounds": 3
+    "successionRounds": 3,
+    "followWithIds": [
+      "lettuce",
+      "carrot",
+      "spinach"
+    ]
   },
   {
     "id": "turnip",
@@ -1295,7 +1470,12 @@
     "spacingCm": 15,
     "plantsPerSqFt": 9,
     "successionIntervalWeeks": 3,
-    "successionRounds": 3
+    "successionRounds": 3,
+    "followWithIds": [
+      "pea",
+      "french-bean",
+      "lettuce"
+    ]
   },
   {
     "id": "pumpkin",
@@ -1332,7 +1512,12 @@
     ],
     "notes": "Needs plenty of space and rich soil. Cure in sun after harvest to harden skins for storage.",
     "spacingCm": 90,
-    "plantsPerSqFt": 0.25
+    "plantsPerSqFt": 0.25,
+    "followWithIds": [
+      "pea",
+      "french-bean",
+      "spinach"
+    ]
   },
   {
     "id": "cucumber",
@@ -1370,7 +1555,12 @@
     ],
     "notes": "Greenhouse varieties crop far more reliably in the UK. Train up a vertical support. Pick regularly to keep plants fruiting.",
     "spacingCm": 60,
-    "plantsPerSqFt": 0.5
+    "plantsPerSqFt": 0.5,
+    "followWithIds": [
+      "lettuce",
+      "spinach",
+      "pea"
+    ]
   },
   {
     "id": "potato-first-early",
@@ -1409,7 +1599,13 @@
     ],
     "notes": "Chit tubers in egg boxes 4–6 weeks before planting. Plant Feb–early Mar, 10cm deep. Earth up as shoots emerge. New potatoes — dig when flowers open.",
     "spacingCm": 30,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "pea",
+      "lettuce",
+      "french-bean",
+      "leek"
+    ]
   },
   {
     "id": "potato-maincrop",
@@ -1448,7 +1644,13 @@
     ],
     "notes": "Plant Mar–Apr, 15cm deep, 40cm apart. Earth up regularly. Leave foliage to die back before harvesting. Store in paper sacks in a cool dark frost-free place.",
     "spacingCm": 40,
-    "plantsPerSqFt": 0.5
+    "plantsPerSqFt": 0.5,
+    "followWithIds": [
+      "pea",
+      "lettuce",
+      "french-bean",
+      "leek"
+    ]
   },
   {
     "id": "asparagus",
@@ -1524,7 +1726,12 @@
     ],
     "notes": "Tiny seeds — surface sow, don't cover. Needs consistent moisture throughout. Self-blanching varieties are easiest; trench celery has better flavour.",
     "spacingCm": 30,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "onion",
+      "beetroot",
+      "lettuce"
+    ]
   },
   {
     "id": "rocket",
@@ -1561,7 +1768,12 @@
     "spacingCm": 10,
     "plantsPerSqFt": 9,
     "successionIntervalWeeks": 3,
-    "successionRounds": 4
+    "successionRounds": 4,
+    "followWithIds": [
+      "carrot",
+      "lettuce",
+      "beetroot"
+    ]
   },
   {
     "id": "globe-artichoke",
@@ -1630,7 +1842,12 @@
     "avoidNearIds": [],
     "notes": "Needs a long warm season. Start indoors Apr–May, plant out after last frost. Cure at room temp for 10 days after harvest to harden skin for long storage.",
     "spacingCm": 90,
-    "plantsPerSqFt": 0.25
+    "plantsPerSqFt": 0.25,
+    "followWithIds": [
+      "pea",
+      "french-bean",
+      "spinach"
+    ]
   },
   {
     "id": "sweet-potato",
@@ -1664,7 +1881,12 @@
     "avoidNearIds": [],
     "notes": "Grow from slips (rooted cuttings from a tuber). Needs warm soil above 15°C consistently. Greenhouse essential in the UK. Harvest before first frost; cure in warmth before storing.",
     "spacingCm": 30,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "lettuce",
+      "pea",
+      "spinach"
+    ]
   },
   {
     "id": "jerusalem-artichoke",
@@ -1697,7 +1919,11 @@
     "avoidNearIds": [],
     "notes": "Plant tubers 10–15cm deep, Feb–Mar. Extremely vigorous — grow in a dedicated bed. Tall plants provide windbreak. Harvest tubers after foliage dies back; leave some in ground to regrow.",
     "spacingCm": 45,
-    "plantsPerSqFt": 0.5
+    "plantsPerSqFt": 0.5,
+    "followWithIds": [
+      "lettuce",
+      "pea"
+    ]
   },
   {
     "id": "salsify",
@@ -1731,7 +1957,12 @@
     "avoidNearIds": [],
     "notes": "Direct sow Mar–Apr — dislikes root disturbance. Deep, stone-free soil essential. Frost sweetens the roots. Leave in ground until needed; edible shoots in spring.",
     "spacingCm": 10,
-    "plantsPerSqFt": 9
+    "plantsPerSqFt": 9,
+    "followWithIds": [
+      "lettuce",
+      "pea",
+      "carrot"
+    ]
   },
   {
     "id": "horseradish",
@@ -1799,7 +2030,12 @@
     "avoidNearIds": [],
     "notes": "Sow Jun–Jul for autumn/winter harvest. For chicory chicons: lift roots in autumn, pot in compost, exclude light at 10–18°C for 3–4 weeks. Radicchio hearts in cold weather.",
     "spacingCm": 30,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "lettuce",
+      "carrot",
+      "beetroot"
+    ]
   },
   {
     "id": "cavolo-nero",
@@ -1836,7 +2072,12 @@
     ],
     "notes": "Italian winter kale with distinctive dark, crinkled leaves. Sow Mar–May, harvest Nov through Mar. Frost improves flavour. Pick from the bottom up, leaving growing tip intact.",
     "spacingCm": 45,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "pea",
+      "french-bean",
+      "carrot"
+    ]
   },
   {
     "id": "collard-greens",
@@ -1874,7 +2115,12 @@
     ],
     "notes": "Southern US staple, excellent in the UK as a cold-hardy leafy green. Cut-and-come-again. More heat-tolerant than kale; harvest leaves before they become tough.",
     "spacingCm": 45,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "pea",
+      "french-bean",
+      "onion"
+    ]
   },
   {
     "id": "mustard-greens",
@@ -1911,7 +2157,12 @@
     "spacingCm": 15,
     "plantsPerSqFt": 4,
     "successionIntervalWeeks": 2,
-    "successionRounds": 4
+    "successionRounds": 4,
+    "followWithIds": [
+      "carrot",
+      "lettuce",
+      "beetroot"
+    ]
   },
   {
     "id": "land-cress",
@@ -1947,7 +2198,12 @@
     "spacingCm": 20,
     "plantsPerSqFt": 4,
     "successionIntervalWeeks": 3,
-    "successionRounds": 3
+    "successionRounds": 3,
+    "followWithIds": [
+      "carrot",
+      "lettuce",
+      "beetroot"
+    ]
   },
   {
     "id": "edamame",
@@ -1984,7 +2240,12 @@
     ],
     "notes": "Sow direct May–Jun in warm soil. Harvest pods when plump and bright green — they go from perfect to over-ripe quickly. Must be boiled before eating; don't eat raw.",
     "spacingCm": 20,
-    "plantsPerSqFt": 4
+    "plantsPerSqFt": 4,
+    "followWithIds": [
+      "cabbage",
+      "lettuce",
+      "kale"
+    ]
   },
   {
     "id": "shallot",
@@ -2022,7 +2283,12 @@
     ],
     "notes": "Plant sets Oct–Nov, 2cm deep, 15cm apart. Each set multiplies into a cluster. Longer-storing and milder than onions. Harvest when foliage yellows; dry thoroughly before storing.",
     "spacingCm": 15,
-    "plantsPerSqFt": 4
+    "plantsPerSqFt": 4,
+    "followWithIds": [
+      "carrot",
+      "lettuce",
+      "beetroot"
+    ]
   },
   {
     "id": "lima-bean",
@@ -2059,7 +2325,12 @@
     ],
     "notes": "Needs a longer, warmer season than runner beans. Greenhouse gives reliable crops in the UK. Harvest pods when beans feel plump but before they harden. Climbing varieties need support.",
     "spacingCm": 20,
-    "plantsPerSqFt": 4
+    "plantsPerSqFt": 4,
+    "followWithIds": [
+      "cabbage",
+      "lettuce",
+      "kale"
+    ]
   },
   {
     "id": "tomatillo",
@@ -2095,7 +2366,12 @@
     ],
     "notes": "Must grow at least two plants for fruit set (cross-pollination required). Harvest when husk splits or turns papery. Treat like tomatoes for growing conditions.",
     "spacingCm": 60,
-    "plantsPerSqFt": 0.25
+    "plantsPerSqFt": 0.25,
+    "followWithIds": [
+      "lettuce",
+      "spinach",
+      "carrot"
+    ]
   },
   {
     "id": "chickpea",
@@ -2132,7 +2408,12 @@
     ],
     "notes": "Requires a long warm growing season — works best in warm UK summers or under cover. Sow direct in warm soil Apr–May. Harvest green pods for fresh eating or leave to dry fully.",
     "spacingCm": 15,
-    "plantsPerSqFt": 4
+    "plantsPerSqFt": 4,
+    "followWithIds": [
+      "cabbage",
+      "lettuce",
+      "kale"
+    ]
   },
   {
     "id": "okra",
@@ -2168,7 +2449,12 @@
     ],
     "notes": "Heated propagator essential for germination. Greenhouse or polytunnel required for reliable UK production. Harvest pods at 5–8cm — they toughen quickly if left longer.",
     "spacingCm": 45,
-    "plantsPerSqFt": 1
+    "plantsPerSqFt": 1,
+    "followWithIds": [
+      "lettuce",
+      "spinach",
+      "carrot"
+    ]
   },
   {
     "id": "spaghetti-squash",
@@ -2203,7 +2489,12 @@
     "avoidNearIds": [],
     "notes": "Trailing squash — allow 2–3m space or train vertically. Harvest when skin is golden-yellow and hard. Internal flesh separates into spaghetti-like strands when baked.",
     "spacingCm": 90,
-    "plantsPerSqFt": 0.25
+    "plantsPerSqFt": 0.25,
+    "followWithIds": [
+      "pea",
+      "french-bean",
+      "spinach"
+    ]
   },
   {
     "id": "winter-lettuce",
@@ -2238,7 +2529,12 @@
     "avoidNearIds": [],
     "notes": "Sow Aug–Sep for Dec–Mar harvest. Use cold-hardy varieties (Little Gem, Arctic King, Winter Density). Under cloches or cold frame to prevent frost damage to outer leaves.",
     "spacingCm": 25,
-    "plantsPerSqFt": 4
+    "plantsPerSqFt": 4,
+    "followWithIds": [
+      "carrot",
+      "radish",
+      "onion"
+    ]
   },
   {
     "id": "daikon",
@@ -2275,6 +2571,11 @@
     "spacingCm": 20,
     "plantsPerSqFt": 4,
     "successionIntervalWeeks": 3,
-    "successionRounds": 3
+    "successionRounds": 3,
+    "followWithIds": [
+      "lettuce",
+      "carrot",
+      "spinach"
+    ]
   }
 ]

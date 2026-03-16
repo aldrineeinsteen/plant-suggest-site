@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { PlannerResult, PlantCategory, PlantRecommendation } from '../types';
+import type { UsePlanReturn } from '../hooks/usePlan';
 import { PlantCard } from '../components/PlantCard/PlantCard';
 import { FilterBar } from '../components/FilterBar/FilterBar';
 import CalendarView from '../components/CalendarView/CalendarView';
@@ -10,9 +11,10 @@ const ALL_CATEGORIES = new Set<PlantCategory>(['vegetable', 'herb', 'fruit', 'fl
 interface Props {
   result: PlannerResult;
   onReset: () => void;
+  plan: UsePlanReturn;
 }
 
-export function ResultsPage({ result, onReset }: Props) {
+export function ResultsPage({ result, onReset, plan }: Props) {
   const [activeCategories, setActiveCategories] = useState<Set<PlantCategory>>(
     new Set(ALL_CATEGORIES)
   );
@@ -63,7 +65,12 @@ export function ResultsPage({ result, onReset }: Props) {
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
-      <PlantSheet rec={selectedRec} onClose={() => setSelectedRec(null)} />
+      <PlantSheet
+        rec={selectedRec}
+        onClose={() => setSelectedRec(null)}
+        isInPlan={selectedRec ? plan.isInPlan(selectedRec.plant.id) : false}
+        onTogglePlan={selectedRec ? () => plan.togglePlan(selectedRec.plant.id) : () => {}}
+      />
       {/* Top bar */}
       <header className="sticky top-0 z-10 border-b border-gray-200 bg-white px-4 py-3 shadow-sm">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4">

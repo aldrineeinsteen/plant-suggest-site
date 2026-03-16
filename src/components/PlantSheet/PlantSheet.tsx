@@ -5,9 +5,11 @@ import { PlantCard } from '../PlantCard/PlantCard';
 interface Props {
   rec: PlantRecommendation | null;
   onClose: () => void;
+  isInPlan: boolean;
+  onTogglePlan: () => void;
 }
 
-export function PlantSheet({ rec, onClose }: Props) {
+export function PlantSheet({ rec, onClose, isInPlan, onTogglePlan }: Props) {
   // Lock body scroll while open
   useEffect(() => {
     if (!rec) return;
@@ -61,6 +63,20 @@ export function PlantSheet({ rec, onClose }: Props) {
         <div className="overflow-y-auto flex-1 p-4">
           {/* Render PlantCard without outer article wrapper — reuse content directly */}
           <PlantCard recommendation={rec} inSheet />
+        </div>
+
+        {/* Sticky footer — Add to My Plan */}
+        <div className="shrink-0 px-4 py-3 border-t border-gray-100">
+          <button
+            onClick={onTogglePlan}
+            className={`w-full rounded-lg py-2.5 text-sm font-medium transition ${
+              isInPlan
+                ? 'bg-brand-50 border border-brand-200 text-brand-700 hover:bg-brand-100'
+                : 'bg-brand-700 text-white hover:bg-brand-800'
+            }`}
+          >
+            {isInPlan ? '✓ In My Plan' : '+ Add to My Plan'}
+          </button>
         </div>
       </div>
     </div>

@@ -166,6 +166,23 @@ export function PlantCard({ recommendation: rec, inSheet = false }: Props) {
           </div>
         )}
       </div>
+
+      {/* Follow with — crop rotation suggestions */}
+      {rec.followWithPlants.length > 0 && (
+        <div className="mt-3">
+          <p className="mb-1 text-xs font-semibold text-gray-500">Good crops to plant after this</p>
+          <div className="flex flex-wrap gap-1">
+            {rec.followWithPlants.map((p) => (
+              <span
+                key={p.id}
+                className="rounded-full bg-sky-50 border border-sky-100 px-2 py-0.5 text-xs text-sky-700"
+              >
+                {p.commonName}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
     </>
   );
 

@@ -41,4 +41,6 @@ export interface PlantDefinition {
   successionRounds?: number;
   /** IDs of companion plants particularly suited to same-bed inter-planting */
   interPlantIds?: string[];
+  /** IDs of plants well-suited to follow this crop in the same bed (crop rotation) */
+  followWithIds?: string[];
 }

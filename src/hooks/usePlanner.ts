@@ -103,14 +103,18 @@ export function usePlanner(): UsePlannerReturn {
         .map((id) => findPlantById(plants, id))
         .filter((p): p is NonNullable<typeof p> => p !== undefined);
 
+      const followWithPlants = (rec.plant.followWithIds ?? [])
+        .map((id) => findPlantById(plants, id))
+        .filter((p): p is NonNullable<typeof p> => p !== undefined);
+
       const score = scoreRecommendation(
-        { ...rec, companionPlants, plantsToAvoid, holidayHighlights: [] },
+        { ...rec, companionPlants, plantsToAvoid, followWithPlants, holidayHighlights: [] },
         climate,
         setup,
         resultIds
       );
 
-      return { ...rec, companionPlants, plantsToAvoid, score, holidayHighlights: [] };
+      return { ...rec, companionPlants, plantsToAvoid, followWithPlants, score, holidayHighlights: [] };
     });
 
     // Sort by score descending before holiday alignment
