@@ -26,6 +26,7 @@ interface CalendarViewProps {
   monthOffset: number;
   onNavigate: (delta: number) => void;
   onReset: () => void;
+  onSelectPlant: (rec: PlantRecommendation) => void;
 }
 
 const WINDOW_COLOURS: Record<WindowType, string> = {
@@ -46,7 +47,7 @@ const LEGEND_ITEMS: { type: WindowType; label: string }[] = [
 
 const PARTS = [1, 2, 3, 4] as const;
 
-export default function CalendarView({ recommendations, startMonth, startYear, monthOffset, onNavigate, onReset }: CalendarViewProps) {
+export default function CalendarView({ recommendations, startMonth, startYear, monthOffset, onNavigate, onReset, onSelectPlant }: CalendarViewProps) {
   const swipeStartX = useRef<number | null>(null);
 
   const todayOrd = useMemo(() => {
@@ -173,7 +174,11 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
         const PlantRow = ({ rec }: { rec: (typeof recommendations)[0] }) => {
           const windows = getActiveWindowsForMonth(rec, startMonth, startYear);
           return (
-            <div className="flex items-start justify-between gap-2 py-2.5 border-b border-gray-100 last:border-0">
+            <button
+              type="button"
+              onClick={() => onSelectPlant(rec)}
+              className="w-full flex items-start justify-between gap-2 py-2.5 border-b border-gray-100 last:border-0 text-left active:bg-gray-50 cursor-pointer"
+            >
               <div className="flex flex-col gap-0.5 min-w-0">
                 <span className="text-sm font-medium text-gray-800 leading-tight">{rec.plant.commonName}</span>
                 {rec.isNextSeason && (
@@ -182,17 +187,20 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
                   </span>
                 )}
               </div>
-              <div className="flex flex-wrap justify-end gap-1 shrink-0">
-                {(windows.length > 0 ? windows : upcomingMonths.flatMap((um) => getActiveWindowsForMonth(rec, um.month, um.year))).map((w) => (
-                  <span
-                    key={w}
-                    className={`rounded px-1.5 py-0.5 text-[10px] font-medium ${WINDOW_COLOURS[w]} text-gray-700`}
-                  >
-                    {WINDOW_LABEL[w]}
-                  </span>
-                ))}
+              <div className="flex items-center gap-1 shrink-0">
+                <div className="flex flex-wrap justify-end gap-1">
+                  {(windows.length > 0 ? windows : upcomingMonths.flatMap((um) => getActiveWindowsForMonth(rec, um.month, um.year))).map((w) => (
+                    <span
+                      key={w}
+                      className={`rounded px-1.5 py-0.5 text-[10px] font-medium ${WINDOW_COLOURS[w]} text-gray-700`}
+                    >
+                      {WINDOW_LABEL[w]}
+                    </span>
+                  ))}
+                </div>
+                <span className="text-gray-300 text-sm" aria-hidden="true">›</span>
               </div>
-            </div>
+            </button>
           );
         };
 
@@ -301,14 +309,18 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
               >
                 {/* Plant name cell */}
                 <td className="sticky left-0 z-10 bg-inherit px-3 py-1 font-medium text-gray-800 whitespace-nowrap border-r border-gray-300">
-                  <span className="flex items-center gap-1.5 flex-wrap">
+                  <button
+                    type="button"
+                    onClick={() => onSelectPlant(rec)}
+                    className="flex items-center gap-1.5 flex-wrap text-left hover:text-brand-700 transition-colors cursor-pointer"
+                  >
                     {rec.plant.commonName}
                     {rec.isNextSeason && (
                       <span className="inline-block rounded-full border border-indigo-100 bg-indigo-50 px-1.5 py-px text-[10px] font-medium text-indigo-600 leading-tight">
                         Next season
                       </span>
                     )}
-                  </span>
+                  </button>
                 </td>
 
                 {/* Slot cells */}

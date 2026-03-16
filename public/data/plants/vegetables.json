@@ -6,18 +6,37 @@
     "category": "vegetable",
     "germinationTempMinC": 18,
     "germinationTempMaxC": 29,
-    "sowingOffsetWeeks": { "min": 0, "max": 2 },
-    "indoorStartOffsetWeeks": { "min": -8, "max": -6 },
-    "transplantOffsetWeeks": { "min": 2, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": 0,
+      "max": 2
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -8,
+      "max": -6
+    },
+    "transplantOffsetWeeks": {
+      "min": 2,
+      "max": 4
+    },
     "daysToFirstHarvest": 75,
     "harvestDurationDays": 60,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["basil", "marigold"],
-    "avoidNearIds": ["fennel"],
-    "notes": "Do not plant out until all frost risk has passed. Needs warm nights."
+    "companionPlantIds": [
+      "basil",
+      "marigold"
+    ],
+    "avoidNearIds": [
+      "fennel"
+    ],
+    "notes": "Do not plant out until all frost risk has passed. Needs warm nights.",
+    "spacingCm": 60,
+    "plantsPerSqFt": 0.25,
+    "interPlantIds": [
+      "basil"
+    ]
   },
   {
     "id": "courgette",
@@ -26,18 +45,35 @@
     "category": "vegetable",
     "germinationTempMinC": 20,
     "germinationTempMaxC": 30,
-    "sowingOffsetWeeks": { "min": 1, "max": 3 },
-    "indoorStartOffsetWeeks": { "min": -4, "max": -3 },
-    "transplantOffsetWeeks": { "min": 2, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": 1,
+      "max": 3
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -4,
+      "max": -3
+    },
+    "transplantOffsetWeeks": {
+      "min": 2,
+      "max": 4
+    },
     "daysToFirstHarvest": 50,
     "harvestDurationDays": 60,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["nasturtium", "sweetcorn"],
+    "companionPlantIds": [
+      "nasturtium",
+      "sweetcorn"
+    ],
     "avoidNearIds": [],
-    "notes": "Very frost-sensitive. Can direct sow outdoors once soil is warm."
+    "notes": "Very frost-sensitive. Can direct sow outdoors once soil is warm.",
+    "spacingCm": 60,
+    "plantsPerSqFt": 0.25,
+    "interPlantIds": [
+      "nasturtium"
+    ]
   },
   {
     "id": "lettuce",
@@ -46,18 +82,38 @@
     "category": "vegetable",
     "germinationTempMinC": 5,
     "germinationTempMaxC": 20,
-    "sowingOffsetWeeks": { "min": -4, "max": 8 },
-    "indoorStartOffsetWeeks": { "min": -6, "max": -4 },
-    "transplantOffsetWeeks": { "min": -2, "max": 2 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 8
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -6,
+      "max": -4
+    },
+    "transplantOffsetWeeks": {
+      "min": -2,
+      "max": 2
+    },
     "daysToFirstHarvest": 45,
     "harvestDurationDays": 30,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["chive", "carrot"],
+    "companionPlantIds": [
+      "chive",
+      "carrot"
+    ],
     "avoidNearIds": [],
-    "notes": "Cool-season crop. Bolts in high summer heat. Succession sow every 3 weeks."
+    "notes": "Cool-season crop. Bolts in high summer heat. Succession sow every 3 weeks.",
+    "spacingCm": 25,
+    "plantsPerSqFt": 4,
+    "successionIntervalWeeks": 2,
+    "successionRounds": 5,
+    "interPlantIds": [
+      "carrot",
+      "chive"
+    ]
   },
   {
     "id": "carrot",
@@ -66,18 +122,37 @@
     "category": "vegetable",
     "germinationTempMinC": 8,
     "germinationTempMaxC": 30,
-    "sowingOffsetWeeks": { "min": -2, "max": 8 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -2,
+      "max": 8
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 75,
     "harvestDurationDays": 60,
     "directSowOnly": true,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["lettuce", "chive", "rosemary"],
-    "avoidNearIds": ["dill"],
-    "notes": "Direct sow only – dislikes root disturbance. Thin to 5cm spacing."
+    "companionPlantIds": [
+      "lettuce",
+      "chive",
+      "rosemary"
+    ],
+    "avoidNearIds": [
+      "dill"
+    ],
+    "notes": "Direct sow only – dislikes root disturbance. Thin to 5cm spacing.",
+    "spacingCm": 8,
+    "plantsPerSqFt": 16,
+    "successionIntervalWeeks": 3,
+    "successionRounds": 4
   },
   {
     "id": "pea",
@@ -86,18 +161,35 @@
     "category": "vegetable",
     "germinationTempMinC": 5,
     "germinationTempMaxC": 24,
-    "sowingOffsetWeeks": { "min": -6, "max": 2 },
-    "indoorStartOffsetWeeks": { "min": -4, "max": -2 },
-    "transplantOffsetWeeks": { "min": -4, "max": -1 },
+    "sowingOffsetWeeks": {
+      "min": -6,
+      "max": 2
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -4,
+      "max": -2
+    },
+    "transplantOffsetWeeks": {
+      "min": -4,
+      "max": -1
+    },
     "daysToFirstHarvest": 60,
     "harvestDurationDays": 28,
     "directSowOnly": false,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["carrot", "lettuce", "sweetcorn"],
+    "companionPlantIds": [
+      "carrot",
+      "lettuce",
+      "sweetcorn"
+    ],
     "avoidNearIds": [],
-    "notes": "Cool-season. Sow early — peas prefer cool root runs."
+    "notes": "Cool-season. Sow early — peas prefer cool root runs.",
+    "spacingCm": 8,
+    "plantsPerSqFt": 9,
+    "successionIntervalWeeks": 3,
+    "successionRounds": 2
   },
   {
     "id": "sweetcorn",
@@ -106,18 +198,32 @@
     "category": "vegetable",
     "germinationTempMinC": 16,
     "germinationTempMaxC": 30,
-    "sowingOffsetWeeks": { "min": 1, "max": 3 },
-    "indoorStartOffsetWeeks": { "min": -4, "max": -3 },
-    "transplantOffsetWeeks": { "min": 2, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": 1,
+      "max": 3
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -4,
+      "max": -3
+    },
+    "transplantOffsetWeeks": {
+      "min": 2,
+      "max": 4
+    },
     "daysToFirstHarvest": 80,
     "harvestDurationDays": 14,
     "directSowOnly": false,
     "greenhouseBenefit": "enables",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["courgette", "pea"],
+    "companionPlantIds": [
+      "courgette",
+      "pea"
+    ],
     "avoidNearIds": [],
-    "notes": "Needs a warm long summer. Best in blocks for wind pollination."
+    "notes": "Needs a warm long summer. Best in blocks for wind pollination.",
+    "spacingCm": 35,
+    "plantsPerSqFt": 1
   },
   {
     "id": "spinach",
@@ -126,18 +232,34 @@
     "category": "vegetable",
     "germinationTempMinC": 5,
     "germinationTempMaxC": 20,
-    "sowingOffsetWeeks": { "min": -6, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -4, "max": -2 },
-    "transplantOffsetWeeks": { "min": -3, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -6,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -4,
+      "max": -2
+    },
+    "transplantOffsetWeeks": {
+      "min": -3,
+      "max": 0
+    },
     "daysToFirstHarvest": 40,
     "harvestDurationDays": 30,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["strawberry", "pea"],
+    "companionPlantIds": [
+      "strawberry",
+      "pea"
+    ],
     "avoidNearIds": [],
-    "notes": "Bolts quickly in heat. Best as a spring or autumn crop."
+    "notes": "Bolts quickly in heat. Best as a spring or autumn crop.",
+    "spacingCm": 15,
+    "plantsPerSqFt": 9,
+    "successionIntervalWeeks": 2,
+    "successionRounds": 4
   },
   {
     "id": "kale",
@@ -146,18 +268,33 @@
     "category": "vegetable",
     "germinationTempMinC": 7,
     "germinationTempMaxC": 30,
-    "sowingOffsetWeeks": { "min": -4, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -6, "max": -4 },
-    "transplantOffsetWeeks": { "min": -2, "max": 2 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -6,
+      "max": -4
+    },
+    "transplantOffsetWeeks": {
+      "min": -2,
+      "max": 2
+    },
     "daysToFirstHarvest": 70,
     "harvestDurationDays": 90,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["nasturtium"],
-    "avoidNearIds": ["tomato"],
-    "notes": "Very hardy. Flavour improves after frost. Cut-and-come-again."
+    "companionPlantIds": [
+      "nasturtium"
+    ],
+    "avoidNearIds": [
+      "tomato"
+    ],
+    "notes": "Very hardy. Flavour improves after frost. Cut-and-come-again.",
+    "spacingCm": 45,
+    "plantsPerSqFt": 1
   },
   {
     "id": "beetroot",
@@ -166,18 +303,34 @@
     "category": "vegetable",
     "germinationTempMinC": 7,
     "germinationTempMaxC": 24,
-    "sowingOffsetWeeks": { "min": -2, "max": 6 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -2,
+      "max": 6
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 60,
     "harvestDurationDays": 60,
     "directSowOnly": true,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["lettuce", "onion"],
+    "companionPlantIds": [
+      "lettuce",
+      "onion"
+    ],
     "avoidNearIds": [],
-    "notes": "Direct sow. Each 'seed' is actually a cluster of seeds — thin to 10cm."
+    "notes": "Direct sow. Each 'seed' is actually a cluster of seeds — thin to 10cm.",
+    "spacingCm": 10,
+    "plantsPerSqFt": 9,
+    "successionIntervalWeeks": 3,
+    "successionRounds": 3
   },
   {
     "id": "onion",
@@ -186,18 +339,35 @@
     "category": "vegetable",
     "germinationTempMinC": 10,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": -8, "max": -2 },
-    "indoorStartOffsetWeeks": { "min": -12, "max": -10 },
-    "transplantOffsetWeeks": { "min": -4, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -8,
+      "max": -2
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -12,
+      "max": -10
+    },
+    "transplantOffsetWeeks": {
+      "min": -4,
+      "max": 0
+    },
     "daysToFirstHarvest": 120,
     "harvestDurationDays": 30,
     "directSowOnly": false,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["carrot", "beetroot", "lettuce"],
-    "avoidNearIds": ["pea"],
-    "notes": "Long-season crop. Sets (small bulbs) are a quicker alternative to seed."
+    "companionPlantIds": [
+      "carrot",
+      "beetroot",
+      "lettuce"
+    ],
+    "avoidNearIds": [
+      "pea"
+    ],
+    "notes": "Long-season crop. Sets (small bulbs) are a quicker alternative to seed.",
+    "spacingCm": 10,
+    "plantsPerSqFt": 9
   },
   {
     "id": "runner-bean",
@@ -206,18 +376,38 @@
     "category": "vegetable",
     "germinationTempMinC": 12,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": 1, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -3, "max": -2 },
-    "transplantOffsetWeeks": { "min": 2, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": 1,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -3,
+      "max": -2
+    },
+    "transplantOffsetWeeks": {
+      "min": 2,
+      "max": 4
+    },
     "daysToFirstHarvest": 70,
     "harvestDurationDays": 60,
     "directSowOnly": false,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["sweetcorn", "lettuce"],
-    "avoidNearIds": ["onion", "fennel"],
-    "notes": "Needs a wigwam or trellis. Frost-sensitive — don't plant out until all risk has passed."
+    "companionPlantIds": [
+      "sweetcorn",
+      "lettuce"
+    ],
+    "avoidNearIds": [
+      "onion",
+      "fennel"
+    ],
+    "notes": "Needs a wigwam or trellis. Frost-sensitive — don't plant out until all risk has passed.",
+    "spacingCm": 15,
+    "plantsPerSqFt": 4,
+    "interPlantIds": [
+      "sweetcorn"
+    ]
   },
   {
     "id": "french-bean",
@@ -226,18 +416,35 @@
     "category": "vegetable",
     "germinationTempMinC": 12,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": 1, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -3, "max": -2 },
-    "transplantOffsetWeeks": { "min": 2, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": 1,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -3,
+      "max": -2
+    },
+    "transplantOffsetWeeks": {
+      "min": 2,
+      "max": 4
+    },
     "daysToFirstHarvest": 55,
     "harvestDurationDays": 45,
     "directSowOnly": false,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["carrot", "spinach"],
-    "avoidNearIds": ["onion", "fennel"],
-    "notes": "Prolific producer. Pick regularly to keep plants cropping."
+    "companionPlantIds": [
+      "carrot",
+      "spinach"
+    ],
+    "avoidNearIds": [
+      "onion",
+      "fennel"
+    ],
+    "notes": "Prolific producer. Pick regularly to keep plants cropping.",
+    "spacingCm": 15,
+    "plantsPerSqFt": 9
   },
   {
     "id": "pepper-sweet",
@@ -246,18 +453,37 @@
     "category": "vegetable",
     "germinationTempMinC": 21,
     "germinationTempMaxC": 32,
-    "sowingOffsetWeeks": { "min": 2, "max": 6 },
-    "indoorStartOffsetWeeks": { "min": -12, "max": -10 },
-    "transplantOffsetWeeks": { "min": 4, "max": 8 },
+    "sowingOffsetWeeks": {
+      "min": 2,
+      "max": 6
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -12,
+      "max": -10
+    },
+    "transplantOffsetWeeks": {
+      "min": 4,
+      "max": 8
+    },
     "daysToFirstHarvest": 90,
     "harvestDurationDays": 60,
     "directSowOnly": false,
     "greenhouseBenefit": "enables",
     "propagatorBenefit": "required",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["basil", "tomato"],
-    "avoidNearIds": ["fennel"],
-    "notes": "Needs a very long warm season. Best grown under glass or polytunnel in the UK."
+    "companionPlantIds": [
+      "basil",
+      "tomato"
+    ],
+    "avoidNearIds": [
+      "fennel"
+    ],
+    "notes": "Needs a very long warm season. Best grown under glass or polytunnel in the UK.",
+    "spacingCm": 45,
+    "plantsPerSqFt": 1,
+    "interPlantIds": [
+      "basil"
+    ]
   },
   {
     "id": "chilli",
@@ -266,18 +492,34 @@
     "category": "vegetable",
     "germinationTempMinC": 25,
     "germinationTempMaxC": 35,
-    "sowingOffsetWeeks": { "min": 2, "max": 6 },
-    "indoorStartOffsetWeeks": { "min": -14, "max": -12 },
-    "transplantOffsetWeeks": { "min": 4, "max": 8 },
+    "sowingOffsetWeeks": {
+      "min": 2,
+      "max": 6
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -14,
+      "max": -12
+    },
+    "transplantOffsetWeeks": {
+      "min": 4,
+      "max": 8
+    },
     "daysToFirstHarvest": 100,
     "harvestDurationDays": 60,
     "directSowOnly": false,
     "greenhouseBenefit": "enables",
     "propagatorBenefit": "required",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["basil", "marigold"],
-    "avoidNearIds": ["fennel"],
-    "notes": "Needs high germination heat. Start very early indoors. Greenhouse gives best results."
+    "companionPlantIds": [
+      "basil",
+      "marigold"
+    ],
+    "avoidNearIds": [
+      "fennel"
+    ],
+    "notes": "Needs high germination heat. Start very early indoors. Greenhouse gives best results.",
+    "spacingCm": 45,
+    "plantsPerSqFt": 1
   },
   {
     "id": "aubergine",
@@ -286,18 +528,34 @@
     "category": "vegetable",
     "germinationTempMinC": 21,
     "germinationTempMaxC": 32,
-    "sowingOffsetWeeks": { "min": 2, "max": 6 },
-    "indoorStartOffsetWeeks": { "min": -14, "max": -12 },
-    "transplantOffsetWeeks": { "min": 4, "max": 8 },
+    "sowingOffsetWeeks": {
+      "min": 2,
+      "max": 6
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -14,
+      "max": -12
+    },
+    "transplantOffsetWeeks": {
+      "min": 4,
+      "max": 8
+    },
     "daysToFirstHarvest": 100,
     "harvestDurationDays": 45,
     "directSowOnly": false,
     "greenhouseBenefit": "enables",
     "propagatorBenefit": "required",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["basil", "marigold"],
-    "avoidNearIds": ["fennel"],
-    "notes": "Very heat-demanding. In cool climates, greenhouse is virtually essential."
+    "companionPlantIds": [
+      "basil",
+      "marigold"
+    ],
+    "avoidNearIds": [
+      "fennel"
+    ],
+    "notes": "Very heat-demanding. In cool climates, greenhouse is virtually essential.",
+    "spacingCm": 50,
+    "plantsPerSqFt": 1
   },
   {
     "id": "leek",
@@ -306,18 +564,34 @@
     "category": "vegetable",
     "germinationTempMinC": 10,
     "germinationTempMaxC": 24,
-    "sowingOffsetWeeks": { "min": -12, "max": -8 },
-    "indoorStartOffsetWeeks": { "min": -14, "max": -12 },
-    "transplantOffsetWeeks": { "min": -6, "max": -2 },
+    "sowingOffsetWeeks": {
+      "min": -12,
+      "max": -8
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -14,
+      "max": -12
+    },
+    "transplantOffsetWeeks": {
+      "min": -6,
+      "max": -2
+    },
     "daysToFirstHarvest": 150,
     "harvestDurationDays": 90,
     "directSowOnly": false,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["carrot", "onion"],
-    "avoidNearIds": ["pea"],
-    "notes": "Winter staple. Plant in dibbed holes — don't backfill, just water in."
+    "companionPlantIds": [
+      "carrot",
+      "onion"
+    ],
+    "avoidNearIds": [
+      "pea"
+    ],
+    "notes": "Winter staple. Plant in dibbed holes — don't backfill, just water in.",
+    "spacingCm": 15,
+    "plantsPerSqFt": 4
   },
   {
     "id": "brussels-sprouts",
@@ -326,18 +600,35 @@
     "category": "vegetable",
     "germinationTempMinC": 7,
     "germinationTempMaxC": 24,
-    "sowingOffsetWeeks": { "min": -14, "max": -10 },
-    "indoorStartOffsetWeeks": { "min": -16, "max": -14 },
-    "transplantOffsetWeeks": { "min": -8, "max": -4 },
+    "sowingOffsetWeeks": {
+      "min": -14,
+      "max": -10
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -16,
+      "max": -14
+    },
+    "transplantOffsetWeeks": {
+      "min": -8,
+      "max": -4
+    },
     "daysToFirstHarvest": 180,
     "harvestDurationDays": 90,
     "directSowOnly": false,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["nasturtium", "marigold"],
-    "avoidNearIds": ["tomato", "fennel"],
-    "notes": "Long-season brassica. Needs firm soil — stake in exposed sites. Improves after frost."
+    "companionPlantIds": [
+      "nasturtium",
+      "marigold"
+    ],
+    "avoidNearIds": [
+      "tomato",
+      "fennel"
+    ],
+    "notes": "Long-season brassica. Needs firm soil — stake in exposed sites. Improves after frost.",
+    "spacingCm": 60,
+    "plantsPerSqFt": 0.25
   },
   {
     "id": "cabbage",
@@ -346,18 +637,36 @@
     "category": "vegetable",
     "germinationTempMinC": 7,
     "germinationTempMaxC": 24,
-    "sowingOffsetWeeks": { "min": -12, "max": 2 },
-    "indoorStartOffsetWeeks": { "min": -14, "max": -12 },
-    "transplantOffsetWeeks": { "min": -6, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -12,
+      "max": 2
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -14,
+      "max": -12
+    },
+    "transplantOffsetWeeks": {
+      "min": -6,
+      "max": 0
+    },
     "daysToFirstHarvest": 100,
     "harvestDurationDays": 30,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["nasturtium", "marigold", "rosemary"],
-    "avoidNearIds": ["tomato", "fennel"],
-    "notes": "Spring, summer and winter varieties available. Net against cabbage white butterfly."
+    "companionPlantIds": [
+      "nasturtium",
+      "marigold",
+      "rosemary"
+    ],
+    "avoidNearIds": [
+      "tomato",
+      "fennel"
+    ],
+    "notes": "Spring, summer and winter varieties available. Net against cabbage white butterfly.",
+    "spacingCm": 45,
+    "plantsPerSqFt": 1
   },
   {
     "id": "cauliflower",
@@ -366,18 +675,36 @@
     "category": "vegetable",
     "germinationTempMinC": 7,
     "germinationTempMaxC": 24,
-    "sowingOffsetWeeks": { "min": -14, "max": -6 },
-    "indoorStartOffsetWeeks": { "min": -16, "max": -14 },
-    "transplantOffsetWeeks": { "min": -6, "max": -2 },
+    "sowingOffsetWeeks": {
+      "min": -14,
+      "max": -6
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -16,
+      "max": -14
+    },
+    "transplantOffsetWeeks": {
+      "min": -6,
+      "max": -2
+    },
     "daysToFirstHarvest": 140,
     "harvestDurationDays": 21,
     "directSowOnly": false,
     "greenhouseBenefit": "enables",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["nasturtium", "marigold"],
-    "avoidNearIds": ["tomato", "fennel", "strawberry"],
-    "notes": "Blanch the curds by folding outer leaves over once they appear."
+    "companionPlantIds": [
+      "nasturtium",
+      "marigold"
+    ],
+    "avoidNearIds": [
+      "tomato",
+      "fennel",
+      "strawberry"
+    ],
+    "notes": "Blanch the curds by folding outer leaves over once they appear.",
+    "spacingCm": 60,
+    "plantsPerSqFt": 0.25
   },
   {
     "id": "broccoli",
@@ -386,18 +713,36 @@
     "category": "vegetable",
     "germinationTempMinC": 7,
     "germinationTempMaxC": 24,
-    "sowingOffsetWeeks": { "min": -8, "max": 2 },
-    "indoorStartOffsetWeeks": { "min": -10, "max": -8 },
-    "transplantOffsetWeeks": { "min": -4, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -8,
+      "max": 2
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -10,
+      "max": -8
+    },
+    "transplantOffsetWeeks": {
+      "min": -4,
+      "max": 0
+    },
     "daysToFirstHarvest": 90,
     "harvestDurationDays": 28,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["nasturtium", "marigold", "rosemary"],
-    "avoidNearIds": ["tomato", "fennel"],
-    "notes": "Cut the central head to promote side shoots for extended harvest."
+    "companionPlantIds": [
+      "nasturtium",
+      "marigold",
+      "rosemary"
+    ],
+    "avoidNearIds": [
+      "tomato",
+      "fennel"
+    ],
+    "notes": "Cut the central head to promote side shoots for extended harvest.",
+    "spacingCm": 45,
+    "plantsPerSqFt": 1
   },
   {
     "id": "purple-sprouting-broccoli",
@@ -406,18 +751,34 @@
     "category": "vegetable",
     "germinationTempMinC": 7,
     "germinationTempMaxC": 24,
-    "sowingOffsetWeeks": { "min": -14, "max": -10 },
-    "indoorStartOffsetWeeks": { "min": -16, "max": -14 },
-    "transplantOffsetWeeks": { "min": -10, "max": -6 },
+    "sowingOffsetWeeks": {
+      "min": -14,
+      "max": -10
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -16,
+      "max": -14
+    },
+    "transplantOffsetWeeks": {
+      "min": -10,
+      "max": -6
+    },
     "daysToFirstHarvest": 250,
     "harvestDurationDays": 56,
     "directSowOnly": false,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["nasturtium"],
-    "avoidNearIds": ["tomato", "fennel"],
-    "notes": "Overwinters outdoors. Harvested in late winter–spring — a true hungry gap filler."
+    "companionPlantIds": [
+      "nasturtium"
+    ],
+    "avoidNearIds": [
+      "tomato",
+      "fennel"
+    ],
+    "notes": "Overwinters outdoors. Harvested in late winter–spring — a true hungry gap filler.",
+    "spacingCm": 60,
+    "plantsPerSqFt": 0.25
   },
   {
     "id": "parsnip",
@@ -426,18 +787,34 @@
     "category": "vegetable",
     "germinationTempMinC": 10,
     "germinationTempMaxC": 18,
-    "sowingOffsetWeeks": { "min": -6, "max": 0 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -6,
+      "max": 0
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 160,
     "harvestDurationDays": 120,
     "directSowOnly": true,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["lettuce", "onion"],
-    "avoidNearIds": ["carrot"],
-    "notes": "Very slow to germinate — use fresh seed each year. Sweetens after frost."
+    "companionPlantIds": [
+      "lettuce",
+      "onion"
+    ],
+    "avoidNearIds": [
+      "carrot"
+    ],
+    "notes": "Very slow to germinate — use fresh seed each year. Sweetens after frost.",
+    "spacingCm": 10,
+    "plantsPerSqFt": 9
   },
   {
     "id": "swede",
@@ -446,18 +823,34 @@
     "category": "vegetable",
     "germinationTempMinC": 7,
     "germinationTempMaxC": 24,
-    "sowingOffsetWeeks": { "min": -4, "max": 2 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 2
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 140,
     "harvestDurationDays": 90,
     "directSowOnly": true,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["nasturtium", "lettuce"],
-    "avoidNearIds": ["fennel"],
-    "notes": "Hardy winter root. Sow in June. Can leave in ground until needed."
+    "companionPlantIds": [
+      "nasturtium",
+      "lettuce"
+    ],
+    "avoidNearIds": [
+      "fennel"
+    ],
+    "notes": "Hardy winter root. Sow in June. Can leave in ground until needed.",
+    "spacingCm": 25,
+    "plantsPerSqFt": 4
   },
   {
     "id": "celeriac",
@@ -466,18 +859,34 @@
     "category": "vegetable",
     "germinationTempMinC": 15,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": -4, "max": 2 },
-    "indoorStartOffsetWeeks": { "min": -14, "max": -12 },
-    "transplantOffsetWeeks": { "min": 2, "max": 6 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 2
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -14,
+      "max": -12
+    },
+    "transplantOffsetWeeks": {
+      "min": 2,
+      "max": 6
+    },
     "daysToFirstHarvest": 180,
     "harvestDurationDays": 90,
     "directSowOnly": false,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["lettuce", "onion"],
-    "avoidNearIds": ["carrot"],
-    "notes": "Needs a long season. Start early under cover. Remove lower leaves in summer."
+    "companionPlantIds": [
+      "lettuce",
+      "onion"
+    ],
+    "avoidNearIds": [
+      "carrot"
+    ],
+    "notes": "Needs a long season. Start early under cover. Remove lower leaves in summer.",
+    "spacingCm": 30,
+    "plantsPerSqFt": 1
   },
   {
     "id": "radish",
@@ -486,18 +895,35 @@
     "category": "vegetable",
     "germinationTempMinC": 5,
     "germinationTempMaxC": 22,
-    "sowingOffsetWeeks": { "min": -6, "max": 8 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -6,
+      "max": 8
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 25,
     "harvestDurationDays": 21,
     "directSowOnly": true,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["lettuce", "carrot", "nasturtium"],
+    "companionPlantIds": [
+      "lettuce",
+      "carrot",
+      "nasturtium"
+    ],
     "avoidNearIds": [],
-    "notes": "Fastest crop in the garden. Succession sow every 2 weeks for continuous supply."
+    "notes": "Fastest crop in the garden. Succession sow every 2 weeks for continuous supply.",
+    "spacingCm": 5,
+    "plantsPerSqFt": 16,
+    "successionIntervalWeeks": 2,
+    "successionRounds": 6
   },
   {
     "id": "swiss-chard",
@@ -506,18 +932,32 @@
     "category": "vegetable",
     "germinationTempMinC": 10,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": -4, "max": 6 },
-    "indoorStartOffsetWeeks": { "min": -6, "max": -4 },
-    "transplantOffsetWeeks": { "min": -2, "max": 2 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 6
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -6,
+      "max": -4
+    },
+    "transplantOffsetWeeks": {
+      "min": -2,
+      "max": 2
+    },
     "daysToFirstHarvest": 60,
     "harvestDurationDays": 120,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["lettuce", "spinach"],
+    "companionPlantIds": [
+      "lettuce",
+      "spinach"
+    ],
     "avoidNearIds": [],
-    "notes": "Cut-and-come-again. Tolerates light frost — productive spring through autumn."
+    "notes": "Cut-and-come-again. Tolerates light frost — productive spring through autumn.",
+    "spacingCm": 30,
+    "plantsPerSqFt": 1
   },
   {
     "id": "pak-choi",
@@ -526,18 +966,34 @@
     "category": "vegetable",
     "germinationTempMinC": 10,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": -4, "max": 6 },
-    "indoorStartOffsetWeeks": { "min": -4, "max": -2 },
-    "transplantOffsetWeeks": { "min": -2, "max": 2 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 6
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -4,
+      "max": -2
+    },
+    "transplantOffsetWeeks": {
+      "min": -2,
+      "max": 2
+    },
     "daysToFirstHarvest": 50,
     "harvestDurationDays": 28,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["lettuce", "nasturtium"],
+    "companionPlantIds": [
+      "lettuce",
+      "nasturtium"
+    ],
     "avoidNearIds": [],
-    "notes": "Bolts in heat. Best as spring or autumn crop. Sow mid-summer for autumn harvest."
+    "notes": "Bolts in heat. Best as spring or autumn crop. Sow mid-summer for autumn harvest.",
+    "spacingCm": 25,
+    "plantsPerSqFt": 4,
+    "successionIntervalWeeks": 3,
+    "successionRounds": 3
   },
   {
     "id": "spring-onion",
@@ -546,18 +1002,36 @@
     "category": "vegetable",
     "germinationTempMinC": 8,
     "germinationTempMaxC": 24,
-    "sowingOffsetWeeks": { "min": -6, "max": 8 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -6,
+      "max": 8
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 60,
     "harvestDurationDays": 28,
     "directSowOnly": true,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["carrot", "lettuce"],
-    "avoidNearIds": ["pea"],
-    "notes": "Succession sow every 3 weeks for continuous supply. Very quick turnaround."
+    "companionPlantIds": [
+      "carrot",
+      "lettuce"
+    ],
+    "avoidNearIds": [
+      "pea"
+    ],
+    "notes": "Succession sow every 3 weeks for continuous supply. Very quick turnaround.",
+    "spacingCm": 5,
+    "plantsPerSqFt": 16,
+    "successionIntervalWeeks": 2,
+    "successionRounds": 5
   },
   {
     "id": "melon",
@@ -566,18 +1040,32 @@
     "category": "vegetable",
     "germinationTempMinC": 20,
     "germinationTempMaxC": 30,
-    "sowingOffsetWeeks": { "min": 2, "max": 6 },
-    "indoorStartOffsetWeeks": { "min": -6, "max": -4 },
-    "transplantOffsetWeeks": { "min": 4, "max": 8 },
+    "sowingOffsetWeeks": {
+      "min": 2,
+      "max": 6
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -6,
+      "max": -4
+    },
+    "transplantOffsetWeeks": {
+      "min": 4,
+      "max": 8
+    },
     "daysToFirstHarvest": 100,
     "harvestDurationDays": 28,
     "directSowOnly": false,
     "greenhouseBenefit": "enables",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["nasturtium", "marigold"],
+    "companionPlantIds": [
+      "nasturtium",
+      "marigold"
+    ],
     "avoidNearIds": [],
-    "notes": "Needs long hot summers. Greenhouse strongly recommended in the UK."
+    "notes": "Needs long hot summers. Greenhouse strongly recommended in the UK.",
+    "spacingCm": 60,
+    "plantsPerSqFt": 0.25
   },
   {
     "id": "broad-bean",
@@ -586,18 +1074,36 @@
     "category": "vegetable",
     "germinationTempMinC": 5,
     "germinationTempMaxC": 15,
-    "sowingOffsetWeeks": { "min": -26, "max": -20 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -26,
+      "max": -20
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 210,
     "harvestDurationDays": 42,
     "directSowOnly": true,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["nasturtium", "carrot", "spinach"],
-    "avoidNearIds": ["onion", "fennel"],
-    "notes": "Autumn sow (Oct–Nov) overwinters as young plants. Hardy — tolerates hard frosts. Pinch out blackfly-prone tips in spring."
+    "companionPlantIds": [
+      "nasturtium",
+      "carrot",
+      "spinach"
+    ],
+    "avoidNearIds": [
+      "onion",
+      "fennel"
+    ],
+    "notes": "Autumn sow (Oct–Nov) overwinters as young plants. Hardy — tolerates hard frosts. Pinch out blackfly-prone tips in spring.",
+    "spacingCm": 25,
+    "plantsPerSqFt": 4
   },
   {
     "id": "broad-bean-spring",
@@ -606,18 +1112,36 @@
     "category": "vegetable",
     "germinationTempMinC": 5,
     "germinationTempMaxC": 15,
-    "sowingOffsetWeeks": { "min": -8, "max": -4 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -8,
+      "max": -4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 140,
     "harvestDurationDays": 42,
     "directSowOnly": true,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["nasturtium", "carrot", "spinach"],
-    "avoidNearIds": ["onion", "fennel"],
-    "notes": "Spring sow (Feb–Mar) for June–July harvest. Hardy enough to sow direct as soon as soil is workable."
+    "companionPlantIds": [
+      "nasturtium",
+      "carrot",
+      "spinach"
+    ],
+    "avoidNearIds": [
+      "onion",
+      "fennel"
+    ],
+    "notes": "Spring sow (Feb–Mar) for June–July harvest. Hardy enough to sow direct as soon as soil is workable.",
+    "spacingCm": 25,
+    "plantsPerSqFt": 4
   },
   {
     "id": "garlic",
@@ -626,18 +1150,36 @@
     "category": "vegetable",
     "germinationTempMinC": 0,
     "germinationTempMaxC": 10,
-    "sowingOffsetWeeks": { "min": -26, "max": -20 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -26,
+      "max": -20
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 240,
     "harvestDurationDays": 28,
     "directSowOnly": true,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["carrot", "lettuce", "tomato"],
-    "avoidNearIds": ["pea", "broad-bean"],
-    "notes": "Plant individual cloves (not seed) Oct–Nov, pointy end up, 5cm deep. Needs cold period to vernalise. Harvest when lower leaves yellow."
+    "companionPlantIds": [
+      "carrot",
+      "lettuce",
+      "tomato"
+    ],
+    "avoidNearIds": [
+      "pea",
+      "broad-bean"
+    ],
+    "notes": "Plant individual cloves (not seed) Oct–Nov, pointy end up, 5cm deep. Needs cold period to vernalise. Harvest when lower leaves yellow.",
+    "spacingCm": 15,
+    "plantsPerSqFt": 4
   },
   {
     "id": "spring-cabbage",
@@ -646,18 +1188,36 @@
     "category": "vegetable",
     "germinationTempMinC": 7,
     "germinationTempMaxC": 24,
-    "sowingOffsetWeeks": { "min": 11, "max": 16 },
-    "indoorStartOffsetWeeks": { "min": 11, "max": 16 },
-    "transplantOffsetWeeks": { "min": 21, "max": 26 },
+    "sowingOffsetWeeks": {
+      "min": 11,
+      "max": 16
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 11,
+      "max": 16
+    },
+    "transplantOffsetWeeks": {
+      "min": 21,
+      "max": 26
+    },
     "daysToFirstHarvest": 165,
     "harvestDurationDays": 60,
     "directSowOnly": false,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["nasturtium", "marigold", "rosemary"],
-    "avoidNearIds": ["tomato", "fennel"],
-    "notes": "Sow outdoors Jul–Aug, transplant Sep–Oct, harvest Feb–May. Overwinters as young plant. Net against cabbage white butterfly."
+    "companionPlantIds": [
+      "nasturtium",
+      "marigold",
+      "rosemary"
+    ],
+    "avoidNearIds": [
+      "tomato",
+      "fennel"
+    ],
+    "notes": "Sow outdoors Jul–Aug, transplant Sep–Oct, harvest Feb–May. Overwinters as young plant. Net against cabbage white butterfly.",
+    "spacingCm": 30,
+    "plantsPerSqFt": 1
   },
   {
     "id": "kohlrabi",
@@ -666,18 +1226,38 @@
     "category": "vegetable",
     "germinationTempMinC": 7,
     "germinationTempMaxC": 24,
-    "sowingOffsetWeeks": { "min": -4, "max": 8 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 8
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 60,
     "harvestDurationDays": 28,
     "directSowOnly": true,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["lettuce", "onion", "nasturtium"],
-    "avoidNearIds": ["tomato", "fennel"],
-    "notes": "Harvest small (golf ball size) for best flavour. Succession sow every 3 weeks Mar–Jun."
+    "companionPlantIds": [
+      "lettuce",
+      "onion",
+      "nasturtium"
+    ],
+    "avoidNearIds": [
+      "tomato",
+      "fennel"
+    ],
+    "notes": "Harvest small (golf ball size) for best flavour. Succession sow every 3 weeks Mar–Jun.",
+    "spacingCm": 20,
+    "plantsPerSqFt": 4,
+    "successionIntervalWeeks": 3,
+    "successionRounds": 3
   },
   {
     "id": "turnip",
@@ -686,18 +1266,36 @@
     "category": "vegetable",
     "germinationTempMinC": 7,
     "germinationTempMaxC": 24,
-    "sowingOffsetWeeks": { "min": -4, "max": 8 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 8
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 50,
     "harvestDurationDays": 28,
     "directSowOnly": true,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["lettuce", "pea"],
-    "avoidNearIds": ["fennel"],
-    "notes": "Pull young for tender salad turnips or leave to swell for mash. Succession sow for continuous supply."
+    "companionPlantIds": [
+      "lettuce",
+      "pea"
+    ],
+    "avoidNearIds": [
+      "fennel"
+    ],
+    "notes": "Pull young for tender salad turnips or leave to swell for mash. Succession sow for continuous supply.",
+    "spacingCm": 15,
+    "plantsPerSqFt": 9,
+    "successionIntervalWeeks": 3,
+    "successionRounds": 3
   },
   {
     "id": "pumpkin",
@@ -706,18 +1304,35 @@
     "category": "vegetable",
     "germinationTempMinC": 20,
     "germinationTempMaxC": 30,
-    "sowingOffsetWeeks": { "min": 1, "max": 3 },
-    "indoorStartOffsetWeeks": { "min": -4, "max": -3 },
-    "transplantOffsetWeeks": { "min": 2, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": 1,
+      "max": 3
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -4,
+      "max": -3
+    },
+    "transplantOffsetWeeks": {
+      "min": 2,
+      "max": 4
+    },
     "daysToFirstHarvest": 100,
     "harvestDurationDays": 21,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["nasturtium", "sweetcorn", "marigold"],
-    "avoidNearIds": ["potato"],
-    "notes": "Needs plenty of space and rich soil. Cure in sun after harvest to harden skins for storage."
+    "companionPlantIds": [
+      "nasturtium",
+      "sweetcorn",
+      "marigold"
+    ],
+    "avoidNearIds": [
+      "potato"
+    ],
+    "notes": "Needs plenty of space and rich soil. Cure in sun after harvest to harden skins for storage.",
+    "spacingCm": 90,
+    "plantsPerSqFt": 0.25
   },
   {
     "id": "cucumber",
@@ -726,18 +1341,36 @@
     "category": "vegetable",
     "germinationTempMinC": 20,
     "germinationTempMaxC": 30,
-    "sowingOffsetWeeks": { "min": 0, "max": 2 },
-    "indoorStartOffsetWeeks": { "min": -4, "max": -3 },
-    "transplantOffsetWeeks": { "min": 2, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": 0,
+      "max": 2
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -4,
+      "max": -3
+    },
+    "transplantOffsetWeeks": {
+      "min": 2,
+      "max": 4
+    },
     "daysToFirstHarvest": 60,
     "harvestDurationDays": 60,
     "directSowOnly": false,
     "greenhouseBenefit": "enables",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["nasturtium", "dill", "sunflower"],
-    "avoidNearIds": ["tomato", "sage"],
-    "notes": "Greenhouse varieties crop far more reliably in the UK. Train up a vertical support. Pick regularly to keep plants fruiting."
+    "companionPlantIds": [
+      "nasturtium",
+      "dill",
+      "sunflower"
+    ],
+    "avoidNearIds": [
+      "tomato",
+      "sage"
+    ],
+    "notes": "Greenhouse varieties crop far more reliably in the UK. Train up a vertical support. Pick regularly to keep plants fruiting.",
+    "spacingCm": 60,
+    "plantsPerSqFt": 0.5
   },
   {
     "id": "potato-first-early",
@@ -746,18 +1379,37 @@
     "category": "vegetable",
     "germinationTempMinC": 7,
     "germinationTempMaxC": 18,
-    "sowingOffsetWeeks": { "min": -10, "max": -6 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -10,
+      "max": -6
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 75,
     "harvestDurationDays": 28,
     "directSowOnly": true,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["nasturtium", "marigold", "broad-bean-spring"],
-    "avoidNearIds": ["tomato", "pumpkin", "cucumber"],
-    "notes": "Chit tubers in egg boxes 4–6 weeks before planting. Plant Feb–early Mar, 10cm deep. Earth up as shoots emerge. New potatoes — dig when flowers open."
+    "companionPlantIds": [
+      "nasturtium",
+      "marigold",
+      "broad-bean-spring"
+    ],
+    "avoidNearIds": [
+      "tomato",
+      "pumpkin",
+      "cucumber"
+    ],
+    "notes": "Chit tubers in egg boxes 4–6 weeks before planting. Plant Feb–early Mar, 10cm deep. Earth up as shoots emerge. New potatoes — dig when flowers open.",
+    "spacingCm": 30,
+    "plantsPerSqFt": 1
   },
   {
     "id": "potato-maincrop",
@@ -766,18 +1418,37 @@
     "category": "vegetable",
     "germinationTempMinC": 7,
     "germinationTempMaxC": 18,
-    "sowingOffsetWeeks": { "min": -8, "max": -4 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -8,
+      "max": -4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 120,
     "harvestDurationDays": 42,
     "directSowOnly": true,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["nasturtium", "marigold", "broad-bean-spring"],
-    "avoidNearIds": ["tomato", "pumpkin", "cucumber"],
-    "notes": "Plant Mar–Apr, 15cm deep, 40cm apart. Earth up regularly. Leave foliage to die back before harvesting. Store in paper sacks in a cool dark frost-free place."
+    "companionPlantIds": [
+      "nasturtium",
+      "marigold",
+      "broad-bean-spring"
+    ],
+    "avoidNearIds": [
+      "tomato",
+      "pumpkin",
+      "cucumber"
+    ],
+    "notes": "Plant Mar–Apr, 15cm deep, 40cm apart. Earth up regularly. Leave foliage to die back before harvesting. Store in paper sacks in a cool dark frost-free place.",
+    "spacingCm": 40,
+    "plantsPerSqFt": 0.5
   },
   {
     "id": "asparagus",
@@ -786,18 +1457,36 @@
     "category": "vegetable",
     "germinationTempMinC": 15,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": -8, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -10, "max": -4 },
-    "transplantOffsetWeeks": { "min": 0, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": -8,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -10,
+      "max": -4
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 4
+    },
     "daysToFirstHarvest": 730,
     "harvestDurationDays": 56,
     "directSowOnly": false,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["tomato", "parsley", "basil"],
-    "avoidNearIds": ["onion", "garlic"],
-    "notes": "Perennial — plant 1-year-old crowns for quickest results. No picking for the first 2 years. Establishes in a permanent bed; harvest spears 6–8 weeks in spring from year 3."
+    "companionPlantIds": [
+      "tomato",
+      "parsley",
+      "basil"
+    ],
+    "avoidNearIds": [
+      "onion",
+      "garlic"
+    ],
+    "notes": "Perennial — plant 1-year-old crowns for quickest results. No picking for the first 2 years. Establishes in a permanent bed; harvest spears 6–8 weeks in spring from year 3.",
+    "spacingCm": 40,
+    "plantsPerSqFt": 0.5
   },
   {
     "id": "celery",
@@ -806,18 +1495,36 @@
     "category": "vegetable",
     "germinationTempMinC": 15,
     "germinationTempMaxC": 21,
-    "sowingOffsetWeeks": { "min": -8, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -12, "max": -4 },
-    "transplantOffsetWeeks": { "min": 2, "max": 6 },
+    "sowingOffsetWeeks": {
+      "min": -8,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -12,
+      "max": -4
+    },
+    "transplantOffsetWeeks": {
+      "min": 2,
+      "max": 6
+    },
     "daysToFirstHarvest": 120,
     "harvestDurationDays": 60,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["leek", "tomato", "spinach"],
-    "avoidNearIds": ["carrot", "parsley"],
-    "notes": "Tiny seeds — surface sow, don't cover. Needs consistent moisture throughout. Self-blanching varieties are easiest; trench celery has better flavour."
+    "companionPlantIds": [
+      "leek",
+      "tomato",
+      "spinach"
+    ],
+    "avoidNearIds": [
+      "carrot",
+      "parsley"
+    ],
+    "notes": "Tiny seeds — surface sow, don't cover. Needs consistent moisture throughout. Self-blanching varieties are easiest; trench celery has better flavour.",
+    "spacingCm": 30,
+    "plantsPerSqFt": 1
   },
   {
     "id": "rocket",
@@ -826,18 +1533,35 @@
     "category": "vegetable",
     "germinationTempMinC": 10,
     "germinationTempMaxC": 20,
-    "sowingOffsetWeeks": { "min": -4, "max": 10 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 10
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 28,
     "harvestDurationDays": 42,
     "directSowOnly": true,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["lettuce", "radish", "carrot"],
+    "companionPlantIds": [
+      "lettuce",
+      "radish",
+      "carrot"
+    ],
     "avoidNearIds": [],
-    "notes": "Succession sow every 3 weeks Mar–Aug. Bolts quickly in summer heat — choose slow-bolt varieties. Autumn sowings are peppery and flavourful. Pick young leaves for salad."
+    "notes": "Succession sow every 3 weeks Mar–Aug. Bolts quickly in summer heat — choose slow-bolt varieties. Autumn sowings are peppery and flavourful. Pick young leaves for salad.",
+    "spacingCm": 10,
+    "plantsPerSqFt": 9,
+    "successionIntervalWeeks": 3,
+    "successionRounds": 4
   },
   {
     "id": "globe-artichoke",
@@ -846,18 +1570,32 @@
     "category": "vegetable",
     "germinationTempMinC": 15,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": -8, "max": 0 },
-    "indoorStartOffsetWeeks": { "min": -10, "max": -4 },
-    "transplantOffsetWeeks": { "min": 0, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": -8,
+      "max": 0
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -10,
+      "max": -4
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 4
+    },
     "daysToFirstHarvest": 365,
     "harvestDurationDays": 42,
     "directSowOnly": false,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["nasturtium", "marigold"],
+    "companionPlantIds": [
+      "nasturtium",
+      "marigold"
+    ],
     "avoidNearIds": [],
-    "notes": "Large perennial — plant as offsets (suckers) from established plants for first-year harvest. Harvest buds before scales open. Protect crowns with straw in winter."
+    "notes": "Large perennial — plant as offsets (suckers) from established plants for first-year harvest. Harvest buds before scales open. Protect crowns with straw in winter.",
+    "spacingCm": 90,
+    "plantsPerSqFt": 0.125
   },
   {
     "id": "butternut-squash",
@@ -866,18 +1604,33 @@
     "category": "vegetable",
     "germinationTempMinC": 20,
     "germinationTempMaxC": 30,
-    "sowingOffsetWeeks": { "min": 1, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -4, "max": -2 },
-    "transplantOffsetWeeks": { "min": 2, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": 1,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -4,
+      "max": -2
+    },
+    "transplantOffsetWeeks": {
+      "min": 2,
+      "max": 4
+    },
     "daysToFirstHarvest": 110,
     "harvestDurationDays": 21,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["nasturtium", "sweetcorn", "marigold"],
+    "companionPlantIds": [
+      "nasturtium",
+      "sweetcorn",
+      "marigold"
+    ],
     "avoidNearIds": [],
-    "notes": "Needs a long warm season. Start indoors Apr–May, plant out after last frost. Cure at room temp for 10 days after harvest to harden skin for long storage."
+    "notes": "Needs a long warm season. Start indoors Apr–May, plant out after last frost. Cure at room temp for 10 days after harvest to harden skin for long storage.",
+    "spacingCm": 90,
+    "plantsPerSqFt": 0.25
   },
   {
     "id": "sweet-potato",
@@ -886,18 +1639,32 @@
     "category": "vegetable",
     "germinationTempMinC": 21,
     "germinationTempMaxC": 30,
-    "sowingOffsetWeeks": { "min": 2, "max": 6 },
-    "indoorStartOffsetWeeks": { "min": -4, "max": -2 },
-    "transplantOffsetWeeks": { "min": 4, "max": 8 },
+    "sowingOffsetWeeks": {
+      "min": 2,
+      "max": 6
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -4,
+      "max": -2
+    },
+    "transplantOffsetWeeks": {
+      "min": 4,
+      "max": 8
+    },
     "daysToFirstHarvest": 120,
     "harvestDurationDays": 21,
     "directSowOnly": false,
     "greenhouseBenefit": "enables",
     "propagatorBenefit": "required",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["nasturtium", "marigold"],
+    "companionPlantIds": [
+      "nasturtium",
+      "marigold"
+    ],
     "avoidNearIds": [],
-    "notes": "Grow from slips (rooted cuttings from a tuber). Needs warm soil above 15°C consistently. Greenhouse essential in the UK. Harvest before first frost; cure in warmth before storing."
+    "notes": "Grow from slips (rooted cuttings from a tuber). Needs warm soil above 15°C consistently. Greenhouse essential in the UK. Harvest before first frost; cure in warmth before storing.",
+    "spacingCm": 30,
+    "plantsPerSqFt": 1
   },
   {
     "id": "jerusalem-artichoke",
@@ -906,18 +1673,31 @@
     "category": "vegetable",
     "germinationTempMinC": 5,
     "germinationTempMaxC": 18,
-    "sowingOffsetWeeks": { "min": -6, "max": -2 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -6,
+      "max": -2
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 180,
     "harvestDurationDays": 90,
     "directSowOnly": true,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["nasturtium"],
+    "companionPlantIds": [
+      "nasturtium"
+    ],
     "avoidNearIds": [],
-    "notes": "Plant tubers 10–15cm deep, Feb–Mar. Extremely vigorous — grow in a dedicated bed. Tall plants provide windbreak. Harvest tubers after foliage dies back; leave some in ground to regrow."
+    "notes": "Plant tubers 10–15cm deep, Feb–Mar. Extremely vigorous — grow in a dedicated bed. Tall plants provide windbreak. Harvest tubers after foliage dies back; leave some in ground to regrow.",
+    "spacingCm": 45,
+    "plantsPerSqFt": 0.5
   },
   {
     "id": "salsify",
@@ -926,18 +1706,32 @@
     "category": "vegetable",
     "germinationTempMinC": 10,
     "germinationTempMaxC": 20,
-    "sowingOffsetWeeks": { "min": -4, "max": 2 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 2
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 150,
     "harvestDurationDays": 90,
     "directSowOnly": true,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["lettuce", "carrot"],
+    "companionPlantIds": [
+      "lettuce",
+      "carrot"
+    ],
     "avoidNearIds": [],
-    "notes": "Direct sow Mar–Apr — dislikes root disturbance. Deep, stone-free soil essential. Frost sweetens the roots. Leave in ground until needed; edible shoots in spring."
+    "notes": "Direct sow Mar–Apr — dislikes root disturbance. Deep, stone-free soil essential. Frost sweetens the roots. Leave in ground until needed; edible shoots in spring.",
+    "spacingCm": 10,
+    "plantsPerSqFt": 9
   },
   {
     "id": "horseradish",
@@ -946,18 +1740,32 @@
     "category": "vegetable",
     "germinationTempMinC": 5,
     "germinationTempMaxC": 18,
-    "sowingOffsetWeeks": { "min": -6, "max": -2 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -6,
+      "max": -2
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 180,
     "harvestDurationDays": 90,
     "directSowOnly": true,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["potato-maincrop", "carrot"],
+    "companionPlantIds": [
+      "potato-maincrop",
+      "carrot"
+    ],
     "avoidNearIds": [],
-    "notes": "Grow from root cuttings (thongs) planted Feb–Mar at 45°. Extremely invasive perennial — contain in a bucket sunk in the ground. Harvest in autumn; lift all roots or regrowth is vigorous."
+    "notes": "Grow from root cuttings (thongs) planted Feb–Mar at 45°. Extremely invasive perennial — contain in a bucket sunk in the ground. Harvest in autumn; lift all roots or regrowth is vigorous.",
+    "spacingCm": 60,
+    "plantsPerSqFt": 0.25
   },
   {
     "id": "chicory",
@@ -966,18 +1774,32 @@
     "category": "vegetable",
     "germinationTempMinC": 10,
     "germinationTempMaxC": 22,
-    "sowingOffsetWeeks": { "min": 4, "max": 12 },
-    "indoorStartOffsetWeeks": { "min": 4, "max": 10 },
-    "transplantOffsetWeeks": { "min": 8, "max": 14 },
+    "sowingOffsetWeeks": {
+      "min": 4,
+      "max": 12
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 4,
+      "max": 10
+    },
+    "transplantOffsetWeeks": {
+      "min": 8,
+      "max": 14
+    },
     "daysToFirstHarvest": 100,
     "harvestDurationDays": 60,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["lettuce", "carrot"],
+    "companionPlantIds": [
+      "lettuce",
+      "carrot"
+    ],
     "avoidNearIds": [],
-    "notes": "Sow Jun–Jul for autumn/winter harvest. For chicory chicons: lift roots in autumn, pot in compost, exclude light at 10–18°C for 3–4 weeks. Radicchio hearts in cold weather."
+    "notes": "Sow Jun–Jul for autumn/winter harvest. For chicory chicons: lift roots in autumn, pot in compost, exclude light at 10–18°C for 3–4 weeks. Radicchio hearts in cold weather.",
+    "spacingCm": 30,
+    "plantsPerSqFt": 1
   },
   {
     "id": "cavolo-nero",
@@ -986,18 +1808,35 @@
     "category": "vegetable",
     "germinationTempMinC": 7,
     "germinationTempMaxC": 24,
-    "sowingOffsetWeeks": { "min": -6, "max": -2 },
-    "indoorStartOffsetWeeks": { "min": -8, "max": -4 },
-    "transplantOffsetWeeks": { "min": -4, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -6,
+      "max": -2
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -8,
+      "max": -4
+    },
+    "transplantOffsetWeeks": {
+      "min": -4,
+      "max": 0
+    },
     "daysToFirstHarvest": 220,
     "harvestDurationDays": 90,
     "directSowOnly": false,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["nasturtium", "marigold"],
-    "avoidNearIds": ["tomato", "fennel"],
-    "notes": "Italian winter kale with distinctive dark, crinkled leaves. Sow Mar–May, harvest Nov through Mar. Frost improves flavour. Pick from the bottom up, leaving growing tip intact."
+    "companionPlantIds": [
+      "nasturtium",
+      "marigold"
+    ],
+    "avoidNearIds": [
+      "tomato",
+      "fennel"
+    ],
+    "notes": "Italian winter kale with distinctive dark, crinkled leaves. Sow Mar–May, harvest Nov through Mar. Frost improves flavour. Pick from the bottom up, leaving growing tip intact.",
+    "spacingCm": 45,
+    "plantsPerSqFt": 1
   },
   {
     "id": "collard-greens",
@@ -1006,18 +1845,36 @@
     "category": "vegetable",
     "germinationTempMinC": 7,
     "germinationTempMaxC": 24,
-    "sowingOffsetWeeks": { "min": -4, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -8, "max": -2 },
-    "transplantOffsetWeeks": { "min": -2, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -8,
+      "max": -2
+    },
+    "transplantOffsetWeeks": {
+      "min": -2,
+      "max": 4
+    },
     "daysToFirstHarvest": 75,
     "harvestDurationDays": 90,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["nasturtium", "marigold", "rosemary"],
-    "avoidNearIds": ["tomato", "fennel"],
-    "notes": "Southern US staple, excellent in the UK as a cold-hardy leafy green. Cut-and-come-again. More heat-tolerant than kale; harvest leaves before they become tough."
+    "companionPlantIds": [
+      "nasturtium",
+      "marigold",
+      "rosemary"
+    ],
+    "avoidNearIds": [
+      "tomato",
+      "fennel"
+    ],
+    "notes": "Southern US staple, excellent in the UK as a cold-hardy leafy green. Cut-and-come-again. More heat-tolerant than kale; harvest leaves before they become tough.",
+    "spacingCm": 45,
+    "plantsPerSqFt": 1
   },
   {
     "id": "mustard-greens",
@@ -1026,18 +1883,35 @@
     "category": "vegetable",
     "germinationTempMinC": 7,
     "germinationTempMaxC": 24,
-    "sowingOffsetWeeks": { "min": -4, "max": 10 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 10
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 30,
     "harvestDurationDays": 45,
     "directSowOnly": true,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["lettuce", "spinach", "coriander"],
+    "companionPlantIds": [
+      "lettuce",
+      "spinach",
+      "coriander"
+    ],
     "avoidNearIds": [],
-    "notes": "Fast-growing. Succession sow every 2–3 weeks for continuous supply. Bolts quickly in summer heat — favour early spring and autumn sowings. Peppery flavour intensifies with age."
+    "notes": "Fast-growing. Succession sow every 2–3 weeks for continuous supply. Bolts quickly in summer heat — favour early spring and autumn sowings. Peppery flavour intensifies with age.",
+    "spacingCm": 15,
+    "plantsPerSqFt": 4,
+    "successionIntervalWeeks": 2,
+    "successionRounds": 4
   },
   {
     "id": "land-cress",
@@ -1046,18 +1920,34 @@
     "category": "vegetable",
     "germinationTempMinC": 5,
     "germinationTempMaxC": 20,
-    "sowingOffsetWeeks": { "min": -4, "max": 8 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 8
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 40,
     "harvestDurationDays": 60,
     "directSowOnly": true,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["lettuce", "spinach"],
+    "companionPlantIds": [
+      "lettuce",
+      "spinach"
+    ],
     "avoidNearIds": [],
-    "notes": "Watercress substitute for garden beds — no running water needed. Hardy; sow in August for winter salads under cover. Peppery; pick young leaves."
+    "notes": "Watercress substitute for garden beds — no running water needed. Hardy; sow in August for winter salads under cover. Peppery; pick young leaves.",
+    "spacingCm": 20,
+    "plantsPerSqFt": 4,
+    "successionIntervalWeeks": 3,
+    "successionRounds": 3
   },
   {
     "id": "edamame",
@@ -1066,18 +1956,35 @@
     "category": "vegetable",
     "germinationTempMinC": 18,
     "germinationTempMaxC": 30,
-    "sowingOffsetWeeks": { "min": 2, "max": 6 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": 2,
+      "max": 6
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 90,
     "harvestDurationDays": 14,
     "directSowOnly": true,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["sweetcorn", "nasturtium"],
-    "avoidNearIds": ["onion", "garlic"],
-    "notes": "Sow direct May–Jun in warm soil. Harvest pods when plump and bright green — they go from perfect to over-ripe quickly. Must be boiled before eating; don't eat raw."
+    "companionPlantIds": [
+      "sweetcorn",
+      "nasturtium"
+    ],
+    "avoidNearIds": [
+      "onion",
+      "garlic"
+    ],
+    "notes": "Sow direct May–Jun in warm soil. Harvest pods when plump and bright green — they go from perfect to over-ripe quickly. Must be boiled before eating; don't eat raw.",
+    "spacingCm": 20,
+    "plantsPerSqFt": 4
   },
   {
     "id": "shallot",
@@ -1086,18 +1993,36 @@
     "category": "vegetable",
     "germinationTempMinC": 0,
     "germinationTempMaxC": 10,
-    "sowingOffsetWeeks": { "min": -26, "max": -20 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -26,
+      "max": -20
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 180,
     "harvestDurationDays": 28,
     "directSowOnly": true,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["carrot", "lettuce", "beetroot"],
-    "avoidNearIds": ["pea", "broad-bean"],
-    "notes": "Plant sets Oct–Nov, 2cm deep, 15cm apart. Each set multiplies into a cluster. Longer-storing and milder than onions. Harvest when foliage yellows; dry thoroughly before storing."
+    "companionPlantIds": [
+      "carrot",
+      "lettuce",
+      "beetroot"
+    ],
+    "avoidNearIds": [
+      "pea",
+      "broad-bean"
+    ],
+    "notes": "Plant sets Oct–Nov, 2cm deep, 15cm apart. Each set multiplies into a cluster. Longer-storing and milder than onions. Harvest when foliage yellows; dry thoroughly before storing.",
+    "spacingCm": 15,
+    "plantsPerSqFt": 4
   },
   {
     "id": "lima-bean",
@@ -1106,18 +2031,35 @@
     "category": "vegetable",
     "germinationTempMinC": 18,
     "germinationTempMaxC": 30,
-    "sowingOffsetWeeks": { "min": 1, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -4, "max": 0 },
-    "transplantOffsetWeeks": { "min": 2, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": 1,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -4,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 2,
+      "max": 4
+    },
     "daysToFirstHarvest": 80,
     "harvestDurationDays": 42,
     "directSowOnly": false,
     "greenhouseBenefit": "enables",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["sweetcorn", "carrot"],
-    "avoidNearIds": ["onion", "fennel"],
-    "notes": "Needs a longer, warmer season than runner beans. Greenhouse gives reliable crops in the UK. Harvest pods when beans feel plump but before they harden. Climbing varieties need support."
+    "companionPlantIds": [
+      "sweetcorn",
+      "carrot"
+    ],
+    "avoidNearIds": [
+      "onion",
+      "fennel"
+    ],
+    "notes": "Needs a longer, warmer season than runner beans. Greenhouse gives reliable crops in the UK. Harvest pods when beans feel plump but before they harden. Climbing varieties need support.",
+    "spacingCm": 20,
+    "plantsPerSqFt": 4
   },
   {
     "id": "tomatillo",
@@ -1126,18 +2068,34 @@
     "category": "vegetable",
     "germinationTempMinC": 18,
     "germinationTempMaxC": 28,
-    "sowingOffsetWeeks": { "min": 0, "max": 2 },
-    "indoorStartOffsetWeeks": { "min": -6, "max": -4 },
-    "transplantOffsetWeeks": { "min": 2, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": 0,
+      "max": 2
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -6,
+      "max": -4
+    },
+    "transplantOffsetWeeks": {
+      "min": 2,
+      "max": 4
+    },
     "daysToFirstHarvest": 80,
     "harvestDurationDays": 45,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["basil", "marigold"],
-    "avoidNearIds": ["fennel"],
-    "notes": "Must grow at least two plants for fruit set (cross-pollination required). Harvest when husk splits or turns papery. Treat like tomatoes for growing conditions."
+    "companionPlantIds": [
+      "basil",
+      "marigold"
+    ],
+    "avoidNearIds": [
+      "fennel"
+    ],
+    "notes": "Must grow at least two plants for fruit set (cross-pollination required). Harvest when husk splits or turns papery. Treat like tomatoes for growing conditions.",
+    "spacingCm": 60,
+    "plantsPerSqFt": 0.25
   },
   {
     "id": "chickpea",
@@ -1146,18 +2104,35 @@
     "category": "vegetable",
     "germinationTempMinC": 15,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": 0, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": 0,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 90,
     "harvestDurationDays": 21,
     "directSowOnly": true,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["spinach", "lettuce"],
-    "avoidNearIds": ["onion", "garlic"],
-    "notes": "Requires a long warm growing season — works best in warm UK summers or under cover. Sow direct in warm soil Apr–May. Harvest green pods for fresh eating or leave to dry fully."
+    "companionPlantIds": [
+      "spinach",
+      "lettuce"
+    ],
+    "avoidNearIds": [
+      "onion",
+      "garlic"
+    ],
+    "notes": "Requires a long warm growing season — works best in warm UK summers or under cover. Sow direct in warm soil Apr–May. Harvest green pods for fresh eating or leave to dry fully.",
+    "spacingCm": 15,
+    "plantsPerSqFt": 4
   },
   {
     "id": "okra",
@@ -1166,18 +2141,34 @@
     "category": "vegetable",
     "germinationTempMinC": 21,
     "germinationTempMaxC": 32,
-    "sowingOffsetWeeks": { "min": 2, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -4, "max": -2 },
-    "transplantOffsetWeeks": { "min": 4, "max": 8 },
+    "sowingOffsetWeeks": {
+      "min": 2,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -4,
+      "max": -2
+    },
+    "transplantOffsetWeeks": {
+      "min": 4,
+      "max": 8
+    },
     "daysToFirstHarvest": 90,
     "harvestDurationDays": 60,
     "directSowOnly": false,
     "greenhouseBenefit": "enables",
     "propagatorBenefit": "required",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["basil", "pepper-sweet"],
-    "avoidNearIds": ["fennel"],
-    "notes": "Heated propagator essential for germination. Greenhouse or polytunnel required for reliable UK production. Harvest pods at 5–8cm — they toughen quickly if left longer."
+    "companionPlantIds": [
+      "basil",
+      "pepper-sweet"
+    ],
+    "avoidNearIds": [
+      "fennel"
+    ],
+    "notes": "Heated propagator essential for germination. Greenhouse or polytunnel required for reliable UK production. Harvest pods at 5–8cm — they toughen quickly if left longer.",
+    "spacingCm": 45,
+    "plantsPerSqFt": 1
   },
   {
     "id": "spaghetti-squash",
@@ -1186,18 +2177,33 @@
     "category": "vegetable",
     "germinationTempMinC": 20,
     "germinationTempMaxC": 30,
-    "sowingOffsetWeeks": { "min": 1, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -4, "max": -2 },
-    "transplantOffsetWeeks": { "min": 2, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": 1,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -4,
+      "max": -2
+    },
+    "transplantOffsetWeeks": {
+      "min": 2,
+      "max": 4
+    },
     "daysToFirstHarvest": 100,
     "harvestDurationDays": 21,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["nasturtium", "sweetcorn", "marigold"],
+    "companionPlantIds": [
+      "nasturtium",
+      "sweetcorn",
+      "marigold"
+    ],
     "avoidNearIds": [],
-    "notes": "Trailing squash — allow 2–3m space or train vertically. Harvest when skin is golden-yellow and hard. Internal flesh separates into spaghetti-like strands when baked."
+    "notes": "Trailing squash — allow 2–3m space or train vertically. Harvest when skin is golden-yellow and hard. Internal flesh separates into spaghetti-like strands when baked.",
+    "spacingCm": 90,
+    "plantsPerSqFt": 0.25
   },
   {
     "id": "winter-lettuce",
@@ -1206,18 +2212,33 @@
     "category": "vegetable",
     "germinationTempMinC": 5,
     "germinationTempMaxC": 18,
-    "sowingOffsetWeeks": { "min": 16, "max": 22 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": 16,
+      "max": 22
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 120,
     "harvestDurationDays": 90,
     "directSowOnly": true,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["carrot", "radish", "chive"],
+    "companionPlantIds": [
+      "carrot",
+      "radish",
+      "chive"
+    ],
     "avoidNearIds": [],
-    "notes": "Sow Aug–Sep for Dec–Mar harvest. Use cold-hardy varieties (Little Gem, Arctic King, Winter Density). Under cloches or cold frame to prevent frost damage to outer leaves."
+    "notes": "Sow Aug–Sep for Dec–Mar harvest. Use cold-hardy varieties (Little Gem, Arctic King, Winter Density). Under cloches or cold frame to prevent frost damage to outer leaves.",
+    "spacingCm": 25,
+    "plantsPerSqFt": 4
   },
   {
     "id": "daikon",
@@ -1226,17 +2247,34 @@
     "category": "vegetable",
     "germinationTempMinC": 10,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": 2, "max": 12 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": 2,
+      "max": 12
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 60,
     "harvestDurationDays": 28,
     "directSowOnly": true,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["lettuce", "carrot", "nasturtium"],
+    "companionPlantIds": [
+      "lettuce",
+      "carrot",
+      "nasturtium"
+    ],
     "avoidNearIds": [],
-    "notes": "Large Japanese radish — can reach 50cm+ long. Sow direct Apr–Aug. Bolt-prone if sown too early. Autumn sowings (Jul–Aug) give roots up to 60cm long. Grate fresh or use in stews."
+    "notes": "Large Japanese radish — can reach 50cm+ long. Sow direct Apr–Aug. Bolt-prone if sown too early. Autumn sowings (Jul–Aug) give roots up to 60cm long. Grate fresh or use in stews.",
+    "spacingCm": 20,
+    "plantsPerSqFt": 4,
+    "successionIntervalWeeks": 3,
+    "successionRounds": 3
   }
 ]

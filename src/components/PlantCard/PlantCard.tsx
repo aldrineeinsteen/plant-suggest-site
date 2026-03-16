@@ -11,9 +11,11 @@ const CATEGORY_COLOURS: Record<string, string> = {
 
 interface Props {
   recommendation: PlantRecommendation;
+  /** When true, renders without the outer article card wrapper (for use inside PlantSheet) */
+  inSheet?: boolean;
 }
 
-export function PlantCard({ recommendation: rec }: Props) {
+export function PlantCard({ recommendation: rec, inSheet = false }: Props) {
   const { plant } = rec;
 
   const windows: { type: WindowType; label: string }[] = [
@@ -32,8 +34,8 @@ export function PlantCard({ recommendation: rec }: Props) {
     harvest: rec.harvestWindow,
   };
 
-  return (
-    <article className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:shadow-md">
+  const content = (
+    <>
       {/* Header */}
       <div className="flex items-start justify-between gap-2">
         <div>
@@ -123,6 +125,54 @@ export function PlantCard({ recommendation: rec }: Props) {
       {plant.notes && (
         <p className="mt-3 text-xs text-gray-500 italic border-t border-gray-100 pt-2">{plant.notes}</p>
       )}
+
+      {/* Garden planning */}
+      <div className="mt-3 border-t border-gray-100 pt-3">
+        <p className="mb-1.5 text-xs font-semibold text-gray-500 uppercase tracking-wide">Garden planning</p>
+        <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-gray-700">
+          <span>
+            <span className="text-gray-400">Spacing </span>
+            {plant.spacingCm} cm
+          </span>
+          <span>
+            <span className="text-gray-400">SFG </span>
+            {plant.plantsPerSqFt >= 1
+              ? `${plant.plantsPerSqFt} per sq ft`
+              : `1 per ${Math.round(1 / plant.plantsPerSqFt)} sq ft`}
+          </span>
+          {plant.successionIntervalWeeks && (
+            <span className="col-span-2">
+              <span className="text-gray-400">Succession </span>
+              every {plant.successionIntervalWeeks}w
+              {plant.successionRounds ? ` · ${plant.successionRounds} rounds` : ''}
+            </span>
+          )}
+        </div>
+        {plant.interPlantIds && plant.interPlantIds.length > 0 && (
+          <div className="mt-1.5">
+            <span className="text-xs text-gray-400">Inter-plant with </span>
+            <div className="mt-0.5 flex flex-wrap gap-1">
+              {rec.companionPlants
+                .filter((cp) => plant.interPlantIds!.includes(cp.id))
+                .map((cp) => (
+                  <span
+                    key={cp.id}
+                    className="rounded-full bg-emerald-50 border border-emerald-100 px-2 py-0.5 text-xs text-emerald-700"
+                  >
+                    {cp.commonName}
+                  </span>
+                ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </>
+  );
+
+  if (inSheet) return <div>{content}</div>;
+  return (
+    <article className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:shadow-md">
+      {content}
     </article>
   );
 }

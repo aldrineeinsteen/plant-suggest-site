@@ -6,18 +6,34 @@
     "category": "fruit",
     "germinationTempMinC": 18,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": -16, "max": -12 },
-    "indoorStartOffsetWeeks": { "min": -18, "max": -14 },
-    "transplantOffsetWeeks": { "min": -4, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -16,
+      "max": -12
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -18,
+      "max": -14
+    },
+    "transplantOffsetWeeks": {
+      "min": -4,
+      "max": 0
+    },
     "daysToFirstHarvest": 90,
     "harvestDurationDays": 30,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["spinach", "lettuce"],
-    "avoidNearIds": ["fennel"],
-    "notes": "From seed is very slow — runners or plug plants are more reliable."
+    "companionPlantIds": [
+      "spinach",
+      "lettuce"
+    ],
+    "avoidNearIds": [
+      "fennel"
+    ],
+    "notes": "From seed is very slow — runners or plug plants are more reliable.",
+    "spacingCm": 30,
+    "plantsPerSqFt": 1
   },
   {
     "id": "cucumber",
@@ -26,18 +42,33 @@
     "category": "fruit",
     "germinationTempMinC": 20,
     "germinationTempMaxC": 30,
-    "sowingOffsetWeeks": { "min": 2, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -4, "max": -3 },
-    "transplantOffsetWeeks": { "min": 3, "max": 5 },
+    "sowingOffsetWeeks": {
+      "min": 2,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -4,
+      "max": -3
+    },
+    "transplantOffsetWeeks": {
+      "min": 3,
+      "max": 5
+    },
     "daysToFirstHarvest": 55,
     "harvestDurationDays": 60,
     "directSowOnly": false,
     "greenhouseBenefit": "enables",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["nasturtium"],
-    "avoidNearIds": ["fennel"],
-    "notes": "Loves heat. Indoor / greenhouse varieties are much more reliable in cool climates."
+    "companionPlantIds": [
+      "nasturtium"
+    ],
+    "avoidNearIds": [
+      "fennel"
+    ],
+    "notes": "Loves heat. Indoor / greenhouse varieties are much more reliable in cool climates.",
+    "spacingCm": 60,
+    "plantsPerSqFt": 0.5
   },
   {
     "id": "pumpkin",
@@ -46,17 +77,31 @@
     "category": "fruit",
     "germinationTempMinC": 20,
     "germinationTempMaxC": 30,
-    "sowingOffsetWeeks": { "min": 2, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -4, "max": -3 },
-    "transplantOffsetWeeks": { "min": 2, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": 2,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -4,
+      "max": -3
+    },
+    "transplantOffsetWeeks": {
+      "min": 2,
+      "max": 4
+    },
     "daysToFirstHarvest": 110,
     "harvestDurationDays": 30,
     "directSowOnly": false,
     "greenhouseBenefit": "enables",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["nasturtium", "sweetcorn"],
+    "companionPlantIds": [
+      "nasturtium",
+      "sweetcorn"
+    ],
     "avoidNearIds": [],
-    "notes": "Needs a long warm summer. Harvest before first frost."
+    "notes": "Needs a long warm summer. Harvest before first frost.",
+    "spacingCm": 90,
+    "plantsPerSqFt": 0.25
   }
 ]

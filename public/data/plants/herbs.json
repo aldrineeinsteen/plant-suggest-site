@@ -6,18 +6,36 @@
     "category": "herb",
     "germinationTempMinC": 18,
     "germinationTempMaxC": 30,
-    "sowingOffsetWeeks": { "min": 0, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -6, "max": -4 },
-    "transplantOffsetWeeks": { "min": 2, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": 0,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -6,
+      "max": -4
+    },
+    "transplantOffsetWeeks": {
+      "min": 2,
+      "max": 4
+    },
     "daysToFirstHarvest": 30,
     "harvestDurationDays": 90,
     "directSowOnly": false,
     "greenhouseBenefit": "enables",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["tomato"],
-    "avoidNearIds": ["fennel"],
-    "notes": "Very frost-sensitive. Keep warm. Regular pinching promotes bushy growth."
+    "companionPlantIds": [
+      "tomato"
+    ],
+    "avoidNearIds": [
+      "fennel"
+    ],
+    "notes": "Very frost-sensitive. Keep warm. Regular pinching promotes bushy growth.",
+    "spacingCm": 20,
+    "plantsPerSqFt": 4,
+    "interPlantIds": [
+      "tomato"
+    ]
   },
   {
     "id": "chive",
@@ -26,18 +44,38 @@
     "category": "herb",
     "germinationTempMinC": 15,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": -6, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -8, "max": -6 },
-    "transplantOffsetWeeks": { "min": -2, "max": 2 },
+    "sowingOffsetWeeks": {
+      "min": -6,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -8,
+      "max": -6
+    },
+    "transplantOffsetWeeks": {
+      "min": -2,
+      "max": 2
+    },
     "daysToFirstHarvest": 60,
     "harvestDurationDays": 120,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["carrot", "lettuce"],
-    "avoidNearIds": ["pea"],
-    "notes": "Hardy perennial. Divide clumps every few years to reinvigorate."
+    "companionPlantIds": [
+      "carrot",
+      "lettuce"
+    ],
+    "avoidNearIds": [
+      "pea"
+    ],
+    "notes": "Hardy perennial. Divide clumps every few years to reinvigorate.",
+    "spacingCm": 20,
+    "plantsPerSqFt": 4,
+    "interPlantIds": [
+      "carrot",
+      "lettuce"
+    ]
   },
   {
     "id": "rosemary",
@@ -46,18 +84,32 @@
     "category": "herb",
     "germinationTempMinC": 16,
     "germinationTempMaxC": 24,
-    "sowingOffsetWeeks": { "min": -4, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -10, "max": -8 },
-    "transplantOffsetWeeks": { "min": 0, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -10,
+      "max": -8
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 4
+    },
     "daysToFirstHarvest": 90,
     "harvestDurationDays": 300,
     "directSowOnly": false,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["carrot", "kale"],
+    "companionPlantIds": [
+      "carrot",
+      "kale"
+    ],
     "avoidNearIds": [],
-    "notes": "Perennial shrub. Slow from seed — often better to buy as plug plants."
+    "notes": "Perennial shrub. Slow from seed — often better to buy as plug plants.",
+    "spacingCm": 60,
+    "plantsPerSqFt": 0.25
   },
   {
     "id": "dill",
@@ -66,18 +118,38 @@
     "category": "herb",
     "germinationTempMinC": 15,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": -2, "max": 6 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -2,
+      "max": 6
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 40,
     "harvestDurationDays": 60,
     "directSowOnly": true,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["lettuce", "onion"],
-    "avoidNearIds": ["carrot", "fennel", "tomato"],
-    "notes": "Direct sow — dislikes root disturbance. Succession sow for continuous harvest."
+    "companionPlantIds": [
+      "lettuce",
+      "onion"
+    ],
+    "avoidNearIds": [
+      "carrot",
+      "fennel",
+      "tomato"
+    ],
+    "notes": "Direct sow — dislikes root disturbance. Succession sow for continuous harvest.",
+    "spacingCm": 20,
+    "plantsPerSqFt": 4,
+    "successionIntervalWeeks": 3,
+    "successionRounds": 3
   },
   {
     "id": "fennel",
@@ -86,9 +158,18 @@
     "category": "herb",
     "germinationTempMinC": 15,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": -2, "max": 6 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -2,
+      "max": 6
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 70,
     "harvestDurationDays": 60,
     "directSowOnly": true,
@@ -96,8 +177,15 @@
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
     "companionPlantIds": [],
-    "avoidNearIds": ["tomato", "dill", "carrot", "basil"],
-    "notes": "Allelopathic — keep away from most vegetables. Excellent for pollinators."
+    "avoidNearIds": [
+      "tomato",
+      "dill",
+      "carrot",
+      "basil"
+    ],
+    "notes": "Allelopathic — keep away from most vegetables. Excellent for pollinators.",
+    "spacingCm": 35,
+    "plantsPerSqFt": 1
   },
   {
     "id": "parsley",
@@ -106,18 +194,36 @@
     "category": "herb",
     "germinationTempMinC": 15,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": -4, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -8, "max": -6 },
-    "transplantOffsetWeeks": { "min": -2, "max": 2 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -8,
+      "max": -6
+    },
+    "transplantOffsetWeeks": {
+      "min": -2,
+      "max": 2
+    },
     "daysToFirstHarvest": 70,
     "harvestDurationDays": 120,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["tomato", "carrot"],
+    "companionPlantIds": [
+      "tomato",
+      "carrot"
+    ],
     "avoidNearIds": [],
-    "notes": "Slow to germinate — soak seeds overnight. Biennial but grown as annual."
+    "notes": "Slow to germinate — soak seeds overnight. Biennial but grown as annual.",
+    "spacingCm": 20,
+    "plantsPerSqFt": 4,
+    "interPlantIds": [
+      "tomato",
+      "carrot"
+    ]
   },
   {
     "id": "mint",
@@ -126,18 +232,32 @@
     "category": "herb",
     "germinationTempMinC": 18,
     "germinationTempMaxC": 26,
-    "sowingOffsetWeeks": { "min": -4, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -8, "max": -6 },
-    "transplantOffsetWeeks": { "min": -2, "max": 2 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -8,
+      "max": -6
+    },
+    "transplantOffsetWeeks": {
+      "min": -2,
+      "max": 2
+    },
     "daysToFirstHarvest": 60,
     "harvestDurationDays": 150,
     "directSowOnly": false,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["carrot", "cabbage"],
+    "companionPlantIds": [
+      "carrot",
+      "cabbage"
+    ],
     "avoidNearIds": [],
-    "notes": "Extremely invasive — always grow in containers. Root division is easier than seed."
+    "notes": "Extremely invasive — always grow in containers. Root division is easier than seed.",
+    "spacingCm": 30,
+    "plantsPerSqFt": 1
   },
   {
     "id": "thyme",
@@ -146,18 +266,33 @@
     "category": "herb",
     "germinationTempMinC": 15,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": -4, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -10, "max": -8 },
-    "transplantOffsetWeeks": { "min": 0, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -10,
+      "max": -8
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 4
+    },
     "daysToFirstHarvest": 75,
     "harvestDurationDays": 300,
     "directSowOnly": false,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["cabbage", "carrot", "rosemary"],
+    "companionPlantIds": [
+      "cabbage",
+      "carrot",
+      "rosemary"
+    ],
     "avoidNearIds": [],
-    "notes": "Hardy woody perennial. Excellent for bees. Trim after flowering to keep compact."
+    "notes": "Hardy woody perennial. Excellent for bees. Trim after flowering to keep compact.",
+    "spacingCm": 30,
+    "plantsPerSqFt": 1
   },
   {
     "id": "oregano",
@@ -166,18 +301,32 @@
     "category": "herb",
     "germinationTempMinC": 15,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": -4, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -10, "max": -8 },
-    "transplantOffsetWeeks": { "min": 0, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -10,
+      "max": -8
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 4
+    },
     "daysToFirstHarvest": 80,
     "harvestDurationDays": 300,
     "directSowOnly": false,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["tomato", "pepper-sweet"],
+    "companionPlantIds": [
+      "tomato",
+      "pepper-sweet"
+    ],
     "avoidNearIds": [],
-    "notes": "Hardy perennial. Flavour intensifies in drier, hotter conditions."
+    "notes": "Hardy perennial. Flavour intensifies in drier, hotter conditions.",
+    "spacingCm": 30,
+    "plantsPerSqFt": 1
   },
   {
     "id": "sage",
@@ -186,18 +335,33 @@
     "category": "herb",
     "germinationTempMinC": 15,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": -4, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -10, "max": -8 },
-    "transplantOffsetWeeks": { "min": 0, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -10,
+      "max": -8
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 4
+    },
     "daysToFirstHarvest": 75,
     "harvestDurationDays": 300,
     "directSowOnly": false,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["cabbage", "carrot", "tomato"],
+    "companionPlantIds": [
+      "cabbage",
+      "carrot",
+      "tomato"
+    ],
     "avoidNearIds": [],
-    "notes": "Hardy evergreen perennial. Replace every 3-4 years as it becomes woody."
+    "notes": "Hardy evergreen perennial. Replace every 3-4 years as it becomes woody.",
+    "spacingCm": 45,
+    "plantsPerSqFt": 1
   },
   {
     "id": "lavender",
@@ -206,18 +370,32 @@
     "category": "herb",
     "germinationTempMinC": 15,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": -4, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -12, "max": -10 },
-    "transplantOffsetWeeks": { "min": 0, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -12,
+      "max": -10
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 4
+    },
     "daysToFirstHarvest": 120,
     "harvestDurationDays": 30,
     "directSowOnly": false,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "accelerates",
     "coldFrameBenefit": "hardens",
-    "companionPlantIds": ["cabbage", "carrot"],
+    "companionPlantIds": [
+      "cabbage",
+      "carrot"
+    ],
     "avoidNearIds": [],
-    "notes": "Slow from seed — cuttings are easier. Prune after flowering, never into old wood."
+    "notes": "Slow from seed — cuttings are easier. Prune after flowering, never into old wood.",
+    "spacingCm": 45,
+    "plantsPerSqFt": 1
   },
   {
     "id": "coriander",
@@ -226,18 +404,36 @@
     "category": "herb",
     "germinationTempMinC": 15,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": -2, "max": 6 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -2,
+      "max": 6
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 30,
     "harvestDurationDays": 45,
     "directSowOnly": true,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["spinach", "lettuce"],
-    "avoidNearIds": ["fennel"],
-    "notes": "Direct sow only — taproots dislike disturbance. Bolts quickly in heat. Succession sow."
+    "companionPlantIds": [
+      "spinach",
+      "lettuce"
+    ],
+    "avoidNearIds": [
+      "fennel"
+    ],
+    "notes": "Direct sow only — taproots dislike disturbance. Bolts quickly in heat. Succession sow.",
+    "spacingCm": 10,
+    "plantsPerSqFt": 9,
+    "successionIntervalWeeks": 2,
+    "successionRounds": 5
   },
   {
     "id": "lemon-balm",
@@ -246,18 +442,32 @@
     "category": "herb",
     "germinationTempMinC": 15,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": -4, "max": 4 },
-    "indoorStartOffsetWeeks": { "min": -8, "max": -6 },
-    "transplantOffsetWeeks": { "min": -2, "max": 2 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 4
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -8,
+      "max": -6
+    },
+    "transplantOffsetWeeks": {
+      "min": -2,
+      "max": 2
+    },
     "daysToFirstHarvest": 60,
     "harvestDurationDays": 150,
     "directSowOnly": false,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["tomato", "lettuce"],
+    "companionPlantIds": [
+      "tomato",
+      "lettuce"
+    ],
     "avoidNearIds": [],
-    "notes": "Hardy perennial. Strong pollinator attractor. Can self-seed prolifically — deadhead."
+    "notes": "Hardy perennial. Strong pollinator attractor. Can self-seed prolifically — deadhead.",
+    "spacingCm": 40,
+    "plantsPerSqFt": 0.5
   },
   {
     "id": "borage",
@@ -266,18 +476,37 @@
     "category": "herb",
     "germinationTempMinC": 15,
     "germinationTempMaxC": 25,
-    "sowingOffsetWeeks": { "min": -2, "max": 6 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -2,
+      "max": 6
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 45,
     "harvestDurationDays": 60,
     "directSowOnly": true,
     "greenhouseBenefit": "none",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "none",
-    "companionPlantIds": ["tomato", "courgette", "strawberry"],
+    "companionPlantIds": [
+      "tomato",
+      "courgette",
+      "strawberry"
+    ],
     "avoidNearIds": [],
-    "notes": "Direct sow. Self-seeds freely. Blue flowers are edible and beloved by bees."
+    "notes": "Direct sow. Self-seeds freely. Blue flowers are edible and beloved by bees.",
+    "spacingCm": 45,
+    "plantsPerSqFt": 1,
+    "interPlantIds": [
+      "tomato",
+      "courgette"
+    ]
   },
   {
     "id": "chervil",
@@ -286,18 +515,34 @@
     "category": "herb",
     "germinationTempMinC": 10,
     "germinationTempMaxC": 20,
-    "sowingOffsetWeeks": { "min": -6, "max": 8 },
-    "indoorStartOffsetWeeks": { "min": 0, "max": 0 },
-    "transplantOffsetWeeks": { "min": 0, "max": 0 },
+    "sowingOffsetWeeks": {
+      "min": -6,
+      "max": 8
+    },
+    "indoorStartOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 0
+    },
     "daysToFirstHarvest": 35,
     "harvestDurationDays": 45,
     "directSowOnly": true,
     "greenhouseBenefit": "extends",
     "propagatorBenefit": "none",
     "coldFrameBenefit": "enables-earlier",
-    "companionPlantIds": ["lettuce", "radish"],
+    "companionPlantIds": [
+      "lettuce",
+      "radish"
+    ],
     "avoidNearIds": [],
-    "notes": "Prefers cool weather — bolt-prone in summer heat. Autumn sowing under glass works well."
+    "notes": "Prefers cool weather — bolt-prone in summer heat. Autumn sowing under glass works well.",
+    "spacingCm": 10,
+    "plantsPerSqFt": 9,
+    "successionIntervalWeeks": 3,
+    "successionRounds": 4
   },
   {
     "id": "tarragon",
@@ -306,9 +551,18 @@
     "category": "herb",
     "germinationTempMinC": 18,
     "germinationTempMaxC": 24,
-    "sowingOffsetWeeks": { "min": -4, "max": 2 },
-    "indoorStartOffsetWeeks": { "min": -10, "max": -8 },
-    "transplantOffsetWeeks": { "min": 0, "max": 4 },
+    "sowingOffsetWeeks": {
+      "min": -4,
+      "max": 2
+    },
+    "indoorStartOffsetWeeks": {
+      "min": -10,
+      "max": -8
+    },
+    "transplantOffsetWeeks": {
+      "min": 0,
+      "max": 4
+    },
     "daysToFirstHarvest": 60,
     "harvestDurationDays": 120,
     "directSowOnly": false,
@@ -317,6 +571,8 @@
     "coldFrameBenefit": "enables-earlier",
     "companionPlantIds": [],
     "avoidNearIds": [],
-    "notes": "True French tarragon rarely sets viable seed — buy divisions or cuttings."
+    "notes": "True French tarragon rarely sets viable seed — buy divisions or cuttings.",
+    "spacingCm": 45,
+    "plantsPerSqFt": 1
   }
 ]

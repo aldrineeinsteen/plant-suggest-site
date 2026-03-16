@@ -31,4 +31,14 @@ export interface PlantDefinition {
   companionPlantIds: string[];
   avoidNearIds: string[];
   notes?: string;
+  /** Plant-to-plant spacing in centimetres */
+  spacingCm: number;
+  /** Square Foot Gardening density — plants per square foot (e.g. 0.25 = 1 per 4 sq ft, 16 = 16 per sq ft) */
+  plantsPerSqFt: number;
+  /** Succession sow interval in weeks — omit if only sown once */
+  successionIntervalWeeks?: number;
+  /** Max rounds of succession sowing */
+  successionRounds?: number;
+  /** IDs of companion plants particularly suited to same-bed inter-planting */
+  interPlantIds?: string[];
 }
