@@ -60,7 +60,7 @@ export function ResultsPage({ result, onReset }: Props) {
     : 'none detected';
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       {/* Top bar */}
       <header className="sticky top-0 z-10 border-b border-gray-200 bg-white px-4 py-3 shadow-sm">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4">
@@ -160,14 +160,16 @@ export function ResultsPage({ result, onReset }: Props) {
 
         {/* Results */}
         {viewMode === 'calendar' ? (
-          <CalendarView
-            recommendations={filtered}
-            startMonth={startMonth}
-            startYear={startYear}
-            monthOffset={monthOffset}
-            onNavigate={navigate}
-            onReset={resetToDefault}
-          />
+          <div className="mx-auto max-w-5xl px-4">
+            <CalendarView
+              recommendations={filtered}
+              startMonth={startMonth}
+              startYear={startYear}
+              monthOffset={monthOffset}
+              onNavigate={navigate}
+              onReset={resetToDefault}
+            />
+          </div>
         ) : (
           <div className="mx-auto max-w-5xl">
             {filtered.length === 0 ? (
