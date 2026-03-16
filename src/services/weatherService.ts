@@ -6,6 +6,8 @@ export interface MonthlyClimateNormals {
   avgMinTempC: number[];
   avgMaxTempC: number[];
   avgMeanTempC: number[];
+  /** Every daily record retrieved, used for accurate sub-zero frost-date detection. */
+  frostDays: { date: string; minTempC: number }[];
 }
 
 interface OpenMeteoArchiveResponse {
@@ -52,6 +54,7 @@ export async function fetchClimateNormals(
     const maxSum = new Array(12).fill(0);
     const meanSum = new Array(12).fill(0);
     const count = new Array(12).fill(0);
+    const frostDays: { date: string; minTempC: number }[] = [];
 
     for (let i = 0; i < time.length; i++) {
       const month = new Date(time[i]).getUTCMonth();
@@ -63,6 +66,8 @@ export async function fetchClimateNormals(
         maxSum[month] += maxV;
         meanSum[month] += meanV;
         count[month]++;
+        // Collect every day for accurate frost-date derivation
+        frostDays.push({ date: time[i], minTempC: minV });
       }
     }
 
@@ -73,6 +78,7 @@ export async function fetchClimateNormals(
       avgMinTempC: minSum.map((s, m) => avg(s, count[m])),
       avgMaxTempC: maxSum.map((s, m) => avg(s, count[m])),
       avgMeanTempC: meanSum.map((s, m) => avg(s, count[m])),
+      frostDays,
     };
   } catch {
     return null;

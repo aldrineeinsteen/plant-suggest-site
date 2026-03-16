@@ -2,23 +2,120 @@ import type { ClimateSummary } from '../types';
 import type { MonthlyClimateNormals } from '../services/weatherService';
 
 const FROST_THRESHOLD_C = 0;
-// Months where we look for last spring frost (Jan=0 … Jun=5)
-const SPRING_MONTHS = [0, 1, 2, 3, 4, 5];
-// Months where we look for first autumn frost (Jul=6 … Dec=11)
-const AUTUMN_MONTHS = [6, 7, 8, 9, 10, 11];
-// Representative year for date calculations
-const YEAR = new Date().getFullYear();
+const MS_PER_DAY = 86_400_000;
 
 /**
- * Returns the representative midpoint date of a calendar month (15th).
+ * Derives accurate frost dates by scanning every daily min-temperature record.
+ *
+ * Strategy:
+ *   - Spring window (NH: Jan 1 – Jun 30): find the LATEST sub-zero day per year,
+ *     then average the day-of-year across years → last spring frost.
+ *   - Autumn window (NH: Jul 1 – Dec 31): find the EARLIEST sub-zero day per year,
+ *     then average the day-of-year across years → first autumn frost.
+ *   - Averaging across years smooths out anomalous years.
+ *   - Returns dates anchored to the current calendar year.
+ *
+ * Returns null for each date if no sub-zero days found in that window
+ * (i.e. frost-free location).
  */
-function midOfMonth(year: number, monthIndex: number): Date {
-  return new Date(year, monthIndex, 15);
+function deriveFrostDates(
+  frostDays: { date: string; minTempC: number }[],
+  hemisphereIsNorth: boolean,
+  targetYear: number,
+): { lastFrostDate: Date | null; firstAutumnFrostDate: Date | null } {
+  // Day-of-year helper (0-indexed)
+  function dayOfYear(d: Date): number {
+    const start = Date.UTC(d.getUTCFullYear(), 0, 0);
+    return Math.floor((d.getTime() - start) / MS_PER_DAY);
+  }
+
+  // Parse all frost candidate days into structured records
+  const records = frostDays
+    .filter((r) => r.minTempC < FROST_THRESHOLD_C)
+    .map((r) => {
+      const d = new Date(r.date + 'T00:00:00Z');
+      return { year: d.getUTCFullYear(), month: d.getUTCMonth(), day: d.getUTCDate(), doy: dayOfYear(d) };
+    });
+
+  // Northern hemisphere: spring = months 0–5 (Jan–Jun), autumn = months 6–11 (Jul–Dec)
+  // Southern hemisphere: spring = months 6–11 (Jul–Dec), autumn = months 0–5 (Jan–Jun)
+  const springMonthRange = hemisphereIsNorth ? [0, 5] : [6, 11];
+  const autumnMonthRange = hemisphereIsNorth ? [6, 11] : [0, 5];
+
+  function inRange(month: number, range: [number, number]): boolean {
+    return month >= range[0] && month <= range[1];
+  }
+
+  // Group sub-zero days in the spring window by year → pick LATEST per year
+  const springByYear = new Map<number, number>(); // year → latest doy
+  for (const r of records) {
+    if (inRange(r.month, springMonthRange as [number, number])) {
+      const prev = springByYear.get(r.year) ?? -Infinity;
+      if (r.doy > prev) springByYear.set(r.year, r.doy);
+    }
+  }
+
+  // Group sub-zero days in the autumn window by year → pick EARLIEST per year
+  const autumnByYear = new Map<number, number>(); // year → earliest doy
+  for (const r of records) {
+    if (inRange(r.month, autumnMonthRange as [number, number])) {
+      const prev = autumnByYear.get(r.year) ?? Infinity;
+      if (r.doy < prev) autumnByYear.set(r.year, r.doy);
+    }
+  }
+
+  // Average day-of-year across years and convert to a Date in targetYear
+  function avgDoyToDate(byYear: Map<number, number>): Date | null {
+    if (byYear.size === 0) return null;
+    const values = [...byYear.values()];
+    const avgDoy = Math.round(values.reduce((a, b) => a + b, 0) / values.length);
+    // Build date from day-of-year in targetYear
+    const d = new Date(Date.UTC(targetYear, 0, 1));
+    d.setUTCDate(d.getUTCDate() + avgDoy - 1);
+    return new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
+  }
+
+  return {
+    lastFrostDate: avgDoyToDate(springByYear),
+    firstAutumnFrostDate: avgDoyToDate(autumnByYear),
+  };
 }
 
 /**
- * Interprets Open-Meteo monthly climate normals into a ClimateSummary.
- * Uses transparent heuristics that can be adjusted via constants above.
+ * Fallback: derive frost dates from monthly average minimums when no daily data available.
+ * Coarser than the daily approach — uses the 15th of the month as a representative date.
+ */
+function deriveFrostDatesFromMonthly(
+  avgMinTempC: number[],
+  hemisphereIsNorth: boolean,
+  targetYear: number,
+): { lastFrostDate: Date | null; firstAutumnFrostDate: Date | null } {
+  const springMonths = hemisphereIsNorth ? [0, 1, 2, 3, 4, 5] : [6, 7, 8, 9, 10, 11];
+  const autumnMonths = hemisphereIsNorth ? [6, 7, 8, 9, 10, 11] : [0, 1, 2, 3, 4, 5];
+
+  let lastFrostDate: Date | null = null;
+  let firstAutumnFrostDate: Date | null = null;
+
+  for (let i = springMonths.length - 1; i >= 0; i--) {
+    if (avgMinTempC[springMonths[i]] <= FROST_THRESHOLD_C) {
+      lastFrostDate = new Date(targetYear, springMonths[i], 15);
+      break;
+    }
+  }
+  for (const m of autumnMonths) {
+    if (avgMinTempC[m] <= FROST_THRESHOLD_C) {
+      firstAutumnFrostDate = new Date(targetYear, m, 15);
+      break;
+    }
+  }
+
+  return { lastFrostDate, firstAutumnFrostDate };
+}
+
+/**
+ * Interprets Open-Meteo climate normals into a ClimateSummary.
+ * Uses daily frost-day scanning when available for precise frost dates;
+ * falls back to monthly-average heuristic otherwise.
  */
 export function interpretClimate(
   lat: number,
@@ -26,51 +123,21 @@ export function interpretClimate(
   normals: MonthlyClimateNormals
 ): ClimateSummary {
   const hemisphereIsNorth = lat >= 0;
-  const { avgMinTempC, avgMeanTempC } = normals;
+  const { avgMinTempC, avgMeanTempC, frostDays } = normals;
+  const targetYear = new Date().getFullYear();
 
-  let lastFrostDate: Date | null = null;
-  let firstAutumnFrostDate: Date | null = null;
+  // Prefer the accurate daily approach; fall back to coarse monthly heuristic
+  const { lastFrostDate, firstAutumnFrostDate } =
+    frostDays && frostDays.length > 0
+      ? deriveFrostDates(frostDays, hemisphereIsNorth, targetYear)
+      : deriveFrostDatesFromMonthly(avgMinTempC, hemisphereIsNorth, targetYear);
 
-  if (hemisphereIsNorth) {
-    // Last spring month with avg_min below frost threshold
-    for (let m = SPRING_MONTHS[SPRING_MONTHS.length - 1]; m >= SPRING_MONTHS[0]; m--) {
-      if (avgMinTempC[m] <= FROST_THRESHOLD_C) {
-        lastFrostDate = midOfMonth(YEAR, m);
-        break;
-      }
-    }
-    // First autumn month with avg_min below frost threshold
-    for (const m of AUTUMN_MONTHS) {
-      if (avgMinTempC[m] <= FROST_THRESHOLD_C) {
-        firstAutumnFrostDate = midOfMonth(YEAR, m);
-        break;
-      }
-    }
-  } else {
-    // Southern hemisphere — spring is Jul–Dec, autumn is Jan–Jun
-    const shSpringMonths = [6, 7, 8, 9, 10, 11];
-    const shAutumnMonths = [0, 1, 2, 3, 4, 5];
-
-    for (let m = shSpringMonths[shSpringMonths.length - 1]; m >= shSpringMonths[0]; m--) {
-      if (avgMinTempC[m] <= FROST_THRESHOLD_C) {
-        lastFrostDate = midOfMonth(YEAR, m);
-        break;
-      }
-    }
-    for (const m of shAutumnMonths) {
-      if (avgMinTempC[m] <= FROST_THRESHOLD_C) {
-        firstAutumnFrostDate = midOfMonth(YEAR, m);
-        break;
-      }
-    }
-  }
-
-  let growingSeasonDays = 365; // frost-free: full year
+  let growingSeasonDays = 365; // frost-free default: full year
   if (lastFrostDate && firstAutumnFrostDate) {
     const ms = firstAutumnFrostDate.getTime() - lastFrostDate.getTime();
-    growingSeasonDays = Math.max(0, Math.round(ms / 86_400_000));
+    growingSeasonDays = Math.max(0, Math.round(ms / MS_PER_DAY));
   } else if (lastFrostDate && !firstAutumnFrostDate) {
-    // Spring frost but no autumn frost — warm climate, estimate season to end of year
+    // Spring frost but no autumn frost — warm climate, generous estimate
     growingSeasonDays = 240;
   }
 
