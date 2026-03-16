@@ -30,11 +30,11 @@ interface CalendarViewProps {
 }
 
 const WINDOW_COLOURS: Record<WindowType, string> = {
-  indoorSeedStart: 'bg-purple-200',
-  directSow: 'bg-yellow-200',
-  transplant: 'bg-blue-200',
-  firstHarvest: 'bg-orange-200',
-  harvest: 'bg-green-200',
+  indoorSeedStart: 'bg-purple-200 dark:bg-purple-800',
+  directSow: 'bg-yellow-200 dark:bg-yellow-800',
+  transplant: 'bg-blue-200 dark:bg-blue-800',
+  firstHarvest: 'bg-orange-200 dark:bg-orange-800',
+  harvest: 'bg-green-200 dark:bg-green-800',
 };
 
 const LEGEND_ITEMS: { type: WindowType; label: string }[] = [
@@ -108,18 +108,18 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
         <button
           onClick={() => onNavigate(-1)}
           aria-label="Previous month"
-          className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-600 hover:border-brand-400 hover:text-brand-700 transition select-none"
+          className="rounded-lg border border-gray-300 dark:border-gray-600 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-brand-400 hover:text-brand-700 dark:hover:text-brand-400 transition select-none"
         >
           ←
         </button>
         <div className="flex items-center gap-2">
-          <span className="font-semibold text-gray-700 tabular-nums">
+          <span className="font-semibold text-gray-700 dark:text-gray-200 tabular-nums">
             {MONTH_SHORT[startMonth - 1]} {startYear}
           </span>
           {monthOffset !== 0 && (
             <button
               onClick={onReset}
-              className="rounded-full border border-brand-300 bg-brand-50 px-2 py-0.5 text-xs font-medium text-brand-700 hover:bg-brand-100 transition"
+              className="rounded-full border border-brand-300 dark:border-brand-700 bg-brand-50 dark:bg-brand-900/30 px-2 py-0.5 text-xs font-medium text-brand-700 dark:text-brand-400 hover:bg-brand-100 dark:hover:bg-brand-900/50 transition"
             >
               Today
             </button>
@@ -128,21 +128,21 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
         <button
           onClick={() => onNavigate(1)}
           aria-label="Next month"
-          className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-600 hover:border-brand-400 hover:text-brand-700 transition select-none"
+          className="rounded-lg border border-gray-300 dark:border-gray-600 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-brand-400 hover:text-brand-700 dark:hover:text-brand-400 transition select-none"
         >
           →
         </button>
       </div>
 
       {/* Legend */}
-      <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-600">
+      <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-600 dark:text-gray-400">
         {LEGEND_ITEMS.map(({ type, label }) => (
           <span key={type} className="flex items-center gap-1">
             <span className={`inline-block w-3 h-3 rounded-sm ${WINDOW_COLOURS[type]}`} />
             {label}
           </span>
         ))}
-        <span className="flex items-center gap-1 text-gray-400">
+        <span className="flex items-center gap-1 text-gray-400 dark:text-gray-500">
           E=Early &nbsp;M=Mid &nbsp;L=Late &nbsp;X=End
         </span>
       </div>
@@ -177,10 +177,10 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
             <button
               type="button"
               onClick={() => onSelectPlant(rec)}
-              className="w-full flex items-start justify-between gap-2 py-2.5 border-b border-gray-100 last:border-0 text-left active:bg-gray-50 cursor-pointer"
+              className="w-full flex items-start justify-between gap-2 py-2.5 border-b border-gray-100 dark:border-gray-700 last:border-0 text-left active:bg-gray-50 dark:active:bg-gray-700 cursor-pointer"
             >
               <div className="flex flex-col gap-0.5 min-w-0">
-                <span className="text-sm font-medium text-gray-800 leading-tight">{rec.plant.commonName}</span>
+                <span className="text-sm font-medium text-gray-800 dark:text-gray-200 leading-tight">{rec.plant.commonName}</span>
                 {rec.isNextSeason && (
                   <span className="inline-block self-start rounded-full border border-indigo-100 bg-indigo-50 px-1.5 py-px text-[10px] font-medium text-indigo-600 leading-tight">
                     Next season
@@ -192,13 +192,13 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
                   {(windows.length > 0 ? windows : upcomingMonths.flatMap((um) => getActiveWindowsForMonth(rec, um.month, um.year))).map((w) => (
                     <span
                       key={w}
-                      className={`rounded px-1.5 py-0.5 text-[10px] font-medium ${WINDOW_COLOURS[w]} text-gray-700`}
+                      className={`rounded px-1.5 py-0.5 text-[10px] font-medium ${WINDOW_COLOURS[w]} text-gray-700 dark:text-gray-200`}
                     >
                       {WINDOW_LABEL[w]}
                     </span>
                   ))}
                 </div>
-                <span className="text-gray-300 text-sm" aria-hidden="true">›</span>
+                <span className="text-gray-300 dark:text-gray-600 text-sm" aria-hidden="true">›</span>
               </div>
             </button>
           );
@@ -207,11 +207,11 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
         return (
           <div className="sm:hidden">
             {thisMonthRecs.length === 0 && upcomingRecs.length === 0 ? (
-              <p className="text-center text-gray-400 text-sm py-10">
+              <p className="text-center text-gray-400 dark:text-gray-500 text-sm py-10">
                 Nothing to do this month — tap → to look ahead
               </p>
             ) : (
-              <div className="rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+              <div className="rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden">
                 {thisMonthRecs.length > 0 && (
                   <div>
                     <div className="bg-brand-600 px-4 py-2">
@@ -224,8 +224,8 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
                 )}
                 {upcomingRecs.length > 0 && (
                   <div className={thisMonthRecs.length > 0 ? 'border-t border-gray-200' : ''}>
-                    <div className="bg-gray-100 px-4 py-2">
-                      <span className="text-xs font-semibold text-gray-500 tracking-wide uppercase">Coming up</span>
+                    <div className="bg-gray-100 dark:bg-gray-700 px-4 py-2">
+                      <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 tracking-wide uppercase">Coming up</span>
                     </div>
                     <div className="divide-y divide-gray-100 px-4">
                       {upcomingRecs.map((r) => <PlantRow key={r.plant.id} rec={r} />)}
@@ -241,13 +241,13 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
       {/* ── Desktop layout (horizontal table) ── */}
       <div className="hidden sm:block">
       {/* Table */}
-      <div className="overflow-auto max-h-[calc(100vh-280px)] rounded-lg border border-gray-200 shadow-sm">
+      <div className="overflow-auto max-h-[calc(100vh-280px)] rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm">
         <table className="border-collapse text-xs w-full min-w-max">
           <thead>
             {/* Row 1 — month labels */}
-            <tr className="bg-gray-100">
+            <tr className="bg-gray-100 dark:bg-gray-800">
               <th
-                className="sticky left-0 top-0 z-30 bg-gray-100 text-left px-3 py-2 font-semibold text-gray-700 whitespace-nowrap border-r border-gray-300 min-w-[140px]"
+                className="sticky left-0 top-0 z-30 bg-gray-100 dark:bg-gray-800 text-left px-3 py-2 font-semibold text-gray-700 dark:text-gray-300 whitespace-nowrap border-r border-gray-300 dark:border-gray-600 min-w-[140px]"
                 rowSpan={2}
               >
                 Plant
@@ -262,10 +262,10 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
                       'sticky top-0 z-20 text-center px-1 py-1 font-medium whitespace-nowrap',
                       isCurrentMonth
                         ? 'bg-brand-600 text-white font-bold'
-                        : 'bg-gray-100 text-gray-600',
+                        : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400',
                       i === 0 ? '' : cm.isOverflow
-                        ? 'border-l-2 border-dashed border-gray-400'
-                        : 'border-l border-gray-300',
+                          ? 'border-l-2 border-dashed border-gray-400 dark:border-gray-600'
+                          : 'border-l border-gray-300 dark:border-gray-700',
                     ].join(' ')}
                   >
                     {cm.label}
@@ -275,7 +275,7 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
             </tr>
 
             {/* Row 2 — part labels (E M L X) */}
-            <tr className="bg-gray-50">
+            <tr className="bg-gray-50 dark:bg-gray-800/80">
               {calendarMonths.map((cm, mi) =>
                 PARTS.map((part) => (
                   <th
@@ -284,13 +284,13 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
                       'sticky top-[25px] z-20 text-center py-1 font-normal w-6 border-b border-gray-200',
                       cm.month === todayMonth && cm.year === todayYear
                         ? 'bg-brand-100 text-brand-700'
-                        : 'bg-gray-50 text-gray-400',
+                        : 'bg-gray-50 dark:bg-gray-800/80 text-gray-400 dark:text-gray-500',
                       part === 1
                         ? mi === 0
                           ? ''
                           : cm.isOverflow
-                            ? 'border-l-2 border-dashed border-gray-400'
-                            : 'border-l border-gray-300'
+                            ? 'border-l-2 border-dashed border-gray-400 dark:border-gray-600'
+                            : 'border-l border-gray-300 dark:border-gray-700'
                         : '',
                     ].join(' ')}
                   >
@@ -305,14 +305,14 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
             {recommendations.map((rec, ri) => (
               <tr
                 key={rec.plant.id}
-                className={ri % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}
+                className={ri % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-gray-50/50 dark:bg-gray-800/50'}
               >
                 {/* Plant name cell */}
-                <td className="sticky left-0 z-10 bg-inherit px-3 py-1 font-medium text-gray-800 whitespace-nowrap border-r border-gray-300">
+                <td className="sticky left-0 z-10 bg-inherit px-3 py-1 font-medium text-gray-800 dark:text-gray-200 whitespace-nowrap border-r border-gray-300 dark:border-gray-600">
                   <button
                     type="button"
                     onClick={() => onSelectPlant(rec)}
-                    className="flex items-center gap-1.5 flex-wrap text-left hover:text-brand-700 transition-colors cursor-pointer"
+                    className="flex items-center gap-1.5 flex-wrap text-left hover:text-brand-700 dark:hover:text-brand-400 transition-colors cursor-pointer"
                   >
                     {rec.plant.commonName}
                     {rec.isNextSeason && (
@@ -334,8 +334,8 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
                       ? mi === 0
                         ? ''
                         : cm.isOverflow
-                          ? 'border-l-2 border-dashed border-gray-400'
-                          : 'border-l border-gray-300'
+                          ? 'border-l-2 border-dashed border-gray-400 dark:border-gray-600'
+                          : 'border-l border-gray-300 dark:border-gray-700'
                       : '';
 
                     return (
@@ -345,7 +345,7 @@ export default function CalendarView({ recommendations, startMonth, startYear, m
                         className={[
                           'w-6 h-6 p-0',
                           borderClass,
-                          type ? WINDOW_COLOURS[type] : isCurrentMonth ? 'bg-brand-50' : 'bg-transparent',
+                          type ? WINDOW_COLOURS[type] : isCurrentMonth ? 'bg-brand-50 dark:bg-brand-900/20' : 'bg-transparent',
                           status ? STATUS_CLASS[status] : '',
                         ].join(' ')}
                       />

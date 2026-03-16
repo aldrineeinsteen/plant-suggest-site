@@ -42,17 +42,17 @@ export function PlantSheet({ rec, onClose, isInPlan, onTogglePlan }: Props) {
       />
 
       {/* Panel — slides up from bottom on mobile, centred modal on desktop */}
-      <div className="relative w-full sm:max-w-lg sm:mx-4 max-h-[88vh] sm:max-h-[85vh] flex flex-col rounded-t-2xl sm:rounded-2xl bg-white shadow-2xl overflow-hidden animate-slide-up">
+      <div className="relative w-full sm:max-w-lg sm:mx-4 max-h-[88vh] sm:max-h-[85vh] flex flex-col rounded-t-2xl sm:rounded-2xl bg-white dark:bg-gray-800 shadow-2xl overflow-hidden animate-slide-up">
         {/* Sticky handle + header */}
-        <div className="shrink-0 px-4 pt-3 pb-2 border-b border-gray-100">
+        <div className="shrink-0 px-4 pt-3 pb-2 border-b border-gray-100 dark:border-gray-700">
           {/* Drag handle (mobile) */}
-          <div className="mx-auto mb-2 w-10 h-1 rounded-full bg-gray-300 sm:hidden" />
+          <div className="mx-auto mb-2 w-10 h-1 rounded-full bg-gray-300 dark:bg-gray-600 sm:hidden" />
           <div className="flex items-center justify-between gap-2">
-            <h2 className="text-base font-semibold text-gray-900 truncate">{rec.plant.commonName}</h2>
+            <h2 className="text-base font-semibold text-gray-900 dark:text-gray-100 truncate">{rec.plant.commonName}</h2>
             <button
               onClick={onClose}
               aria-label="Close"
-              className="shrink-0 rounded-full p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition"
+              className="shrink-0 rounded-full p-1.5 text-gray-400 dark:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-600 dark:hover:text-gray-200 transition"
             >
               ✕
             </button>
@@ -66,12 +66,12 @@ export function PlantSheet({ rec, onClose, isInPlan, onTogglePlan }: Props) {
         </div>
 
         {/* Sticky footer — Add to My Plan */}
-        <div className="shrink-0 px-4 py-3 border-t border-gray-100">
+        <div className="shrink-0 px-4 py-3 border-t border-gray-100 dark:border-gray-700">
           <button
             onClick={onTogglePlan}
             className={`w-full rounded-lg py-2.5 text-sm font-medium transition ${
               isInPlan
-                ? 'bg-brand-50 border border-brand-200 text-brand-700 hover:bg-brand-100'
+                ? 'bg-brand-50 dark:bg-brand-900/30 border border-brand-200 dark:border-brand-700 text-brand-700 dark:text-brand-300 hover:bg-brand-100 dark:hover:bg-brand-900/50'
                 : 'bg-brand-700 text-white hover:bg-brand-800'
             }`}
           >

@@ -29,7 +29,7 @@ export function FilterBar({ activeCategories, onToggleCategory, totalCount, filt
               className={`rounded-full border px-3 py-1 text-xs font-medium capitalize transition ${
                 active
                   ? 'bg-brand-600 border-brand-600 text-white'
-                  : 'bg-white border-gray-300 text-gray-600 hover:border-brand-500 hover:text-brand-700'
+                  : 'bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:border-brand-500 hover:text-brand-700 dark:hover:border-brand-400 dark:hover:text-brand-400'
               }`}
             >
               {CATEGORY_EMOJI[cat]}<span className="hidden sm:inline"> {cat}</span>
@@ -37,7 +37,7 @@ export function FilterBar({ activeCategories, onToggleCategory, totalCount, filt
           );
         })}
       </div>
-      <span className="text-xs text-gray-400 hidden sm:inline">
+      <span className="text-xs text-gray-400 dark:text-gray-500 hidden sm:inline">
         {filteredCount}/{totalCount}
       </span>
     </div>

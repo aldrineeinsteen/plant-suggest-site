@@ -18,8 +18,8 @@ export function HolidayBadge({ highlight }: Props) {
     <div
       className={`flex items-center gap-1.5 rounded-md border px-2 py-1 text-xs ${
         isBest
-          ? 'border-green-300 bg-green-50 text-green-800'
-          : 'border-emerald-200 bg-emerald-50 text-emerald-700'
+          ? 'border-green-300 bg-green-50 text-green-800 dark:border-green-700 dark:bg-green-950 dark:text-green-300'
+          : 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-700 dark:bg-emerald-950 dark:text-emerald-400'
       }`}
     >
       <span aria-hidden="true">{isBest ? '★' : '☆'}</span>

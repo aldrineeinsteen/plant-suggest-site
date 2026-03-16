@@ -3,10 +3,10 @@ import { WindowBadge } from '../WindowBadge/WindowBadge';
 import { HolidayBadge } from '../HolidayBadge/HolidayBadge';
 
 const CATEGORY_COLOURS: Record<string, string> = {
-  vegetable: 'bg-lime-100 text-lime-800',
-  herb: 'bg-teal-100 text-teal-800',
-  fruit: 'bg-orange-100 text-orange-800',
-  flower: 'bg-pink-100 text-pink-800',
+  vegetable: 'bg-lime-100 text-lime-800 dark:bg-lime-900 dark:text-lime-200',
+  herb: 'bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200',
+  fruit: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200',
+  flower: 'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200',
 };
 
 interface Props {
@@ -39,12 +39,12 @@ export function PlantCard({ recommendation: rec, inSheet = false }: Props) {
       {/* Header */}
       <div className="flex items-start justify-between gap-2">
         <div>
-          <h2 className="text-base font-semibold text-gray-900">{plant.commonName}</h2>
+          <h2 className="text-base font-semibold text-gray-900 dark:text-gray-100">{plant.commonName}</h2>
           {plant.scientificName && (
-            <p className="text-xs italic text-gray-400">{plant.scientificName}</p>
+            <p className="text-xs italic text-gray-400 dark:text-gray-500">{plant.scientificName}</p>
           )}
           {rec.isNextSeason && (
-            <span className="mt-1 inline-block rounded-full border border-indigo-100 bg-indigo-50 px-2 py-0.5 text-[10px] font-medium text-indigo-600">
+            <span className="mt-1 inline-block rounded-full border border-indigo-100 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-900 px-2 py-0.5 text-[10px] font-medium text-indigo-600 dark:text-indigo-300">
               Next season
             </span>
           )}
@@ -69,12 +69,12 @@ export function PlantCard({ recommendation: rec, inSheet = false }: Props) {
       {/* Companion plants */}
       {rec.companionPlants.length > 0 && (
         <div className="mt-3">
-          <p className="mb-1 text-xs font-semibold text-gray-500">Companion plants</p>
+          <p className="mb-1 text-xs font-semibold text-gray-500 dark:text-gray-400">Companion plants</p>
           <div className="flex flex-wrap gap-1">
             {rec.companionPlants.map((cp) => (
               <span
                 key={cp.id}
-                className="rounded-full bg-brand-50 px-2 py-0.5 text-xs text-brand-700 border border-brand-100"
+                className="rounded-full bg-brand-50 dark:bg-brand-900/40 px-2 py-0.5 text-xs text-brand-700 dark:text-brand-300 border border-brand-100 dark:border-brand-800"
               >
                 {cp.commonName}
               </span>
@@ -86,12 +86,12 @@ export function PlantCard({ recommendation: rec, inSheet = false }: Props) {
       {/* Plants to avoid */}
       {rec.plantsToAvoid.length > 0 && (
         <div className="mt-2">
-          <p className="mb-1 text-xs font-semibold text-gray-500">Avoid near</p>
+          <p className="mb-1 text-xs font-semibold text-gray-500 dark:text-gray-400">Avoid near</p>
           <div className="flex flex-wrap gap-1">
             {rec.plantsToAvoid.map((p) => (
               <span
                 key={p.id}
-                className="rounded-full bg-red-50 px-2 py-0.5 text-xs text-red-700 border border-red-100"
+                className="rounded-full bg-red-50 dark:bg-red-950 px-2 py-0.5 text-xs text-red-700 dark:text-red-300 border border-red-100 dark:border-red-900"
               >
                 {p.commonName}
               </span>
@@ -123,26 +123,26 @@ export function PlantCard({ recommendation: rec, inSheet = false }: Props) {
 
       {/* Notes */}
       {plant.notes && (
-        <p className="mt-3 text-xs text-gray-500 italic border-t border-gray-100 pt-2">{plant.notes}</p>
+        <p className="mt-3 text-xs text-gray-500 dark:text-gray-400 italic border-t border-gray-100 dark:border-gray-700 pt-2">{plant.notes}</p>
       )}
 
       {/* Garden planning */}
-      <div className="mt-3 border-t border-gray-100 pt-3">
-        <p className="mb-1.5 text-xs font-semibold text-gray-500 uppercase tracking-wide">Garden planning</p>
-        <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-gray-700">
+      <div className="mt-3 border-t border-gray-100 dark:border-gray-700 pt-3">
+        <p className="mb-1.5 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Garden planning</p>
+        <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-gray-700 dark:text-gray-300">
           <span>
-            <span className="text-gray-400">Spacing </span>
+            <span className="text-gray-400 dark:text-gray-500">Spacing </span>
             {plant.spacingCm} cm
           </span>
           <span>
-            <span className="text-gray-400">SFG </span>
+            <span className="text-gray-400 dark:text-gray-500">SFG </span>
             {plant.plantsPerSqFt >= 1
               ? `${plant.plantsPerSqFt} per sq ft`
               : `1 per ${Math.round(1 / plant.plantsPerSqFt)} sq ft`}
           </span>
           {plant.successionIntervalWeeks && (
             <span className="col-span-2">
-              <span className="text-gray-400">Succession </span>
+              <span className="text-gray-400 dark:text-gray-500">Succession </span>
               every {plant.successionIntervalWeeks}w
               {plant.successionRounds ? ` · ${plant.successionRounds} rounds` : ''}
             </span>
@@ -150,14 +150,14 @@ export function PlantCard({ recommendation: rec, inSheet = false }: Props) {
         </div>
         {plant.interPlantIds && plant.interPlantIds.length > 0 && (
           <div className="mt-1.5">
-            <span className="text-xs text-gray-400">Inter-plant with </span>
+            <span className="text-xs text-gray-400 dark:text-gray-500">Inter-plant with </span>
             <div className="mt-0.5 flex flex-wrap gap-1">
               {rec.companionPlants
                 .filter((cp) => plant.interPlantIds!.includes(cp.id))
                 .map((cp) => (
                   <span
                     key={cp.id}
-                    className="rounded-full bg-emerald-50 border border-emerald-100 px-2 py-0.5 text-xs text-emerald-700"
+                    className="rounded-full bg-emerald-50 dark:bg-emerald-950 border border-emerald-100 dark:border-emerald-900 px-2 py-0.5 text-xs text-emerald-700 dark:text-emerald-300"
                   >
                     {cp.commonName}
                   </span>
@@ -170,12 +170,12 @@ export function PlantCard({ recommendation: rec, inSheet = false }: Props) {
       {/* Follow with — crop rotation suggestions */}
       {rec.followWithPlants.length > 0 && (
         <div className="mt-3">
-          <p className="mb-1 text-xs font-semibold text-gray-500">Good crops to plant after this</p>
+          <p className="mb-1 text-xs font-semibold text-gray-500 dark:text-gray-400">Good crops to plant after this</p>
           <div className="flex flex-wrap gap-1">
             {rec.followWithPlants.map((p) => (
               <span
                 key={p.id}
-                className="rounded-full bg-sky-50 border border-sky-100 px-2 py-0.5 text-xs text-sky-700"
+                className="rounded-full bg-sky-50 dark:bg-sky-950 border border-sky-100 dark:border-sky-900 px-2 py-0.5 text-xs text-sky-700 dark:text-sky-300"
               >
                 {p.commonName}
               </span>
@@ -188,7 +188,7 @@ export function PlantCard({ recommendation: rec, inSheet = false }: Props) {
 
   if (inSheet) return <div>{content}</div>;
   return (
-    <article className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:shadow-md">
+    <article className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm transition hover:shadow-md">
       {content}
     </article>
   );

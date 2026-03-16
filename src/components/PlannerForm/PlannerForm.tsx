@@ -49,19 +49,19 @@ export function PlannerForm({ onSubmit, isLoading }: Props) {
     <form onSubmit={handleSubmit} noValidate className="space-y-6">
       {/* Location */}
       <fieldset className="space-y-4">
-        <legend className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
+        <legend className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
           Your location
         </legend>
 
         <div>
-          <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="country" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Country
           </label>
           <select
             id="country"
             value={country}
             onChange={(e) => setCountry(e.target.value)}
-            className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+            className="block w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 px-3 py-2 text-sm shadow-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
           >
             {COUNTRIES.map((c) => (
               <option key={c.code} value={c.code}>
@@ -72,7 +72,7 @@ export function PlannerForm({ onSubmit, isLoading }: Props) {
         </div>
 
         <div>
-          <label htmlFor="postcode" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="postcode" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Postcode / ZIP code
           </label>
           <input
@@ -82,10 +82,10 @@ export function PlannerForm({ onSubmit, isLoading }: Props) {
             onChange={(e) => setPostcode(e.target.value)}
             placeholder="e.g. SW1A 1AA"
             autoComplete="postal-code"
-            className={`block w-full rounded-lg border px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-1 ${
+            className={`block w-full rounded-lg border px-3 py-2 text-sm text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-700 shadow-sm focus:outline-none focus:ring-1 ${
               postcodeError
                 ? 'border-red-400 focus:border-red-400 focus:ring-red-400'
-                : 'border-gray-300 focus:border-brand-500 focus:ring-brand-500'
+                : 'border-gray-300 dark:border-gray-600 focus:border-brand-500 focus:ring-brand-500'
             }`}
           />
           {postcodeError && (
@@ -96,7 +96,7 @@ export function PlannerForm({ onSubmit, isLoading }: Props) {
 
       {/* Growing setup */}
       <fieldset className="space-y-3">
-        <legend className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
+        <legend className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
           Growing setup
         </legend>
 
@@ -126,7 +126,7 @@ export function PlannerForm({ onSubmit, isLoading }: Props) {
           <label
             key={id}
             htmlFor={id}
-            className="flex items-start gap-3 rounded-lg border border-gray-200 p-3 cursor-pointer hover:border-brand-400 transition"
+            className="flex items-start gap-3 rounded-lg border border-gray-200 dark:border-gray-600 p-3 cursor-pointer hover:border-brand-400 dark:hover:border-brand-500 transition"
           >
             <input
               id={id}
@@ -136,8 +136,8 @@ export function PlannerForm({ onSubmit, isLoading }: Props) {
               className="mt-0.5 h-4 w-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500"
             />
             <div>
-              <span className="block text-sm font-medium text-gray-800">{label}</span>
-              <span className="block text-xs text-gray-500">{description}</span>
+              <span className="block text-sm font-medium text-gray-800 dark:text-gray-200">{label}</span>
+              <span className="block text-xs text-gray-500 dark:text-gray-400">{description}</span>
             </div>
           </label>
         ))}

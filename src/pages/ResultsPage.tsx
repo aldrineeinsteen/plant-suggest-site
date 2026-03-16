@@ -12,9 +12,11 @@ interface Props {
   result: PlannerResult;
   onReset: () => void;
   plan: UsePlanReturn;
+  isDark: boolean;
+  onToggleDark: () => void;
 }
 
-export function ResultsPage({ result, onReset, plan }: Props) {
+export function ResultsPage({ result, onReset, plan, isDark, onToggleDark }: Props) {
   const [activeCategories, setActiveCategories] = useState<Set<PlantCategory>>(
     new Set(ALL_CATEGORIES)
   );
@@ -64,7 +66,7 @@ export function ResultsPage({ result, onReset, plan }: Props) {
     : 'none detected';
 
   return (
-    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 overflow-x-hidden">
       <PlantSheet
         rec={selectedRec}
         onClose={() => setSelectedRec(null)}
@@ -72,21 +74,30 @@ export function ResultsPage({ result, onReset, plan }: Props) {
         onTogglePlan={selectedRec ? () => plan.togglePlan(selectedRec.plant.id) : () => {}}
       />
       {/* Top bar */}
-      <header className="sticky top-0 z-10 border-b border-gray-200 bg-white px-4 py-3 shadow-sm">
+      <header className="sticky top-0 z-10 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-3 shadow-sm">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <span className="text-xl" aria-hidden="true">🌱</span>
-            <span className="font-bold text-brand-800">Plant Suggest</span>
+            <span className="font-bold text-brand-800 dark:text-brand-400">Plant Suggest</span>
           </div>
-          <div className="text-sm text-gray-500 hidden sm:block truncate max-w-xs">
+          <div className="text-sm text-gray-500 dark:text-gray-300 hidden sm:block truncate max-w-xs">
             {result.location.displayName.split(',').slice(0, 2).join(',')}
           </div>
-          <button
-            onClick={onReset}
-            className="rounded-lg border border-gray-300 px-3 py-1.5 text-xs font-medium text-gray-600 hover:border-brand-400 hover:text-brand-700 transition"
-          >
-            ← New search
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={onToggleDark}
+              aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+              className="rounded-full p-1.5 text-base text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+            >
+              {isDark ? '☀️' : '🌙'}
+            </button>
+            <button
+              onClick={onReset}
+              className="rounded-lg border border-gray-300 dark:border-gray-600 px-3 py-1.5 text-xs font-medium text-gray-600 dark:text-gray-300 hover:border-brand-400 hover:text-brand-700 dark:hover:border-brand-400 dark:hover:text-brand-400 transition"
+            >
+              ← New search
+            </button>
+          </div>
         </div>
       </header>
 
@@ -94,41 +105,41 @@ export function ResultsPage({ result, onReset, plan }: Props) {
         {/* Constrained header content — always centred */}
         <div className="mx-auto max-w-5xl">
           {/* Climate summary */}
-          <section className="mb-6 rounded-xl border border-brand-100 bg-brand-50">
+          <section className="mb-6 rounded-xl border border-brand-100 dark:border-gray-700 bg-brand-50 dark:bg-gray-800">
             {/* Header row — always visible */}
             <button
               onClick={() => setClimateOpen((o) => !o)}
               className="w-full flex items-center justify-between px-4 py-3 text-left"
               aria-expanded={climateOpen}
             >
-              <h2 className="text-sm font-semibold text-brand-800">Climate summary</h2>
+              <h2 className="text-sm font-semibold text-brand-800 dark:text-brand-300">Climate summary</h2>
               <div className="flex items-center gap-2">
                 {/* Temp badge — visible when collapsed */}
                 {!climateOpen && (
-                  <span className="rounded-full bg-brand-100 border border-brand-200 px-2 py-0.5 text-xs font-medium text-brand-800">
+                  <span className="rounded-full bg-brand-100 dark:bg-gray-700 border border-brand-200 dark:border-gray-600 px-2 py-0.5 text-xs font-medium text-brand-800 dark:text-brand-300">
                     {climate.avgSummerTempC}°C · {climate.growingSeasonDays}d
                   </span>
                 )}
-                <span className="text-brand-600 text-sm select-none">{climateOpen ? '▲' : '▼'}</span>
+                <span className="text-brand-600 dark:text-brand-400 text-sm select-none">{climateOpen ? '▲' : '▼'}</span>
               </div>
             </button>
             {/* Expandable detail */}
             {climateOpen && (
-              <div className="px-4 pb-4 grid grid-cols-2 gap-x-8 gap-y-1 text-sm text-gray-700 sm:grid-cols-4">
+              <div className="px-4 pb-4 grid grid-cols-2 gap-x-8 gap-y-1 text-sm text-gray-700 dark:text-gray-300 sm:grid-cols-4">
                 <div>
-                  <span className="text-xs text-gray-500 block">Last spring frost</span>
+                  <span className="text-xs text-gray-500 dark:text-gray-500 block">Last spring frost</span>
                   <strong>{frostLabel}</strong>
                 </div>
                 <div>
-                  <span className="text-xs text-gray-500 block">First autumn frost</span>
+                  <span className="text-xs text-gray-500 dark:text-gray-500 block">First autumn frost</span>
                   <strong>{autumnFrostLabel}</strong>
                 </div>
                 <div>
-                  <span className="text-xs text-gray-500 block">Growing season</span>
+                  <span className="text-xs text-gray-500 dark:text-gray-500 block">Growing season</span>
                   <strong>{climate.growingSeasonDays} days</strong>
                 </div>
                 <div>
-                  <span className="text-xs text-gray-500 block">Avg summer temp</span>
+                  <span className="text-xs text-gray-500 dark:text-gray-500 block">Avg summer temp</span>
                   <strong>{climate.avgSummerTempC}°C</strong>
                 </div>
               </div>
@@ -143,23 +154,23 @@ export function ResultsPage({ result, onReset, plan }: Props) {
               totalCount={result.recommendations.length}
               filteredCount={filtered.length}
             />
-            <div className="flex rounded-lg border border-gray-300 overflow-hidden text-xs font-medium ml-auto shrink-0">
+            <div className="flex rounded-lg border border-gray-300 dark:border-gray-600 overflow-hidden text-xs font-medium ml-auto shrink-0">
               <button
                 onClick={() => setViewMode('cards')}
                 className={`px-3 py-1.5 transition ${
                   viewMode === 'cards'
                     ? 'bg-brand-600 text-white'
-                    : 'bg-white text-gray-600 hover:bg-gray-50'
+                    : 'bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600'
                 }`}
               >
                 Cards
               </button>
               <button
                 onClick={() => setViewMode('calendar')}
-                className={`px-3 py-1.5 border-l border-gray-300 transition ${
+                className={`px-3 py-1.5 border-l border-gray-300 dark:border-gray-600 transition ${
                   viewMode === 'calendar'
                     ? 'bg-brand-600 text-white'
-                    : 'bg-white text-gray-600 hover:bg-gray-50'
+                    : 'bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600'
                 }`}
               >
                 Calendar
@@ -184,7 +195,7 @@ export function ResultsPage({ result, onReset, plan }: Props) {
         ) : (
           <div className="mx-auto max-w-5xl">
             {filtered.length === 0 ? (
-              <p className="text-center text-gray-500 py-16">No plants match the selected filters.</p>
+              <p className="text-center text-gray-500 dark:text-gray-400 py-16">No plants match the selected filters.</p>
             ) : (
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {filtered.map((rec) => (

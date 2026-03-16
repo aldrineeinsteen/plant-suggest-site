@@ -3,7 +3,7 @@ import type { LocationInput, GrowingSetup, PlannerResult, PlantRecommendation } 
 
 const STORAGE_KEY = 'plant-suggest-result';
 // Increment this whenever the stored shape or computed fields change, to discard stale caches.
-const STORAGE_VERSION = 2;
+const STORAGE_VERSION = 3;
 
 function saveResult(result: PlannerResult): void {
   try {
@@ -21,8 +21,12 @@ function loadSavedResult(): PlannerResult | null {
     // Discard cached results from older versions
     if (wrapper.v !== STORAGE_VERSION || !wrapper.result) return null;
     const parsed = wrapper.result;
-    // Revive generatedAt — JSON serialisation strips the Date prototype
+    // Revive Date fields — JSON serialisation strips the Date prototype
     parsed.generatedAt = new Date(parsed.generatedAt);
+    if (parsed.climate.lastFrostDate)
+      parsed.climate.lastFrostDate = new Date(parsed.climate.lastFrostDate as unknown as string);
+    if (parsed.climate.firstAutumnFrostDate)
+      parsed.climate.firstAutumnFrostDate = new Date(parsed.climate.firstAutumnFrostDate as unknown as string);
     return parsed;
   } catch {
     return null;
