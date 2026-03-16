@@ -2,10 +2,12 @@ import { useState } from 'react';
 import type { LocationInput, GrowingSetup, PlannerResult, PlantRecommendation } from '../types';
 
 const STORAGE_KEY = 'plant-suggest-result';
+// Increment this whenever the stored shape or computed fields change, to discard stale caches.
+const STORAGE_VERSION = 2;
 
 function saveResult(result: PlannerResult): void {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(result));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: STORAGE_VERSION, result }));
   } catch {
     // Quota exceeded or storage unavailable — silently skip
   }
@@ -15,7 +17,10 @@ function loadSavedResult(): PlannerResult | null {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return null;
-    const parsed = JSON.parse(raw) as PlannerResult;
+    const wrapper = JSON.parse(raw) as { v?: number; result?: PlannerResult };
+    // Discard cached results from older versions
+    if (wrapper.v !== STORAGE_VERSION || !wrapper.result) return null;
+    const parsed = wrapper.result;
     // Revive generatedAt — JSON serialisation strips the Date prototype
     parsed.generatedAt = new Date(parsed.generatedAt);
     return parsed;
