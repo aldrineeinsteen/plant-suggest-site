@@ -459,7 +459,7 @@ src/
 
 ## Licence
 
-MIT
+Apache 2.0
 READMEEOF`, and this is the output of running that command instead:
 heredoc>   "transplanavaScr  "g.
 heredoc>  
